@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://https://roboz-up.github.io/ROBOZ/</id>
-    <title>Gridea</title>
-    <updated>2020-03-19T15:37:48.434Z</updated>
+    <id>https://roboz-up.github.io/ROBOZ/</id>
+    <title>ROBOZ的小站</title>
+    <updated>2020-03-19T23:34:15.904Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://https://roboz-up.github.io/ROBOZ/"/>
-    <link rel="self" href="https://https://roboz-up.github.io/ROBOZ/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
-    <logo>https://https://roboz-up.github.io/ROBOZ/images/avatar.png</logo>
-    <icon>https://https://roboz-up.github.io/ROBOZ/favicon.ico</icon>
-    <rights>All rights reserved 2020, Gridea</rights>
+    <link rel="alternate" href="https://roboz-up.github.io/ROBOZ/"/>
+    <link rel="self" href="https://roboz-up.github.io/ROBOZ/atom.xml"/>
+    <logo>https://roboz-up.github.io/ROBOZ/images/avatar.png</logo>
+    <icon>https://roboz-up.github.io/ROBOZ/favicon.ico</icon>
+    <rights>All rights reserved 2020, ROBOZ的小站</rights>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://https://roboz-up.github.io/ROBOZ/post/hello-gridea/</id>
-        <link href="https://https://roboz-up.github.io/ROBOZ/post/hello-gridea/">
+        <id>https://roboz-up.github.io/ROBOZ/post/hello-gridea/</id>
+        <link href="https://roboz-up.github.io/ROBOZ/post/hello-gridea/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
