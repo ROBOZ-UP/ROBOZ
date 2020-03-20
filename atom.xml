@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://roboz-up.github.io</id>
     <title>ROBOZ的小站</title>
-    <updated>2020-03-20T00:46:28.322Z</updated>
+    <updated>2020-03-20T00:52:07.461Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://roboz-up.github.io"/>
     <link rel="self" href="https://roboz-up.github.io/atom.xml"/>
@@ -10,4 +10,13 @@
     <logo>https://roboz-up.github.io/images/avatar.png</logo>
     <icon>https://roboz-up.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, ROBOZ的小站</rights>
+    <entry>
+        <title type="html"><![CDATA[欢迎某人。。。]]></title>
+        <id>https://roboz-up.github.io/post/la-la-la/</id>
+        <link href="https://roboz-up.github.io/post/la-la-la/">
+        </link>
+        <updated>2020-03-20T00:48:33.000Z</updated>
+        <content type="html"><![CDATA[<p>鬼见愁君。。。</p>
+]]></content>
+    </entry>
 </feed>
