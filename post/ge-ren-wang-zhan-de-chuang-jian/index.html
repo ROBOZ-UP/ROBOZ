@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 
 <head>
-    
-        <meta charset="utf-8" />
+    <meta charset="utf-8" />
 <title>
-    文章 | ROBOZ
+    ROBOZ
 </title>
 <!--[if lt IE 9]><script src="//cdn.bootcss.com/html5shiv/r29/html5.js"></script><![endif]-->
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
@@ -48,7 +47,6 @@
                     })();
                 </script>
                 
-            
 </head>
 
 <body>
@@ -151,47 +149,157 @@
 
     }
 </script>
-            <div class="post-main">
-                <div class="post-list">
-                    
-    
-        
-                
-                    
-    
-                    
+            <div class="main">
+                <div class="container">
+                    <article class="post-wrap">
+                        <header class="post-header">
+                            <h1 class="post-title">
+                                个人免费网站的创建
+                            </h1>
+                            
+                                    <!--zh-->
+                                    <div class="post-meta zh">
+                                        &#x4F5C;&#x8005;:
+                                        <a itemprop="author" rel="author" href="/">
+                                            ROBOZ
+                                        </a>
+                                        <span class="post-time">&#x65E5;&#x671F;: <a href="#">2020-03-20</a></span>
+                                        <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a
+                                    href="#">0.8
+                                    &#x5206;&#x949F;</a></span>
+                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">200</a></span>
+                                        
+                                                阅读量:
+                                                <span data-hk-page="current"> - </span>
+                                                
+                                    </div>
+                                    
+                        </header>
+                        <div class="post-content">
+                            <p>📮基于Gridea和Github建立个人免费网站的经验分享。</p>
+<figure data-type="image" tabindex="1"><img src="https://roboz-up.github.io/post-images/1584695375986.jpg" alt="" loading="lazy"></figure>
+<h1 id="环境搭建与准备">环境搭建与准备</h1>
+<h2 id="下载安装-gridea">下载安装 Gridea</h2>
+<pre><code>Gridea 官网：https://gridea.dev/
+</code></pre>
+<figure data-type="image" tabindex="2"><img src="https://roboz-up.github.io/post-images/1584696600131.png" alt="" loading="lazy"></figure>
+<h2 id="下载安装-git">下载安装 Git</h2>
+<pre><code>Git 官网：https://git-scm.com/downloads
+
+网速慢的小可爱可以使用 淘宝NPM镜像
+https://npm.taobao.org/mirrors/git-for-windows/
+</code></pre>
+<figure data-type="image" tabindex="3"><img src="https://roboz-up.github.io/post-images/1584699726284.png" alt="" loading="lazy"></figure>
+<h2 id="注册github账号已经有账号的小可爱直接跳过即可">注册Github账号（已经有账号的小可爱直接跳过即可）</h2>
+<pre><code>Github 官网： https://github.com/
+
+注册Github账号教程
+https://jingyan.baidu.com/article/86fae346e723303c49121abb.html/
+</code></pre>
+<figure data-type="image" tabindex="4"><img src="https://roboz-up.github.io/post-images/1584697256485.png" alt="" loading="lazy"></figure>
+<h1 id="配置gridea">配置Gridea</h1>
+<h2 id="创建github仓库及其网站">创建Github仓库及其网站</h2>
+<pre><code>登陆Github 新建仓库
+</code></pre>
+<figure data-type="image" tabindex="5"><img src="https://roboz-up.github.io/post-images/1584702124481.png" alt="" loading="lazy"></figure>
+<h2 id="获取github私人token令牌">获取Github私人Token令牌</h2>
+<pre><code>令牌获取教程
+https://blog.csdn.net/ltstud/article/details/75949726/
+</code></pre>
+<h2 id="建立gridea远程连接">建立Gridea远程连接</h2>
+<pre><code>打开Gridea 进行配置
+</code></pre>
+<figure data-type="image" tabindex="6"><img src="https://roboz-up.github.io/post-images/1584703457574.jpg" alt="" loading="lazy"></figure>
+<h1 id="应用gridea">应用Gridea</h1>
+<pre><code>配置完成后，先测试远程连接是否正常
+点击同步，进行网页美化与内容同步
+</code></pre>
+<figure data-type="image" tabindex="7"><img src="https://roboz-up.github.io/post-images/1584703992782.png" alt="" loading="lazy"></figure>
+
+                        </div>
                         
+                            <div class="post-toc">
+                                <ul class="markdownIt-TOC">
+<li><a href="#%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E4%B8%8E%E5%87%86%E5%A4%87">环境搭建与准备</a>
+<ul>
+<li><a href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85-gridea">下载安装 Gridea</a></li>
+<li><a href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85-git">下载安装 Git</a></li>
+<li><a href="#%E6%B3%A8%E5%86%8Cgithub%E8%B4%A6%E5%8F%B7%E5%B7%B2%E7%BB%8F%E6%9C%89%E8%B4%A6%E5%8F%B7%E7%9A%84%E5%B0%8F%E5%8F%AF%E7%88%B1%E7%9B%B4%E6%8E%A5%E8%B7%B3%E8%BF%87%E5%8D%B3%E5%8F%AF">注册Github账号（已经有账号的小可爱直接跳过即可）</a></li>
+</ul>
+</li>
+<li><a href="#%E9%85%8D%E7%BD%AEgridea">配置Gridea</a>
+<ul>
+<li><a href="#%E5%88%9B%E5%BB%BAgithub%E4%BB%93%E5%BA%93%E5%8F%8A%E5%85%B6%E7%BD%91%E7%AB%99">创建Github仓库及其网站</a></li>
+<li><a href="#%E8%8E%B7%E5%8F%96github%E7%A7%81%E4%BA%BAtoken%E4%BB%A4%E7%89%8C">获取Github私人Token令牌</a></li>
+<li><a href="#%E5%BB%BA%E7%AB%8Bgridea%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5">建立Gridea远程连接</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BA%94%E7%94%A8gridea">应用Gridea</a></li>
+</ul>
+
+                            </div>
                             
                                 
-                                    <section class="post-item">
-                                        <div class="content">
-                                            <a href="https://roboz-up.github.io/post/ge-ren-wang-zhan-de-chuang-jian/">
-                                                <h2 class="post-title">
-                                                    个人免费网站的创建
-                                                </h2>
-                                            </a>
-                                            <div class="post-abstract">
-                                                
-                                            </div>
-                                            <div class="post-info">
-                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2020-03-20</span>
-                                                
-                                            </div>
-                                        </div>
-                                        
-                                            <a href="https://roboz-up.github.io/post/ge-ren-wang-zhan-de-chuang-jian/">
-    <div class="feature-container" style="background-image: url('https://roboz-up.github.io/post-images/ge-ren-wang-zhan-de-chuang-jian.jpg')">
-    </div>
-  </a>
-                                            
-                                    </section>
                                     
-                                        
+                                            <!--zh-->
+                                            <section class="post-copyright zh">
+                                                <p class="copyright-item ">
+                                                    <span>&#x4F5C;&#x8005;:</span>
+                                                    <span>ROBOZ</span>
+                                                </p>
+
+                                                <p class="copyright-item">
+                                                    <span>&#x6C38;&#x4E45;&#x94FE;&#x63A5;:</span>
+                                                    <span><a href="https://roboz-up.github.io/post/ge-ren-wang-zhan-de-chuang-jian/">https://roboz-up.github.io/post/ge-ren-wang-zhan-de-chuang-jian/</a></span>
+                                                </p>
+
+                                                <p class="copyright-item">
+                                                    <span>&#x534F;&#x8BAE;:</span>
+                                                    <span>MIT License</span>
+                                                </p>
+                                            </section>
                                             
-                            
-                                            
+                                                
+                                                    
+                                                                    <!--Share-->
+                                                                    <span style="margin-right:15px">
+                        <i class="post-share"></i>
+                        <span>&#x5206;&#x4EAB;:</span>
+                                                                    <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://roboz-up.github.io/post/ge-ren-wang-zhan-de-chuang-jian/"><i class="fa fa-qrcode"></i></a>
+                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://roboz-up.github.io/post/ge-ren-wang-zhan-de-chuang-jian/&sharesource=qzone&title=个人免费网站的创建&pics=https://roboz-up.github.io/images/avatar.png?v=1584704272480&summary="><i class="fa fa-qq"></i></a>
+                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://roboz-up.github.io/post/ge-ren-wang-zhan-de-chuang-jian/&sharesource=weibo&title=个人免费网站的创建 + " - " + &pic="https://roboz-up.github.io/images/avatar.png?v=1584704272480 "><i class="fa fa-weibo "></i></a>
+
+                                                                    </span>
+                                                                    
+                                                                            <!--zh-->
+                                                                            <section class="post-tags zh ">
+                                                                                <div>
+                                                                                    <span>&#x6807;&#x7B7E;:</span>
+                                                                                    <span class="tag ">
+                        
+                                </span>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <a href="javascript:window.history.back();">
+                        &#x8FD4;&#x56DE;</a>
+                                                                                    <span>&dot;</span>
+                                                                                    <a href="#">&#x4E3B;&#x9875;</a>
+                                                                                </div>
+                                                                            </section>
+
+                                                                            
+                                                                                <!---->
+                                                                                <section class="post-nav">
+                                                                                    
+                                                                                            
+                                                                                </section>
+                    </article>
                 </div>
+                
+                                            
             </div>
+    </div>
+    </div>
     </div>
     
         <footer id="footer" class="footer">
@@ -253,6 +361,10 @@
                     console.log("\n %c \u26a1Theme:Chic Author's Blog:https://blog.itjoker.cn  Write By ITJoker  \n\n", "color: #ffffff; background: rgba(49, 49, 49, 0.85); padding:5px 0;border-radius:5px;");
                 </script>
                 
+        </div>
 </body>
+<script>
+    scroll();
+</script>
 
 </html>
