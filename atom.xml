@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://roboz-up.github.io</id>
     <title>ROBOZ</title>
-    <updated>2020-03-20T14:29:10.456Z</updated>
+    <updated>2020-03-20T14:41:04.071Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://roboz-up.github.io"/>
     <link rel="self" href="https://roboz-up.github.io/atom.xml"/>
@@ -16,7 +16,10 @@
         <link href="https://roboz-up.github.io/post/ge-ren-wang-zhan-de-chuang-jian/">
         </link>
         <updated>2020-03-20T08:57:58.000Z</updated>
+        <summary type="html"><![CDATA[<p>📮基于Gridea和Github建立个人免费网站的经验分享。</p>
+]]></summary>
         <content type="html"><![CDATA[<p>📮基于Gridea和Github建立个人免费网站的经验分享。</p>
+<!-- more -->
 <figure data-type="image" tabindex="1"><img src="https://roboz-up.github.io/post-images/1584695375986.jpg" alt="" loading="lazy"></figure>
 <h1 id="环境搭建与准备">环境搭建与准备</h1>
 <h2 id="下载安装-gridea">下载安装 Gridea</h2>
