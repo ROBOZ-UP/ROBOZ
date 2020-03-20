@@ -1929,7 +1929,7 @@ body {
     .node-title::before {
       background-color: #555;
     }.bg-color {
-      background-color: #fff;
+      background-color: #f1f3f5;
     }a {
       color: #1864ab;
     }
@@ -1953,17 +1953,21 @@ body {
     .next-md-body a:hover, .friends-box a:hover {
       color: #7048e8;
       border-bottom-color: #7048e8;
-    }
-      .nav-item a {
-        color:  #555;
+    }.nav-item a {
+        color: #555;
+      }
+      .nav-item-active a {
+        color: #555;
+        border-bottom: 1px solid #555 !important;
       }.nav-item a:hover {
         color: #9775fa;
+        border-bottom: 1px solid #9775fa !important;
       }.nav-item-active {
-      background: #f9f9f9;
+      background: #e6fcf5;
     }
 
     .nav-item:hover {
-      background: #f9f9f9;
+      background: #e6fcf5;
       color: rgba(0, 0, 0, 0.98);
     }.site-author-image {
       border-radius: 50%;
@@ -1998,22 +2002,78 @@ body {
     .active-hidden > a {
       color: #fc6423;
       border-bottom-color: #fc6423;
-    }
+    }.header {
+        opacity: 0.88;
+        background-color: #fff;
+      }
+      .muse.section-layout {
+        opacity: 0.88;
+      }
+        .header-box {
+          background-image: url(\media\images\custom-headerImg.jpeg);
+          background-attachment: fixed;
+        }
+        .muse .blog-header {
+          padding: 50px 0 0 !important;
+          background-color: transparent !important;
+          overflow: unset !important;
+        }
+        .site-nav ul {
+          background: rgba(255,255,255,0.65);
+          box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.15);
+          padding: 10px 100px !important;
+        }
+        .site-nav {
+          margin: 40px 0 0 !important;
+        }
+        .muse.section-layout {
+          padding: 0px !important;
+          background-color: transparent !important;
+        }
+        .muse .post {
+          padding: 20px 40px !important;
+          -webkit-box-shadow: 0 0 50px rgba(202,203,203,0.5);
+          -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
+        }
+      
       .site-meta {
-        background: #845ef7 !important;
+        background: #212529 !important;
       }
       .head-top-line {
-        background: #845ef7 !important;
-      }
+        background: #212529 !important;
+      }.sidebar {
+      background-image: url(\media\images\custom-siteMetaImg.jpeg) !important;
+    }
+    .sidebar-item-box a {
+      color: #eee;
+    }
+    .friends-title {
+      color: #eee;
+      border-top: 1px dotted #fff;
+    }
+    .friends-box a {
+      color: #eee;
+      border-bottom: 1px solid #eee;
+    }
+    .toc-wrapper a {
+      color: #eee;
+      border-bottom: 1px solid #eee;
+    }
+    .sidebar-title-item {
+      color: #eee;
+    }
+    
     .brand {
       background: #212529;
     }
     .main-title {
-      color: #FFF;
+      color: #fff9db;
     }
     .mist .site-title i {
-      background: #FFF;
-    }.box-scale > #landlord {
+      background: #fff9db;
+    }.bg-img img {
+        filter: blur(2px)
+      }.box-scale > #landlord {
       transform: scale(0，1);
     }.box-shadow-wrapper {
       box-shadow: none !important;
