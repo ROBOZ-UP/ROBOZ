@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
@@ -50,10 +50,38 @@
                     })();
                 </script>
                 
+    <script src="//cdn.jsdelivr.net/gh/tangkaichuan/gridea-search/lib/fuse.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/tangkaichuan/gridea-search/lib/ejs.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/tangkaichuan/gridea-search/lib/gridea-search.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/tangkaichuan/gridea-search/example/assets/media/gridea-search/result-template.ejs" type="text/ejs"></script>
+    <style>
+            .main_ {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 90vh;
+            }
+            
+            .result-box {
+                margin-top: 50px;
+                display: flex;
+                border-radius: 5px;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
 </head>
 
 <body>
-    <div class="wrapper">
+    <style>
+        .searched-keyword {
+            background-color: green;
+        }
+    </style>
+    <div class="main_">
         <header>
     <nav class="navbar">
         <div class="container">
@@ -152,122 +180,15 @@
 
     }
 </script>
-            <div class="main">
-                <div class="container">
-                    <article class="post-wrap">
-                        <header class="post-header">
-                            <h1 class="post-title">
-                                关于
-                            </h1>
-                            
-                                    <!--zh-->
-                                    <div class="post-meta zh">
-                                        &#x4F5C;&#x8005;:
-                                        <a itemprop="author" rel="author" href="/">
-                                            ROBOZ
-                                        </a>
-                                        <span class="post-time">&#x65E5;&#x671F;: <a href="#">2020-03-20</a></span>
-                                        <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a
-                                    href="#">0.0
-                                    &#x5206;&#x949F;</a></span>
-                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">8</a></span>
-                                        
-                                                阅读量:
-                                                <span data-hk-page="current"> - </span>
-                                                
-                                    </div>
-                                    
-                        </header>
-                        <div class="post-content">
-                            <p>💐欢迎来到我的小站🍂</p>
-
-                        </div>
-                        
-                            <div class="post-toc">
-                                
-                            </div>
-                            
-                                
-                                    
-                                            <!--zh-->
-                                            <section class="post-copyright zh">
-                                                <p class="copyright-item ">
-                                                    <span>&#x4F5C;&#x8005;:</span>
-                                                    <span>ROBOZ</span>
-                                                </p>
-
-                                                <p class="copyright-item">
-                                                    <span>&#x6C38;&#x4E45;&#x94FE;&#x63A5;:</span>
-                                                    <span><a href="https://roboz-up.github.io/post/about/">https://roboz-up.github.io/post/about/</a></span>
-                                                </p>
-
-                                                <p class="copyright-item">
-                                                    <span>&#x534F;&#x8BAE;:</span>
-                                                    <span>MIT License</span>
-                                                </p>
-                                            </section>
-                                            
-                                                
-                                                    
-                                                                    <!--Share-->
-                                                                    <span style="margin-right:15px">
-                        <i class="post-share"></i>
-                        <span>&#x5206;&#x4EAB;:</span>
-                                                                    <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://roboz-up.github.io/post/about/"><i class="fa fa-qrcode"></i></a>
-                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://roboz-up.github.io/post/about/&sharesource=qzone&title=关于&pics=https://roboz-up.github.io/images/avatar.png?v=1584693043962&summary="><i class="fa fa-qq"></i></a>
-                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://roboz-up.github.io/post/about/&sharesource=weibo&title=关于 + " - " + &pic="https://roboz-up.github.io/images/avatar.png?v=1584693043962 "><i class="fa fa-weibo "></i></a>
-
-                                                                    </span>
-                                                                    
-                                                                            <!--zh-->
-                                                                            <section class="post-tags zh ">
-                                                                                <div>
-                                                                                    <span>&#x6807;&#x7B7E;:</span>
-                                                                                    <span class="tag ">
-                        
-                                </span>
-                                                                                </div>
-                                                                                <div>
-                                                                                    <a href="javascript:window.history.back();">
-                        &#x8FD4;&#x56DE;</a>
-                                                                                    <span>&dot;</span>
-                                                                                    <a href="#">&#x4E3B;&#x9875;</a>
-                                                                                </div>
-                                                                            </section>
-
-                                                                            
-                                                                                <!---->
-                                                                                <section class="post-nav">
-                                                                                    
-                                                                                            
-                                                                                </section>
-                    </article>
+            <div class="result-box">
+                <div id="gridea-search-result">
+                    <p class="searching">搜索中......</p>
+                    <p class="no-result" style="display:none">未搜索到相关文章</p>
                 </div>
-                
-                                            
-                                                <div id="vlaine-comment"></div>
-<script type="application/javascript" src="https://unpkg.com/valine"></script>
-<script type="application/javascript">
-  new Valine({
-    el: '#vlaine-comment',
-    appId: '',
-    appKey: '',
-    pageSize: 10,
-    notify: true,
-    avatar: 'mp',
-    verify: true,
-    placeholder: '来都来了，不妨评论一下',
-    visitor: true,
-    highlight: false,
-    recordIP: true,
-  })
-</script>
-                                                    
             </div>
     </div>
-    </div>
-    </div>
-    
+</body>
+
     <div id="player"></div>
     
         <footer id="footer" class="footer">
@@ -403,10 +324,5 @@
                         tpwidget("show");
                     </script>
                     
-        </div>
-</body>
-<script>
-    scroll();
-</script>
 
 </html>
