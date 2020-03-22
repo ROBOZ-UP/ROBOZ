@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://roboz-up.github.io</id>
     <title>ROBOZ</title>
-    <updated>2020-03-22T04:27:28.483Z</updated>
+    <updated>2020-03-22T04:54:47.341Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://roboz-up.github.io"/>
     <link rel="self" href="https://roboz-up.github.io/atom.xml"/>
@@ -16,51 +16,5 @@
         <link href="https://roboz-up.github.io/post/ge-ren-wang-zhan-de-chuang-jian/">
         </link>
         <updated>2020-03-20T08:57:58.000Z</updated>
-        <summary type="html"><![CDATA[<p>📮基于Gridea和Github建立个人免费网站的经验分享。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>📮基于Gridea和Github建立个人免费网站的经验分享。</p>
-<!-- more -->
-<figure data-type="image" tabindex="1"><img src="https://roboz-up.github.io/post-images/1584695375986.jpg" alt="" loading="lazy"></figure>
-<h1 id="环境搭建与准备">环境搭建与准备</h1>
-<h2 id="下载安装-gridea">下载安装 Gridea</h2>
-<pre><code>Gridea 官网：https://gridea.dev/
-</code></pre>
-<figure data-type="image" tabindex="2"><img src="https://roboz-up.github.io/post-images/1584696600131.png" alt="" loading="lazy"></figure>
-<h2 id="下载安装-git">下载安装 Git</h2>
-<pre><code>Git 官网：https://git-scm.com/
-
-网速慢的小可爱可以使用 淘宝NPM镜像
-https://npm.taobao.org/mirrors/git-for-windows/
-</code></pre>
-<figure data-type="image" tabindex="3"><img src="https://roboz-up.github.io/post-images/1584699726284.png" alt="" loading="lazy"></figure>
-<h2 id="注册github账号已经有账号的小可爱直接跳过即可">注册Github账号（已经有账号的小可爱直接跳过即可）</h2>
-<pre><code>Github 官网： https://github.com/
-
-注册Github账号教程
-https://jingyan.baidu.com/article/86fae346e723303c49121abb.html/
-</code></pre>
-<figure data-type="image" tabindex="4"><img src="https://roboz-up.github.io/post-images/1584697256485.png" alt="" loading="lazy"></figure>
-<h1 id="配置gridea">配置Gridea</h1>
-<h2 id="创建github仓库及其网站">创建Github仓库及其网站</h2>
-<pre><code>登陆Github 新建仓库
-</code></pre>
-<figure data-type="image" tabindex="5"><img src="https://roboz-up.github.io/post-images/1584702124481.png" alt="" loading="lazy"></figure>
-<h2 id="获取github私人token令牌">获取Github私人Token令牌</h2>
-<pre><code>令牌获取教程
-https://blog.csdn.net/ltstud/article/details/75949726/
-</code></pre>
-<h2 id="建立gridea远程连接">建立Gridea远程连接</h2>
-<pre><code>打开Gridea 进行配置
-</code></pre>
-<figure data-type="image" tabindex="6"><img src="https://roboz-up.github.io/post-images/1584703457574.jpg" alt="" loading="lazy"></figure>
-<h1 id="应用gridea">应用Gridea</h1>
-<pre><code>配置完成后，先测试远程连接是否正常
-点击同步，进行网页美化与内容同步
-</code></pre>
-<figure data-type="image" tabindex="7"><img src="https://roboz-up.github.io/post-images/1584703992782.png" alt="" loading="lazy"></figure>
-<p>如需转载、反馈、交流<br>
-联系站长<br>
-QQ：1731171249</p>
-]]></content>
     </entry>
 </feed>
