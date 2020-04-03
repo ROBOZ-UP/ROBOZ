@@ -84,7 +84,7 @@
                         <input id="switch_default" type="checkbox" class="switch_default">
                         <label for="switch_default" class="toggleBtn"></label>
             </div>
-            <form id="gridea-search-form" data-update="1585907339836" action="/search/index.html">
+            <form id="gridea-search-form" data-update="1585915876162" action="/search/index.html">
                 <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
             </form>
         </div>
@@ -103,7 +103,7 @@
                         <!--zh-->
                         <a id="mobile-toggle-theme-zh" class="a zh">&nbsp;&#x6697;&#x9ED1;</a>
                     </div>
-                    <form id="gridea-search-form" data-update="1585907339836" action="/search/index.html">
+                    <form id="gridea-search-form" data-update="1585915876162" action="/search/index.html">
                         <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
                     </form>
                     <!--en-->
@@ -176,9 +176,9 @@
                                         </a>
                                         <span class="post-time">&#x65E5;&#x671F;: <a href="#">2020-03-25</a></span>
                                         <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a
-                                    href="#">10.2
+                                    href="#">16.3
                                     &#x5206;&#x949F;</a></span>
-                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">2765</a></span>
+                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">4402</a></span>
                                         
                                             <span class="post-category">&#x5206;&#x7C7B;:
                                 
@@ -578,6 +578,148 @@ Inner matrix dimensions must agree.<br>
 </tr>
 </tbody>
 </table>
+<p>函数使用说明：<br>
+（1）函数的自变量规定为矩阵变量，运算法则是将函数逐项作用于矩阵的元素上，因而运算的结果是一个与自变量同维数的矩阵。<br>
+（2）abs函数可以求实数的绝对值、复数的模、字符串的ASCII码值。<br>
+（3）用于取整的函数有fix、floor、ceil、round，要注意它们的区别。<br>
+（4）rem与mod函数的区别。rem(x,y)和mod(x, y)要求x，y必须为相同大小的实矩阵或为标量。当y ≠ 0时，rem(x, y) = x − y.*fix(x./y)，而mod(x,y) = x − y.*floor(x./y)，当y = 0时，rem(x, 0) = NaN，而mod(x,0) = x。显然，当x，y同号时，rem(x,y)与mod(x,y)相等。rem(x,y)的符号与x相同，而mod(x, y)的符号与y相同。</p>
+<h3 id="关系运算">关系运算</h3>
+<p>MATLAB提供了6种关系运算符：&lt;（小于）、&lt;=（小于或等于）、&gt;（大于）、&gt;=（大于或等于）、= =（等于）、～=（不等于）。<br>
+（1）当两个比较量是标量时，直接比较两数的大小。若关系成立，关系表达式结果为1，否则为0。<br>
+（2）当参与比较的量是两个维数相同的矩阵时，比较是对两矩阵相同位置的元素按标量关系运算规则逐个进行，并给出元素的比较结果。最终的关系运算的结果是一个维数与原矩阵相同的矩阵，它的元素由0或1组成。<br>
+（3）当参与比较的一个是标量，而另一个是矩阵时，则把标量与矩阵的每一个元素按标量关系运算规则逐个比较，并给出元素比较结果。最终的运算结果是一个维数与矩阵相同的矩阵，它的元素由0或1组成。</p>
+<h3 id="逻辑运算">逻辑运算</h3>
+<p>MATLAB提供了3种逻辑运算符：&amp;（与）、|（或）和～（非）。此外，MATLAB还提供了4个逻辑运算函数：and(a,b)、or(a,b)、not(a)和xor(a,b)。<br>
+在逻辑运算中，确认非零元素为真，用1表示；零元素为假，用0表示。设参与逻辑运算的是两个标量a和b，那么，逻辑运算符和逻辑运算函数的含义如下。</p>
+<ul>
+<li>a&amp;b或函数and(a, b)表示a和b作逻辑<strong>与</strong>运算，当a、b全为非零时，运算结果为1，否则为0。</li>
+<li>a|b或函数or(a, b)表示a和b作逻辑<strong>或</strong>运算，当a、b中只要有一个非零，运算结果为1。</li>
+<li>～a和函数not(a)表示对a作逻辑<strong>非</strong>运算，当a是零时，运算结果为1；当a非零时，运算结果为0。</li>
+<li>函数xor(a, b)表示a和b作逻辑<strong>异或</strong>运算，当a、b的值不同时，运算结果为1，否则运算结果为0。</li>
+</ul>
+<p>（1）若参与逻辑运算的是两个同维矩阵，那么运算将对矩阵相同位置上的元素按标量规则逐个进行。最终运算结果是一个与原矩阵同维的矩阵，其元素由1或0组成。<br>
+（2）若参与逻辑运算的一个是标量，一个是矩阵，那么运算将在标量与矩阵中的每个元素之间按标量规则逐个进行。最终运算结果是一个与矩阵同维的矩阵，其元素由1或0组成。<br>
+（3）逻辑非是单目运算符，也服从矩阵运算规则。</p>
+<h3 id="优先级">优先级</h3>
+<p>在算术、关系、逻辑运算中，算术运算优先级最高，逻辑运算优先级最低。</p>
+<h3 id="关系与逻辑运算函数">关系与逻辑运算函数</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">函数名</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">all</td>
+<td style="text-align:center">若向量的所有元素为零，则结果为1</td>
+</tr>
+<tr>
+<td style="text-align:center">any</td>
+<td style="text-align:center">向量中任意一个元素非零，都给出结果1</td>
+</tr>
+<tr>
+<td style="text-align:center">exist</td>
+<td style="text-align:center">检测变量在工作空间是否存在，若存在结果为1；否则为0</td>
+</tr>
+<tr>
+<td style="text-align:center">find</td>
+<td style="text-align:center">找出向量或矩阵中非零元素的位置</td>
+</tr>
+<tr>
+<td style="text-align:center">isempty</td>
+<td style="text-align:center">若被查变量是空阵，则结果为1</td>
+</tr>
+<tr>
+<td style="text-align:center">isglobal</td>
+<td style="text-align:center">若被查变量是全局变量，则结果为1</td>
+</tr>
+<tr>
+<td style="text-align:center">isinf</td>
+<td style="text-align:center">若元素是±inf，则结果矩阵相应位置元素取1，否则取0</td>
+</tr>
+<tr>
+<td style="text-align:center">isnan</td>
+<td style="text-align:center">若元素是nan，则结果矩阵相应位置元素取1，否则取0</td>
+</tr>
+<tr>
+<td style="text-align:center">isfinite</td>
+<td style="text-align:center">若元素值大小有限制，则结果矩阵相应位置元素取1，否则取0</td>
+</tr>
+<tr>
+<td style="text-align:center">issparse</td>
+<td style="text-align:center">若变量是稀疏矩阵，则结果矩阵相应位置元素取1，否则取0</td>
+</tr>
+<tr>
+<td style="text-align:center">isstr</td>
+<td style="text-align:center">若变量是字符串，则结果矩阵相应位置元素取1，否则取0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>INF</strong>表示“无穷大”，是infinite的缩写。<strong>NAN</strong>表示“无效数字”，是Not a number的缩写。<br>
+在矩阵中，若数值为0的元素数目远远多于非0元素的数目，并且非0元素分布没有规律时，则称该矩阵为<strong>稀疏矩阵</strong>；与之相反，若非0元素数目占大多数时，则称该矩阵为<strong>稠密矩阵</strong>。</p>
+<h2 id="字符串">字符串</h2>
+<p>字符串的每个字符都是字符矩阵的一个元素。其构建方式是通过<strong>单撇号</strong>括起来的字符序列来实现的。<br>
+MATLAB将一个字符串当作一个<strong>行向量</strong>，每个元素对应一个字符，其标识方法和数值向量相同。<br>
+<strong>多行字符串要求各行字符数要相等</strong><br>
+字符串是以<strong>ASCII</strong>形式存储的。abs和double函数都可以用来获取字符串矩阵所对应的ASCII数值矩阵。相反，char函数可以把ASCII矩阵转换为字符串矩阵。</p>
+<p>把字符串的内容作为对应的MATLAB语句来执行。<br>
+<strong>eval(t)</strong><br>
+其中t为字符串。</p>
+<h3 id="字符串处理函数">字符串处理函数</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">函数名</th>
+<th style="text-align:center">含义</th>
+<th style="text-align:center">函数名</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">setstr</td>
+<td style="text-align:center">将ASCII码值转换为字符</td>
+<td style="text-align:center">strcat</td>
+<td style="text-align:center">用于字符串的连接</td>
+</tr>
+<tr>
+<td style="text-align:center">findstr</td>
+<td style="text-align:center">查找匹配的字符串所在的位置</td>
+<td style="text-align:center">strcmp</td>
+<td style="text-align:center">用于字符串的比较</td>
+</tr>
+<tr>
+<td style="text-align:center">mat2str</td>
+<td style="text-align:center">将矩阵转换为字符串</td>
+<td style="text-align:center">strrep</td>
+<td style="text-align:center">替换匹配的字符串</td>
+</tr>
+<tr>
+<td style="text-align:center">num2str</td>
+<td style="text-align:center">将数值转换为字符串</td>
+<td style="text-align:center">isspace</td>
+<td style="text-align:center">判断是否为空格</td>
+</tr>
+<tr>
+<td style="text-align:center">int2str</td>
+<td style="text-align:center">将整数转换为字符串</td>
+<td style="text-align:center">ischar</td>
+<td style="text-align:center">判断是否为字符</td>
+</tr>
+<tr>
+<td style="text-align:center">str2num</td>
+<td style="text-align:center">将数字型字符串转换为数值</td>
+<td style="text-align:center">isletter</td>
+<td style="text-align:center">判断是否为字母</td>
+</tr>
+</tbody>
+</table>
+<p>disp 显示数组。disp函数的自变量是一个长字符串。</p>
+<p><strong>字符串写法的注意事项：</strong><br>
+（1）若字符串中的字符含有单撇号，则该单撇号字符应用两个单撇号来表示。<br>
+（2）可以用字符串向量的形式连接多个字符串，即用中括号括起来。</p>
 <h1 id="第二章-matlab程序设计">第二章 MATLAB程序设计</h1>
 <h1 id="第三章-图形绘制">第三章 图形绘制</h1>
 <h1 id="第四章-线性代数中的数值计算">第四章 线性代数中的数值计算</h1>
@@ -662,6 +804,15 @@ QQ：3168788134</p>
 </ul>
 </li>
 <li><a href="#matlab%E5%B8%B8%E7%94%A8%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0">MATLAB常用数学函数</a></li>
+<li><a href="#%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97">关系运算</a></li>
+<li><a href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97">逻辑运算</a></li>
+<li><a href="#%E4%BC%98%E5%85%88%E7%BA%A7">优先级</a></li>
+<li><a href="#%E5%85%B3%E7%B3%BB%E4%B8%8E%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E5%87%BD%E6%95%B0">关系与逻辑运算函数</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2">字符串</a>
+<ul>
+<li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0">字符串处理函数</a></li>
 </ul>
 </li>
 </ul>
@@ -708,8 +859,8 @@ QQ：3168788134</p>
                         <i class="post-share"></i>
                         <span>&#x5206;&#x4EAB;:</span>
                                                                     <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://roboz-up.github.io/post/bi-ji-fang-zhen-cheng-xu-she-ji/"><i class="fa fa-qrcode"></i></a>
-                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://roboz-up.github.io/post/bi-ji-fang-zhen-cheng-xu-she-ji/&sharesource=qzone&title=笔记：仿真程序设计&pics=https://roboz-up.github.io/images/avatar.png?v=1585907339836&summary="><i class="fa fa-qq"></i></a>
-                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://roboz-up.github.io/post/bi-ji-fang-zhen-cheng-xu-she-ji/&sharesource=weibo&title=笔记：仿真程序设计 + " - " + &pic="https://roboz-up.github.io/images/avatar.png?v=1585907339836 "><i class="fa fa-weibo "></i></a>
+                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://roboz-up.github.io/post/bi-ji-fang-zhen-cheng-xu-she-ji/&sharesource=qzone&title=笔记：仿真程序设计&pics=https://roboz-up.github.io/images/avatar.png?v=1585915876162&summary="><i class="fa fa-qq"></i></a>
+                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://roboz-up.github.io/post/bi-ji-fang-zhen-cheng-xu-she-ji/&sharesource=weibo&title=笔记：仿真程序设计 + " - " + &pic="https://roboz-up.github.io/images/avatar.png?v=1585915876162 "><i class="fa fa-weibo "></i></a>
 
                                                                     </span>
                                                                     
@@ -890,7 +1041,7 @@ QQ：3168788134</p>
                     CheckVersion();
                     
                     var newDate = new Date();
-                    newDate.setTime(1585907339836);
+                    newDate.setTime(1585915876162);
                     console.log(" Blog Update Time: " + newDate.toLocaleDateString());
                     console.log("\n %c \u26a1Theme:Chic Author's Blog:https://blog.itjoker.cn  Write By ITJoker  \n\n", "color: #ffffff; background: rgba(49, 49, 49, 0.85); padding:5px 0;border-radius:5px;");
                 </script>
