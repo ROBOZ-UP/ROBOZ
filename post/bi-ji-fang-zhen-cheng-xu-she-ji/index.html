@@ -84,7 +84,7 @@
                         <input id="switch_default" type="checkbox" class="switch_default">
                         <label for="switch_default" class="toggleBtn"></label>
             </div>
-            <form id="gridea-search-form" data-update="1585141169048" action="/search/index.html">
+            <form id="gridea-search-form" data-update="1585902184609" action="/search/index.html">
                 <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
             </form>
         </div>
@@ -103,7 +103,7 @@
                         <!--zh-->
                         <a id="mobile-toggle-theme-zh" class="a zh">&nbsp;&#x6697;&#x9ED1;</a>
                     </div>
-                    <form id="gridea-search-form" data-update="1585141169048" action="/search/index.html">
+                    <form id="gridea-search-form" data-update="1585902184609" action="/search/index.html">
                         <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
                     </form>
                     <!--en-->
@@ -176,9 +176,9 @@
                                         </a>
                                         <span class="post-time">&#x65E5;&#x671F;: <a href="#">2020-03-25</a></span>
                                         <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a
-                                    href="#">1.8
+                                    href="#">2.7
                                     &#x5206;&#x949F;</a></span>
-                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">487</a></span>
+                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">746</a></span>
                                         
                                             <span class="post-category">&#x5206;&#x7C7B;:
                                 
@@ -193,9 +193,68 @@
                                     
                         </header>
                         <div class="post-content">
-                            <p>⏰最后更新时间：2020.3.25</p>
+                            <p>⏰最后更新时间：2020.4.3</p>
 <figure data-type="image" tabindex="1"><img src="https://roboz-up.github.io/post-images/1585126206802.png" alt="" loading="lazy"></figure>
 <h1 id="第一章-matlab基础知识">第一章 MATLAB基础知识</h1>
+<h2 id="帮助命令">帮助命令</h2>
+<h3 id="help命令">help命令</h3>
+<p><strong>help</strong>   <strong>函数名</strong></p>
+<p>可以通过help加函数名来显示该函数的帮助说明。</p>
+<p>help命令是查询函数语法的最基本方法，查询信息直接显示在命令窗口。在命令窗口中直接输入help命令将会显示当前帮助系统中所包含的所有项目，即搜索路径中所有的目录名称。</p>
+<h3 id="lookfor命令">lookfor命令</h3>
+<p><strong>lookfor</strong>   <strong>关键词</strong></p>
+<p>lookfor命令可以帮助用户查找关键词。</p>
+<h3 id="其他帮助命令">其他帮助命令</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">命令功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">demo</td>
+<td style="text-align:center">运行演示程序</td>
+</tr>
+<tr>
+<td style="text-align:center">tour</td>
+<td style="text-align:center">运行漫游程序</td>
+</tr>
+<tr>
+<td style="text-align:center">doc</td>
+<td style="text-align:center">在帮助浏览器中显示指定函数的参考信息</td>
+</tr>
+<tr>
+<td style="text-align:center">what</td>
+<td style="text-align:center">列出当前目录下的M文件、MEX文件、MET文件</td>
+</tr>
+<tr>
+<td style="text-align:center">which</td>
+<td style="text-align:center">显示指定函数或文件的路径</td>
+</tr>
+<tr>
+<td style="text-align:center">helpbrowser</td>
+<td style="text-align:center">打开帮助内的浏览器</td>
+</tr>
+<tr>
+<td style="text-align:center">helpdesk</td>
+<td style="text-align:center">运行HTML格式的帮助面板(Help Desk)</td>
+</tr>
+<tr>
+<td style="text-align:center">helpwin</td>
+<td style="text-align:center">打开帮助内的浏览器</td>
+</tr>
+<tr>
+<td style="text-align:center">exist</td>
+<td style="text-align:center">查找指定变量或函数的存在性</td>
+</tr>
+<tr>
+<td style="text-align:center">web</td>
+<td style="text-align:center">显示指定的网络页面</td>
+</tr>
+</tbody>
+</table>
 <h2 id="常用预定义变量">常用预定义变量</h2>
 <table>
 <thead>
@@ -327,6 +386,13 @@ QQ：3168788134</p>
                                 <ul class="markdownIt-TOC">
 <li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-matlab%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86">第一章 MATLAB基础知识</a>
 <ul>
+<li><a href="#%E5%B8%AE%E5%8A%A9%E5%91%BD%E4%BB%A4">帮助命令</a>
+<ul>
+<li><a href="#help%E5%91%BD%E4%BB%A4">help命令</a></li>
+<li><a href="#lookfor%E5%91%BD%E4%BB%A4">lookfor命令</a></li>
+<li><a href="#%E5%85%B6%E4%BB%96%E5%B8%AE%E5%8A%A9%E5%91%BD%E4%BB%A4">其他帮助命令</a></li>
+</ul>
+</li>
 <li><a href="#%E5%B8%B8%E7%94%A8%E9%A2%84%E5%AE%9A%E4%B9%89%E5%8F%98%E9%87%8F">常用预定义变量</a></li>
 <li><a href="#%E6%95%B0%E6%8D%AE%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F">数据输出格式</a></li>
 </ul>
@@ -373,8 +439,8 @@ QQ：3168788134</p>
                         <i class="post-share"></i>
                         <span>&#x5206;&#x4EAB;:</span>
                                                                     <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://roboz-up.github.io/post/bi-ji-fang-zhen-cheng-xu-she-ji/"><i class="fa fa-qrcode"></i></a>
-                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://roboz-up.github.io/post/bi-ji-fang-zhen-cheng-xu-she-ji/&sharesource=qzone&title=笔记：仿真程序设计&pics=https://roboz-up.github.io/images/avatar.png?v=1585141169048&summary="><i class="fa fa-qq"></i></a>
-                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://roboz-up.github.io/post/bi-ji-fang-zhen-cheng-xu-she-ji/&sharesource=weibo&title=笔记：仿真程序设计 + " - " + &pic="https://roboz-up.github.io/images/avatar.png?v=1585141169048 "><i class="fa fa-weibo "></i></a>
+                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://roboz-up.github.io/post/bi-ji-fang-zhen-cheng-xu-she-ji/&sharesource=qzone&title=笔记：仿真程序设计&pics=https://roboz-up.github.io/images/avatar.png?v=1585902184609&summary="><i class="fa fa-qq"></i></a>
+                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://roboz-up.github.io/post/bi-ji-fang-zhen-cheng-xu-she-ji/&sharesource=weibo&title=笔记：仿真程序设计 + " - " + &pic="https://roboz-up.github.io/images/avatar.png?v=1585902184609 "><i class="fa fa-weibo "></i></a>
 
                                                                     </span>
                                                                     
@@ -555,7 +621,7 @@ QQ：3168788134</p>
                     CheckVersion();
                     
                     var newDate = new Date();
-                    newDate.setTime(1585141169048);
+                    newDate.setTime(1585902184609);
                     console.log(" Blog Update Time: " + newDate.toLocaleDateString());
                     console.log("\n %c \u26a1Theme:Chic Author's Blog:https://blog.itjoker.cn  Write By ITJoker  \n\n", "color: #ffffff; background: rgba(49, 49, 49, 0.85); padding:5px 0;border-radius:5px;");
                 </script>
