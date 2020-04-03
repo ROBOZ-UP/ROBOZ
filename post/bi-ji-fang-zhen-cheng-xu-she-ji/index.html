@@ -84,7 +84,7 @@
                         <input id="switch_default" type="checkbox" class="switch_default">
                         <label for="switch_default" class="toggleBtn"></label>
             </div>
-            <form id="gridea-search-form" data-update="1585903667947" action="/search/index.html">
+            <form id="gridea-search-form" data-update="1585907339836" action="/search/index.html">
                 <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
             </form>
         </div>
@@ -103,7 +103,7 @@
                         <!--zh-->
                         <a id="mobile-toggle-theme-zh" class="a zh">&nbsp;&#x6697;&#x9ED1;</a>
                     </div>
-                    <form id="gridea-search-form" data-update="1585903667947" action="/search/index.html">
+                    <form id="gridea-search-form" data-update="1585907339836" action="/search/index.html">
                         <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
                     </form>
                     <!--en-->
@@ -176,9 +176,9 @@
                                         </a>
                                         <span class="post-time">&#x65E5;&#x671F;: <a href="#">2020-03-25</a></span>
                                         <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a
-                                    href="#">3.8
+                                    href="#">10.2
                                     &#x5206;&#x949F;</a></span>
-                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">1051</a></span>
+                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">2765</a></span>
                                         
                                             <span class="post-category">&#x5206;&#x7C7B;:
                                 
@@ -321,14 +321,14 @@
 <p>利用MAT文件可以把当前MATLAB工作空间中的一些有用变量长久地保留下来。<br>
 MAT文件是MATLAB保存数据的一种标准格式二进制文件，扩展名是.mat。</p>
 <ul>
-<li>-append选项控制将变量追加到MAT文件中。</li>
-<li>-ascii选项使文件以ASCII格式处理，省略该选项时文件以二进制格式处理。</li>
+<li><strong>-append</strong>选项控制将变量追加到MAT文件中。</li>
+<li><strong>-ascii</strong>选项使文件以ASCII格式处理，省略该选项时文件以二进制格式处理。</li>
 </ul>
 <h4 id="mat文件的生成">MAT文件的生成</h4>
 <p>save  文件名 [变量名表]  [-append][-ascii]</p>
 <h4 id="mat文件的装入">MAT文件的装入</h4>
 <p>load  文件名  [变量名表]  [-ascii]</p>
-<h3 id="数据输出格式">数据输出格式</h3>
+<h2 id="数据输出格式">数据输出格式</h2>
 <p><strong>format 格式符</strong><br>
 <strong>注意</strong>，format命令只影响数据输出格式，不影响数据的计算和存储。</p>
 <table>
@@ -389,6 +389,195 @@ MAT文件是MATLAB保存数据的一种标准格式二进制文件，扩展名�
 </tr>
 </tbody>
 </table>
+<h2 id="matlab矩阵及其基本运算">MATLAB矩阵及其基本运算</h2>
+<h3 id="矩阵的生成">矩阵的生成</h3>
+<p>在MATLAB中，生成矩阵时无须对矩阵的维数和类型进行说明，MATLAB会根据用户所输入的内容自动进行配置。</p>
+<h4 id="直接输入法">直接输入法</h4>
+<p>将矩阵的所有元素用<strong>方括号</strong>括起来，按矩阵行的顺序输入各元素，同一行的各元素之间用<strong>空格或逗号</strong>分隔，不同行的元素之间用<strong>分号</strong>分隔。</p>
+<h4 id="利用m文件建立矩阵">利用M文件建立矩阵</h4>
+<p>对于比较大且比较复杂的矩阵，可以为它专门建立一个M文件</p>
+<h4 id="利用数据文件建立指定矩阵">利用数据文件建立指定矩阵</h4>
+<p>用户能够通过load命令，将外部数据文件中的内容调入到工作空间中创建矩阵，外部文件的扩展名为.dat。</p>
+<h4 id="利用已建好的矩阵建立更大的矩阵">利用已建好的矩阵建立更大的矩阵</h4>
+<h3 id="冒号表达式">冒号表达式</h3>
+<p>在MATLAB中利用冒号可以产生行向量。<br>
+冒号表达式的一般格式为</p>
+<p>a : b : c</p>
+<p>其中，a为初始值，b为步长，c为终止值（c &gt; a）。<br>
+冒号表达式可产生一个由a开始到c结束，以步长b自增的行向量。</p>
+<p>在MATLAB中，还可以用linspace函数产生行向量。<br>
+其调用格式为</p>
+<p>linspace(a,b,n)</p>
+<p>其中a和b是生成向量的第1个和最后一个元素，n是元素总数。<br>
+当n省略时，自动产生100个元素。</p>
+<h3 id="矩阵的拆分">矩阵的拆分</h3>
+<h4 id="矩阵元素">矩阵元素</h4>
+<p>对矩阵的单个元素操作。<br>
+例如，如果想将矩阵A的第a行第b列的元素赋为c，则可以通过下面语句来完成：<br>
+A(a,b)=c<br>
+这时将只改变该元素的值，而不影响其他元素的值。</p>
+<p>在MATLAB中，也可以采用矩阵元素的序号来引用矩阵元素。矩阵元素的序号就是相应元素在内存中的排列顺序。矩阵元素按列编号，先第1列，再第2列，依次类推。<br>
+例如：<br>
+A=[10,20,30;40,50,60];<br>
+A(3)的元素是20。</p>
+<p>序号（Index）与下标（Subscript）是一一对应的，以m × n矩阵A为例，矩阵元素A(i, j)的序号为(j−1)*m + i。其相互转换关系也可利用sub2ind和ind2sub函数求得。</p>
+<ul>
+<li>size(A) 函数返回包含两个元素的向量，分别是矩阵A的行数和列数</li>
+<li>length(A) 给出行数和列数中的较大者,即length(A)=max(size(A))</li>
+<li>ndims(A) 给出A的维数</li>
+<li>reshape(A,m,n) 函数在矩阵总元素保持不变的前提下，将矩阵A重新排列成m*n的二维矩阵。</li>
+</ul>
+<h4 id="矩阵拆分">矩阵拆分</h4>
+<h5 id="利用冒号表达式获得子矩阵">利用冒号表达式获得子矩阵</h5>
+<p>① A(m,n)表示取A矩阵第m行、第n列的元素，A(m,:)表示取A矩阵第m行的全部元素，A(:,n)表示取A矩阵的第n列全部元素。<br>
+② A(m1:m2,:)表示取A矩阵第m1～m2行的全部元素，A(:,n1:n2)表示取A矩阵第n1～n2列的全部元素，A(m1:m2,n1:n2)表示取A矩阵第m1～m2行内，并在第n1～n2列中的所有元素。<br>
+③ A(:)将矩阵A每一列元素堆叠起来，成为一个列向量。</p>
+<h5 id="end表示某一维的末尾元素下标">end表示某一维的末尾元素下标</h5>
+<h5 id="利用空矩阵删除矩阵的元素">利用空矩阵删除矩阵的元素</h5>
+<p>在MATLAB中，空矩阵是指无任何元素的矩阵，表示形式为[]。<br>
+给变量x赋空矩阵的语句为<br>
+x=[]<br>
+将某些元素从矩阵中删除，采用将其置为空矩阵的方法就是一种有效的方法。<br>
+例如：<br>
+A=[1 2 3 4 5 6;7 8 9 10 11 12;13 14 15 16 17 18];<br>
+A(:,[2 4])=[]<br>
+其中第2条命令将删除A的第2列和第4列元素。</p>
+<h3 id="算术运算">算术运算</h3>
+<h4 id="基本算术运算">基本算术运算</h4>
+<p>MATLAB的基本算术运算有：+（加）、−（减）、*（乘）、/（右除）、\（左除）、^（乘方）。</p>
+<h5 id="矩阵加减运算">矩阵加减运算</h5>
+<p>运算规则是：若<strong>A和B矩阵的维数相同</strong>，则可以执行矩阵的加减运算，A和B矩阵的相应元素相加减。如果A与B的维数不相同，则MATLAB将给出错误信息，提示用户两个矩阵的维数不匹配。<br>
+一个标量也可以和其他不同维数的矩阵进行加减运算。例如：<br>
+x=[2,-1,0;3,2,-4];<br>
+y=x-1;<br>
+y=y+x</p>
+<h5 id="矩阵乘法">矩阵乘法</h5>
+<p>矩阵A和B进行乘法运算，要求<strong>A的列数与B的行数相等</strong>，或称A和B两矩阵维数相容。如果两者的维数不相容，则将给出错误信息，提示用户两个矩阵是不可乘的。例如：<br>
+A=[1,2,3;4,5,6];<br>
+B=A*A<br>
+??? Error using ==&gt; mtimes<br>
+Inner matrix dimensions must agree.<br>
+在MATLAB中，还可以进行矩阵和标量相乘，标量可以是乘数也可以是被乘数。<strong>矩阵和标量相乘是矩阵中的每个元素与此标量相乘。</strong></p>
+<h5 id="矩阵除法">矩阵除法</h5>
+<p>在MATLAB中，有两种矩阵除法运算：\和/，分别表示左除和右除。如果A矩阵是非奇异方阵，则A\B和B/A运算可以实现。A\B等效于A的逆左乘B矩阵，也就是inv(A)<em>B，而B/A等效于A矩阵的逆右乘B矩阵，也就是B</em>inv(A)。</p>
+<ul>
+<li>inv(矩阵名) 矩阵求逆</li>
+</ul>
+<h5 id="矩阵的乘方">矩阵的乘方</h5>
+<p>一个矩阵的乘方运算可以表示成A^x，要求A为方阵，x为标量。</p>
+<h4 id="点运算">点运算</h4>
+<p>两矩阵进行点运算是指它们的<strong>对应元素</strong>进行相关运算，要求两矩阵的维参数相同。点运算符有.*、./、.\和.^。</p>
+<p>如果A、B两矩阵具有相同的维数，则A./B表示A矩阵除以B矩阵的对应元素。B.\A等价于A./B。 （与矩阵的左除、右除不同）</p>
+<p>若两个矩阵维数一致，则A.^B表示两矩阵对应元素进行乘方运算。其中指数和底数也可以是标量。</p>
+<h3 id="matlab常用数学函数">MATLAB常用数学函数</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">函数名</th>
+<th style="text-align:center">含义</th>
+<th style="text-align:center">函数名</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">sin</td>
+<td style="text-align:center">正弦函数</td>
+<td style="text-align:center">exp</td>
+<td style="text-align:center">自然指数函数</td>
+</tr>
+<tr>
+<td style="text-align:center">cos</td>
+<td style="text-align:center">余弦函数</td>
+<td style="text-align:center">pow2</td>
+<td style="text-align:center">2的幂</td>
+</tr>
+<tr>
+<td style="text-align:center">tan</td>
+<td style="text-align:center">正切函数</td>
+<td style="text-align:center">abs</td>
+<td style="text-align:center">绝对值函数</td>
+</tr>
+<tr>
+<td style="text-align:center">asin</td>
+<td style="text-align:center">反正弦函数</td>
+<td style="text-align:center">angle</td>
+<td style="text-align:center">复数的俯角</td>
+</tr>
+<tr>
+<td style="text-align:center">acos</td>
+<td style="text-align:center">反余弦函数</td>
+<td style="text-align:center">real</td>
+<td style="text-align:center">复数的实部</td>
+</tr>
+<tr>
+<td style="text-align:center">atan</td>
+<td style="text-align:center">反正切函数</td>
+<td style="text-align:center">imag</td>
+<td style="text-align:center">复数的虚部</td>
+</tr>
+<tr>
+<td style="text-align:center">sinh</td>
+<td style="text-align:center">双曲正弦函数</td>
+<td style="text-align:center">conj</td>
+<td style="text-align:center">复数共轭运算</td>
+</tr>
+<tr>
+<td style="text-align:center">cosh</td>
+<td style="text-align:center">双曲余弦函数</td>
+<td style="text-align:center">rem</td>
+<td style="text-align:center">求余数或模运算</td>
+</tr>
+<tr>
+<td style="text-align:center">tanh</td>
+<td style="text-align:center">双曲正切函数</td>
+<td style="text-align:center">mod</td>
+<td style="text-align:center">模除求余</td>
+</tr>
+<tr>
+<td style="text-align:center">asinh</td>
+<td style="text-align:center">反双曲正弦函数</td>
+<td style="text-align:center">fix</td>
+<td style="text-align:center">向零方向取整</td>
+</tr>
+<tr>
+<td style="text-align:center">acosh</td>
+<td style="text-align:center">反双曲余弦函数</td>
+<td style="text-align:center">floor</td>
+<td style="text-align:center">不大于自变量的最大整数</td>
+</tr>
+<tr>
+<td style="text-align:center">atanh</td>
+<td style="text-align:center">反双曲正切函数</td>
+<td style="text-align:center">ceil</td>
+<td style="text-align:center">不小于自变量的最小整数</td>
+</tr>
+<tr>
+<td style="text-align:center">sqrt</td>
+<td style="text-align:center">平方根函数</td>
+<td style="text-align:center">round</td>
+<td style="text-align:center">四舍五入到最邻近的整数</td>
+</tr>
+<tr>
+<td style="text-align:center">log</td>
+<td style="text-align:center">自然对数函数</td>
+<td style="text-align:center">sign</td>
+<td style="text-align:center">符号函数</td>
+</tr>
+<tr>
+<td style="text-align:center">log10</td>
+<td style="text-align:center">常用对数函数</td>
+<td style="text-align:center">gcd</td>
+<td style="text-align:center">最大公因子</td>
+</tr>
+<tr>
+<td style="text-align:center">log2</td>
+<td style="text-align:center">以2为底的对数函数</td>
+<td style="text-align:center">lcm</td>
+<td style="text-align:center">最小公倍数</td>
+</tr>
+</tbody>
+</table>
 <h1 id="第二章-matlab程序设计">第二章 MATLAB程序设计</h1>
 <h1 id="第三章-图形绘制">第三章 图形绘制</h1>
 <h1 id="第四章-线性代数中的数值计算">第四章 线性代数中的数值计算</h1>
@@ -433,7 +622,46 @@ QQ：3168788134</p>
 <li><a href="#mat%E6%96%87%E4%BB%B6%E7%9A%84%E8%A3%85%E5%85%A5">MAT文件的装入</a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a href="#%E6%95%B0%E6%8D%AE%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F">数据输出格式</a></li>
+<li><a href="#matlab%E7%9F%A9%E9%98%B5%E5%8F%8A%E5%85%B6%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97">MATLAB矩阵及其基本运算</a>
+<ul>
+<li><a href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E7%94%9F%E6%88%90">矩阵的生成</a>
+<ul>
+<li><a href="#%E7%9B%B4%E6%8E%A5%E8%BE%93%E5%85%A5%E6%B3%95">直接输入法</a></li>
+<li><a href="#%E5%88%A9%E7%94%A8m%E6%96%87%E4%BB%B6%E5%BB%BA%E7%AB%8B%E7%9F%A9%E9%98%B5">利用M文件建立矩阵</a></li>
+<li><a href="#%E5%88%A9%E7%94%A8%E6%95%B0%E6%8D%AE%E6%96%87%E4%BB%B6%E5%BB%BA%E7%AB%8B%E6%8C%87%E5%AE%9A%E7%9F%A9%E9%98%B5">利用数据文件建立指定矩阵</a></li>
+<li><a href="#%E5%88%A9%E7%94%A8%E5%B7%B2%E5%BB%BA%E5%A5%BD%E7%9A%84%E7%9F%A9%E9%98%B5%E5%BB%BA%E7%AB%8B%E6%9B%B4%E5%A4%A7%E7%9A%84%E7%9F%A9%E9%98%B5">利用已建好的矩阵建立更大的矩阵</a></li>
+</ul>
+</li>
+<li><a href="#%E5%86%92%E5%8F%B7%E8%A1%A8%E8%BE%BE%E5%BC%8F">冒号表达式</a></li>
+<li><a href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E6%8B%86%E5%88%86">矩阵的拆分</a>
+<ul>
+<li><a href="#%E7%9F%A9%E9%98%B5%E5%85%83%E7%B4%A0">矩阵元素</a></li>
+<li><a href="#%E7%9F%A9%E9%98%B5%E6%8B%86%E5%88%86">矩阵拆分</a>
+<ul>
+<li><a href="#%E5%88%A9%E7%94%A8%E5%86%92%E5%8F%B7%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%8E%B7%E5%BE%97%E5%AD%90%E7%9F%A9%E9%98%B5">利用冒号表达式获得子矩阵</a></li>
+<li><a href="#end%E8%A1%A8%E7%A4%BA%E6%9F%90%E4%B8%80%E7%BB%B4%E7%9A%84%E6%9C%AB%E5%B0%BE%E5%85%83%E7%B4%A0%E4%B8%8B%E6%A0%87">end表示某一维的末尾元素下标</a></li>
+<li><a href="#%E5%88%A9%E7%94%A8%E7%A9%BA%E7%9F%A9%E9%98%B5%E5%88%A0%E9%99%A4%E7%9F%A9%E9%98%B5%E7%9A%84%E5%85%83%E7%B4%A0">利用空矩阵删除矩阵的元素</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97">算术运算</a>
+<ul>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97">基本算术运算</a>
+<ul>
+<li><a href="#%E7%9F%A9%E9%98%B5%E5%8A%A0%E5%87%8F%E8%BF%90%E7%AE%97">矩阵加减运算</a></li>
+<li><a href="#%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95">矩阵乘法</a></li>
+<li><a href="#%E7%9F%A9%E9%98%B5%E9%99%A4%E6%B3%95">矩阵除法</a></li>
+<li><a href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E4%B9%98%E6%96%B9">矩阵的乘方</a></li>
+</ul>
+</li>
+<li><a href="#%E7%82%B9%E8%BF%90%E7%AE%97">点运算</a></li>
+</ul>
+</li>
+<li><a href="#matlab%E5%B8%B8%E7%94%A8%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0">MATLAB常用数学函数</a></li>
 </ul>
 </li>
 </ul>
@@ -480,8 +708,8 @@ QQ：3168788134</p>
                         <i class="post-share"></i>
                         <span>&#x5206;&#x4EAB;:</span>
                                                                     <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://roboz-up.github.io/post/bi-ji-fang-zhen-cheng-xu-she-ji/"><i class="fa fa-qrcode"></i></a>
-                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://roboz-up.github.io/post/bi-ji-fang-zhen-cheng-xu-she-ji/&sharesource=qzone&title=笔记：仿真程序设计&pics=https://roboz-up.github.io/images/avatar.png?v=1585903667947&summary="><i class="fa fa-qq"></i></a>
-                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://roboz-up.github.io/post/bi-ji-fang-zhen-cheng-xu-she-ji/&sharesource=weibo&title=笔记：仿真程序设计 + " - " + &pic="https://roboz-up.github.io/images/avatar.png?v=1585903667947 "><i class="fa fa-weibo "></i></a>
+                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://roboz-up.github.io/post/bi-ji-fang-zhen-cheng-xu-she-ji/&sharesource=qzone&title=笔记：仿真程序设计&pics=https://roboz-up.github.io/images/avatar.png?v=1585907339836&summary="><i class="fa fa-qq"></i></a>
+                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://roboz-up.github.io/post/bi-ji-fang-zhen-cheng-xu-she-ji/&sharesource=weibo&title=笔记：仿真程序设计 + " - " + &pic="https://roboz-up.github.io/images/avatar.png?v=1585907339836 "><i class="fa fa-weibo "></i></a>
 
                                                                     </span>
                                                                     
@@ -662,7 +890,7 @@ QQ：3168788134</p>
                     CheckVersion();
                     
                     var newDate = new Date();
-                    newDate.setTime(1585903667947);
+                    newDate.setTime(1585907339836);
                     console.log(" Blog Update Time: " + newDate.toLocaleDateString());
                     console.log("\n %c \u26a1Theme:Chic Author's Blog:https://blog.itjoker.cn  Write By ITJoker  \n\n", "color: #ffffff; background: rgba(49, 49, 49, 0.85); padding:5px 0;border-radius:5px;");
                 </script>
