@@ -84,7 +84,7 @@
                         <input id="switch_default" type="checkbox" class="switch_default">
                         <label for="switch_default" class="toggleBtn"></label>
             </div>
-            <form id="gridea-search-form" data-update="1585924310953" action="/search/index.html">
+            <form id="gridea-search-form" data-update="1585926570596" action="/search/index.html">
                 <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
             </form>
         </div>
@@ -103,7 +103,7 @@
                         <!--zh-->
                         <a id="mobile-toggle-theme-zh" class="a zh">&nbsp;&#x6697;&#x9ED1;</a>
                     </div>
-                    <form id="gridea-search-form" data-update="1585924310953" action="/search/index.html">
+                    <form id="gridea-search-form" data-update="1585926570596" action="/search/index.html">
                         <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
                     </form>
                     <!--en-->
@@ -176,9 +176,9 @@
                                         </a>
                                         <span class="post-time">&#x65E5;&#x671F;: <a href="#">2020-03-25</a></span>
                                         <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a
-                                    href="#">47.1
+                                    href="#">60.3
                                     &#x5206;&#x949F;</a></span>
-                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">12868</a></span>
+                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">16451</a></span>
                                         
                                             <span class="post-category">&#x5206;&#x7C7B;:
                                 
@@ -1282,6 +1282,141 @@ imwrite(A,fname,fmt)<br>
 其中，每一组x、y、z组成一组曲线的坐标参数，用法与plot和plot3函数相同。选项p用于设置绘制的彗星轨迹线的彗长，彗长为p倍y向量的长度。</li>
 </ul>
 <h1 id="第四章-线性代数中的数值计算">第四章 线性代数中的数值计算</h1>
+<h2 id="特殊矩阵的生成">特殊矩阵的生成</h2>
+<h3 id="通用的特殊矩阵">通用的特殊矩阵</h3>
+<p>●	zeros函数：产生全0矩阵，即零矩阵。<br>
+●	ones函数：产生全1矩阵，即幺矩阵。<br>
+●	eye函数：产生单位矩阵，即对角线上的元素为1、其余元素为0的矩阵。<br>
+●	rand函数：产生0～1均匀分布的随机矩阵。<br>
+●	randn函数：产生均值为0、方差为1的标准正态分布随机矩阵。<br>
+这几个函数的调用格式相似，如果这个函数的参数只是一个，那么MATLAB将会创建一个方阵，行数和列数均为这个参数；如果这个函数的参数有两个，那么第一个参数代表行数，第二个参数代表列数。下面以产生零矩阵的zeros函数为例进行说明。<br>
+zeros函数的调用格式如下。<br>
+●	zeros(m)：产生m × m零矩阵。<br>
+●	zeros(m,n)：产生m × n零矩阵。当m = n时，等同于zeros(m)。<br>
+●	zeros(size(A))：产生与矩阵A同样大小的零矩阵。</p>
+<h3 id="面向特定应用的特殊矩阵">面向特定应用的特殊矩阵</h3>
+<h4 id="魔方矩阵">魔方矩阵</h4>
+<p>魔方矩阵有一个有趣的性质，其每行、每列及两条对角线上的元素和都相等。对于n阶魔方阵，其元素由1，2，3，…，n2共n2个整数组成。MATLAB提供了求魔方矩阵的函数magic(n)，其功能是生成一个n阶魔方阵。</p>
+<h4 id="范得蒙矩阵">范得蒙矩阵</h4>
+<p>范得蒙（Vandermonde）矩阵的最后一列全为1，倒数第二列为一个指定的向量，其他各列是其后列与倒数第二列的点乘积。可以用一个指定向量生成一个范得蒙矩阵。在MATLAB中，函数vander(V)生成以向量V为基础向量的范得蒙矩阵。</p>
+<h4 id="希尔伯特矩阵">希尔伯特矩阵</h4>
+<p>希尔伯特（Hilbert）矩阵是一种数学变换矩阵，它的每个元素hij = 1/(i + j − 1)。在MATLAB中，生成希尔伯特矩阵的函数是hilb(n)。<br>
+专门求希尔伯特矩阵的逆的函数invhilb(n)</p>
+<h4 id="托普利兹矩阵">托普利兹矩阵</h4>
+<p>托普利兹（Toeplitz）矩阵除第一行第一列外，其他每个元素都与左上角的元素相同。生成托普利兹矩阵的函数是toeplitz(x,y)，它生成一个以x为第一列、y为第一行的托普利兹矩阵。这里x、y均为向量，两者不必等长。toeplitz(x)用向量x生成一个对称的托普利兹矩阵。</p>
+<h4 id="伴随矩阵">伴随矩阵</h4>
+<p>生成伴随矩阵的函数是compan(p)，其中p是一个多项式的系数向量，高次幂系数排在前，低次幂排在后。</p>
+<h4 id="帕斯卡矩阵">帕斯卡矩阵</h4>
+<p>我们知道，二次项(x + y)n展开后的系数随n的增大组成一个三角形表，称为杨辉三角形。由杨辉三角形表组成的矩阵称为帕斯卡（Pascal）矩阵，函数pascal(n)生成一个n阶帕斯卡矩阵。</p>
+<h2 id="矩阵分析">矩阵分析</h2>
+<h3 id="矩阵结构变换">矩阵结构变换</h3>
+<h4 id="对角阵">对角阵</h4>
+<p>只有对角线上有非0元素的矩阵称为对角矩阵，对角线上的元素都为1的对角矩阵称为单位矩阵。<br>
+（1）提取矩阵的对角线元素<br>
+设A为m × n矩阵，函数diag(A)用于提取矩阵A主对角线元素，产生一个具有min(m,n)个元素的列向量。<br>
+diag(A,k) 提取第k条对角线的元素。主对角线为第0条对角线；与主对角线平行，往上为第1条，第2条，…，第n条对角线，往下为第 − 1条，第 − 2条，…，第 − n条对角线。<br>
+（2）构造对角矩阵<br>
+设V为具有m个元素的向量，diag(V,k)的功能是产生一个n × n（n = m + |k|）对角阵，其第k条对角线的元素即为向量V的元素。<br>
+省略k时，相当于k为0，其主对角线元素即为向量V的元素。</p>
+<h4 id="三角阵">三角阵</h4>
+<p>三角阵又进一步分为上三角阵和下三角阵。所谓上三角阵，即矩阵的对角线以下的元素全为0的一种矩阵，而下三角阵则是对角线以上的元素全为0的一种矩阵。</p>
+<p>与矩阵A对应的上三角阵B是与A具有相同的行数和列数的一个矩阵，并且B的对角线以上（含对角线）的元素和A对应相等，而对角线以下的元素等于0。求矩阵A的上三角阵的MATLAB函数是triu(A)。</p>
+<p>triu(A,k)，其功能是求矩阵A的第k条对角线以上的元素。</p>
+<p>在MATLAB中，提取矩阵A的下三角矩阵的函数是tril(A)和tril(A,k)。</p>
+<h4 id="矩阵的转置">矩阵的转置</h4>
+<p>所谓转置，即把源矩阵的第一行变成目标矩阵第一列，第二行变成第二列……依此类推。显然，一个m行n列的矩阵经过转置运算后，变成一个n行m列的矩阵。MATLAB中，转置运算符是单撇号(')。</p>
+<h4 id="矩阵的旋转">矩阵的旋转</h4>
+<p>在MATLAB中，可以很方便地以90°为单位对矩阵A按逆时针方向进行旋转。利用函数rot90(A,k)将矩阵A旋转90°的k倍，当k为负整数时，对矩阵A按顺时针方向进行旋转；当k为1时可省略。</p>
+<h4 id="矩阵的翻转">矩阵的翻转</h4>
+<p>矩阵的翻转分左右翻转和上下翻转。对矩阵实施左右翻转是将原矩阵的第一列和最后一列调换，第二列和倒数第二列调换……依此类推。<br>
+对矩阵A实施左右翻转的函数是fliplr(A)。<br>
+对矩阵A实施上下翻转的函数是flipud(A)。</p>
+<h2 id="矩阵求值">矩阵求值</h2>
+<h3 id="方阵的行列式值">方阵的行列式值</h3>
+<p>把一个方阵看作一个行列式，并对其按行列式的规则求值，这个值就称为矩阵所对应的行列式的值。在MATLAB中，求方阵A所对应的行列式的值的函数是det(A)。</p>
+<h3 id="矩阵的秩">矩阵的秩</h3>
+<p>rank(A)</p>
+<h3 id="矩阵的迹">矩阵的迹</h3>
+<p>矩阵的迹即矩阵的对角线元素之和。<br>
+trace(A)</p>
+<h3 id="向量和矩阵的范数">向量和矩阵的范数</h3>
+<p>函数norm用于计算矩阵或向量的范数，norm函数的格式如下。<br>
+●	norm(X,1)：求向量或矩阵X的1− 范数。<br>
+●	norm(X)、norm(X,2)：求向量或矩阵X的2− 范数。<br>
+●	norm(X,inf)：求向量或矩阵X的∞− 范数。</p>
+<h3 id="矩阵的条件数">矩阵的条件数</h3>
+<p>条件数，用于判断矩阵是良性矩阵还是病态矩阵的参数。</p>
+<ul>
+<li>良性矩阵:系数矩阵的微小变化不会导致解向量发生很大变化</li>
+<li>病态矩阵:系数矩阵的个别元素的微小变化会导致解向量发生很大变化<br>
+矩阵A的条件数等于A的范数与A的逆矩阵的范数的乘积，即cond(A)=||A||*||A-1||。这样定义的条件数总是大于1的。条件数越接近于1，矩阵的性能越好，反之，矩阵的性能越差。A有3种范数，相应地可定义3种条件数。在MATLAB中，计算A的3种条件数的函数如下。<br>
+●	cond(A,1)：计算A的1−范数下的条件数。<br>
+●	cond(A)或cond(A,2)：计算A的2−范数数下的条件数。<br>
+●	cond(A,inf)：计算A的∞ −范数下的条件数。</li>
+</ul>
+<h3 id="矩阵的特征值与特征向量">矩阵的特征值与特征向量</h3>
+<p>对于n阶方阵A，求数λ和向量ζ，使得等式Aζ = λζ成立，满足等式的数λ称为A的特征值，而向量ζ称为A的特征向量。<br>
+在MATLAB中，计算矩阵A的特征值和特征向量的函数是eig(A)，常用的调用格式有如下3种。<br>
+●	E = eig(A)：求矩阵A的全部特征值，构成向量E。<br>
+●	[V,D] = eig(A)：求矩阵A的全部特征值，构成对角阵D，并求A的特征向量构成V的列向量。<br>
+●	[V,D] = eig(A,'nobalance')：与第2种格式类似，但第2种格式中先对A作相似变换后求矩阵A的特征值和特征向量，而格式3直接求矩阵A的特征值和特征向量。<br>
+一个矩阵的特征向量有无穷多个，eig函数只找出其中的n个，A的其他特征向量，均可由这n个特征向量的线性组合表示。</p>
+<h2 id="线性方程组求解">线性方程组求解</h2>
+<h3 id="矩阵求逆及线性代数方程组求解">矩阵求逆及线性代数方程组求解</h3>
+<h4 id="矩阵求逆">矩阵求逆</h4>
+<p>inv(A)函数用于计算方阵的逆矩阵。</p>
+<h4 id="利用矩阵求逆方法解线性方程组">利用矩阵求逆方法解线性方程组</h4>
+<p>inv(A)*B</p>
+<h4 id="利用左除运算符求解线性方程组">利用左除运算符求解线性方程组</h4>
+<p>对于线性方程组Ax = b，可以利用左除运算符“\”求解：<br>
+x = A\b    等效于inv(A)*B。</p>
+<h2 id="矩阵分解">矩阵分解</h2>
+<p>矩阵分解是指根据一定的原理用某种算法将一个矩阵分解成若干个矩阵的乘积。常见的矩阵分解有LU分解、QR分解、Cholesky分解以及Schur分解、Hessenberg分解、奇异分解等。</p>
+<h3 id="矩阵的lu分解">矩阵的LU分解</h3>
+<p>矩阵的LU分解又称Gauss消去分解或三角分解，就是将一个方阵表示为一个行交换下三角矩阵和一个上三角矩阵的乘积形式。<br>
+MATLAB提供的lu函数用于对矩阵进行LU分解，其调用格式如下。<br>
+●	[L,U] = lu(X)：产生一个上三角阵U和一个变换形式的下三角阵L(行交换)，使之满足X = LU。注意，这里的矩阵X必须是方阵。<br>
+●	[L,U,P] = lu(X)：产生一个上三角阵U和一个下三角阵L以及一个置换矩阵P，使之满足PX = LU。当然矩阵X同样必须是方阵。<br>
+当使用第1种格式时，矩阵L往往不是一个下三角矩阵，但可以通过行交换成为一个下三角阵。</p>
+<h3 id="矩阵的qr分解">矩阵的QR分解</h3>
+<p>对矩阵X进行QR分解，就是把X分解为一个正交矩阵Q和一个上三角矩阵R的乘积形式。MATLAB的函数qr可用于对矩阵进行QR分解，其调用格式如下。<br>
+●	[Q,R] = qr(X)：产生一个一个正交矩阵Q和一个上三角矩阵R，使之满足X = QR。<br>
+●	[Q,R,E] = qr(X)：产生一个一个正交矩阵Q、一个上三角矩阵R以及一个置换矩阵E，使之满足XE = QR。</p>
+<h3 id="矩阵的cholesky分解">矩阵的Cholesky分解</h3>
+<p>如果矩阵X是对称正定的，则Cholesky分解将矩阵X分解成一个下三角矩阵和上三角矩阵的乘积。设上三角矩阵为R，则下三角矩阵为其转置，即X = R'R。MATLAB函数chol(X)用于对矩阵X进行Cholesky分解，其调用格式如下。<br>
+●	R = chol(X)：产生一个上三角阵R，使R'R = X。若X为非对称正定，则输出一个出错信息。<br>
+●	[R,p] = chol(X)：这个命令格式将不输出出错信息。当X为对称正定的，则p = 0，R与上述格式得到的结果相同；否则p为一个正整数。如果X为满秩矩阵，则R为一个阶数为q = p − 1的上三角阵，且满足R'R = X(1:q,1:q)。</p>
+<h2 id="超越函数运算">超越函数运算</h2>
+<h3 id="超越函数">超越函数</h3>
+<p>MATLAB还提供了一些直接作用于矩阵的超越函数，如矩阵平方根函数sqrtm、矩阵指数函数expm、矩阵对数函数logm等，这些函数名都在上述内部函数名之后缀以m，并规定输入参数A必须是方阵。</p>
+<h3 id="通用矩阵函数funm">通用矩阵函数funm</h3>
+<p>funm(A,'fun')对方阵A计算由fun定义的函数的矩阵函数值。例如，当fun取exp时，funm(A,'exp')可以计算矩阵A的指数，与expm(A)的计算结果一样。</p>
+<h2 id="稀疏矩阵的处理">稀疏矩阵的处理</h2>
+<p>稀疏矩阵中具有大量的零元素，而仅含极少量的非零元素。</p>
+<h3 id="矩阵存储方式">矩阵存储方式</h3>
+<ul>
+<li>完全存储方式: 矩阵的全部元素按列存储。以前讲到的矩阵的存储方式都是按这个方式存储的，此存储方式对稀疏矩阵也适用。例如，不论是m × n阶普通的还是稀疏的实矩阵均需要m × n个存储单元，而复矩阵还要翻倍。在这种方式下，矩阵中的全部零元素也必须输入。</li>
+<li>稀疏存储方式: 仅存储矩阵所有的非零元素的值及其位置，即行号和列号。</li>
+</ul>
+<h3 id="矩阵的稀疏存储方式">矩阵的稀疏存储方式</h3>
+<h4 id="将完全存储方式转化为稀疏存储方式">将完全存储方式转化为稀疏存储方式</h4>
+<p>函数A = sparse(S)将矩阵S转化为稀疏存储方式的矩阵A。当矩阵S是稀疏存储方式时，则函数调用相当于A = S。<br>
+sparse函数还有其他一些调用格式。<br>
+●	sparse(m,n)：生成一个m × n的所有元素都是0的稀疏矩阵。<br>
+●	sparse(u,v,S)：u、v、S是3个等长的向量。S是要建立的稀疏矩阵的非0元素，u(i)、v(i)分别是S(i)的行和列下标，该函数建立一个max(u)行、max(v)列并以S为稀疏元素的稀疏矩阵。<br>
+和稀疏矩阵操作有关的函数。<br>
+●	[u,v,S] = find(A)：返回矩阵A中非0元素的下标和元素。这里产生的u、v、S可作为sparse(u,v,S)的参数。<br>
+●	full(A)：返回和稀疏存储矩阵A对应的完全存储方式矩阵。</p>
+<h4 id="产生稀疏存储矩阵">产生稀疏存储矩阵</h4>
+<p>B = spconvert(A)<br>
+其中A为一个m × 3或m × 4的矩阵，其每行表示一个非0元素，m是非0元素的个数，A中每个元素的意义是：<br>
+(i,1)  第i个非0元素所在的行；<br>
+(i,2)  第i个非0元素所在的列；<br>
+(i,3)  第i个非0元素值的实部；<br>
+(i,4)  第i个非0元素值的虚部，若矩阵的全部元素都是实数，则无须第4列。<br>
+该函数将A所描述的一个稀疏矩阵转化为一个稀疏存储矩阵。</p>
+<h4 id="单位矩阵的稀疏存储">单位矩阵的稀疏存储</h4>
+<p>单位矩阵只有对角线元素为1，其他元素都为0，是一种具有稀疏特征的矩阵。函数eye产生一个完全存储方式的单位矩阵。MATLAB还有一个产生稀疏存储方式的单位矩阵的函数，这就是speye。函数speye(m,n)返回一个m × n的稀疏存储单位矩阵。</p>
 <h1 id="第五章-数据处理与多项式计算">第五章 数据处理与多项式计算</h1>
 <h1 id="第六章-数值微积分与常微分方程求解">第六章 数值微积分与常微分方程求解</h1>
 <h1 id="第七章-符号计算">第七章 符号计算</h1>
@@ -1535,7 +1670,84 @@ QQ：3168788134</p>
 </li>
 </ul>
 </li>
-<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%B8%AD%E7%9A%84%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97">第四章 线性代数中的数值计算</a></li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%B8%AD%E7%9A%84%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97">第四章 线性代数中的数值计算</a>
+<ul>
+<li><a href="#%E7%89%B9%E6%AE%8A%E7%9F%A9%E9%98%B5%E7%9A%84%E7%94%9F%E6%88%90">特殊矩阵的生成</a>
+<ul>
+<li><a href="#%E9%80%9A%E7%94%A8%E7%9A%84%E7%89%B9%E6%AE%8A%E7%9F%A9%E9%98%B5">通用的特殊矩阵</a></li>
+<li><a href="#%E9%9D%A2%E5%90%91%E7%89%B9%E5%AE%9A%E5%BA%94%E7%94%A8%E7%9A%84%E7%89%B9%E6%AE%8A%E7%9F%A9%E9%98%B5">面向特定应用的特殊矩阵</a>
+<ul>
+<li><a href="#%E9%AD%94%E6%96%B9%E7%9F%A9%E9%98%B5">魔方矩阵</a></li>
+<li><a href="#%E8%8C%83%E5%BE%97%E8%92%99%E7%9F%A9%E9%98%B5">范得蒙矩阵</a></li>
+<li><a href="#%E5%B8%8C%E5%B0%94%E4%BC%AF%E7%89%B9%E7%9F%A9%E9%98%B5">希尔伯特矩阵</a></li>
+<li><a href="#%E6%89%98%E6%99%AE%E5%88%A9%E5%85%B9%E7%9F%A9%E9%98%B5">托普利兹矩阵</a></li>
+<li><a href="#%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5">伴随矩阵</a></li>
+<li><a href="#%E5%B8%95%E6%96%AF%E5%8D%A1%E7%9F%A9%E9%98%B5">帕斯卡矩阵</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%9F%A9%E9%98%B5%E5%88%86%E6%9E%90">矩阵分析</a>
+<ul>
+<li><a href="#%E7%9F%A9%E9%98%B5%E7%BB%93%E6%9E%84%E5%8F%98%E6%8D%A2">矩阵结构变换</a>
+<ul>
+<li><a href="#%E5%AF%B9%E8%A7%92%E9%98%B5">对角阵</a></li>
+<li><a href="#%E4%B8%89%E8%A7%92%E9%98%B5">三角阵</a></li>
+<li><a href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E8%BD%AC%E7%BD%AE">矩阵的转置</a></li>
+<li><a href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E6%97%8B%E8%BD%AC">矩阵的旋转</a></li>
+<li><a href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E7%BF%BB%E8%BD%AC">矩阵的翻转</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%9F%A9%E9%98%B5%E6%B1%82%E5%80%BC">矩阵求值</a>
+<ul>
+<li><a href="#%E6%96%B9%E9%98%B5%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F%E5%80%BC">方阵的行列式值</a></li>
+<li><a href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A9">矩阵的秩</a></li>
+<li><a href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E8%BF%B9">矩阵的迹</a></li>
+<li><a href="#%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5%E7%9A%84%E8%8C%83%E6%95%B0">向量和矩阵的范数</a></li>
+<li><a href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E6%9D%A1%E4%BB%B6%E6%95%B0">矩阵的条件数</a></li>
+<li><a href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E7%89%B9%E5%BE%81%E5%80%BC%E4%B8%8E%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F">矩阵的特征值与特征向量</a></li>
+</ul>
+</li>
+<li><a href="#%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E6%B1%82%E8%A7%A3">线性方程组求解</a>
+<ul>
+<li><a href="#%E7%9F%A9%E9%98%B5%E6%B1%82%E9%80%86%E5%8F%8A%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84%E6%B1%82%E8%A7%A3">矩阵求逆及线性代数方程组求解</a>
+<ul>
+<li><a href="#%E7%9F%A9%E9%98%B5%E6%B1%82%E9%80%86">矩阵求逆</a></li>
+<li><a href="#%E5%88%A9%E7%94%A8%E7%9F%A9%E9%98%B5%E6%B1%82%E9%80%86%E6%96%B9%E6%B3%95%E8%A7%A3%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84">利用矩阵求逆方法解线性方程组</a></li>
+<li><a href="#%E5%88%A9%E7%94%A8%E5%B7%A6%E9%99%A4%E8%BF%90%E7%AE%97%E7%AC%A6%E6%B1%82%E8%A7%A3%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84">利用左除运算符求解线性方程组</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3">矩阵分解</a>
+<ul>
+<li><a href="#%E7%9F%A9%E9%98%B5%E7%9A%84lu%E5%88%86%E8%A7%A3">矩阵的LU分解</a></li>
+<li><a href="#%E7%9F%A9%E9%98%B5%E7%9A%84qr%E5%88%86%E8%A7%A3">矩阵的QR分解</a></li>
+<li><a href="#%E7%9F%A9%E9%98%B5%E7%9A%84cholesky%E5%88%86%E8%A7%A3">矩阵的Cholesky分解</a></li>
+</ul>
+</li>
+<li><a href="#%E8%B6%85%E8%B6%8A%E5%87%BD%E6%95%B0%E8%BF%90%E7%AE%97">超越函数运算</a>
+<ul>
+<li><a href="#%E8%B6%85%E8%B6%8A%E5%87%BD%E6%95%B0">超越函数</a></li>
+<li><a href="#%E9%80%9A%E7%94%A8%E7%9F%A9%E9%98%B5%E5%87%BD%E6%95%B0funm">通用矩阵函数funm</a></li>
+</ul>
+</li>
+<li><a href="#%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5%E7%9A%84%E5%A4%84%E7%90%86">稀疏矩阵的处理</a>
+<ul>
+<li><a href="#%E7%9F%A9%E9%98%B5%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F">矩阵存储方式</a></li>
+<li><a href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A8%80%E7%96%8F%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F">矩阵的稀疏存储方式</a>
+<ul>
+<li><a href="#%E5%B0%86%E5%AE%8C%E5%85%A8%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F%E8%BD%AC%E5%8C%96%E4%B8%BA%E7%A8%80%E7%96%8F%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F">将完全存储方式转化为稀疏存储方式</a></li>
+<li><a href="#%E4%BA%A7%E7%94%9F%E7%A8%80%E7%96%8F%E5%AD%98%E5%82%A8%E7%9F%A9%E9%98%B5">产生稀疏存储矩阵</a></li>
+<li><a href="#%E5%8D%95%E4%BD%8D%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A8%80%E7%96%8F%E5%AD%98%E5%82%A8">单位矩阵的稀疏存储</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E4%B8%8E%E5%A4%9A%E9%A1%B9%E5%BC%8F%E8%AE%A1%E7%AE%97">第五章 数据处理与多项式计算</a></li>
 <li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E6%95%B0%E5%80%BC%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8E%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E6%B1%82%E8%A7%A3">第六章 数值微积分与常微分方程求解</a></li>
 <li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97">第七章 符号计算</a></li>
@@ -1575,8 +1787,8 @@ QQ：3168788134</p>
                         <i class="post-share"></i>
                         <span>&#x5206;&#x4EAB;:</span>
                                                                     <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://roboz-up.github.io/post/bi-ji-fang-zhen-cheng-xu-she-ji/"><i class="fa fa-qrcode"></i></a>
-                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://roboz-up.github.io/post/bi-ji-fang-zhen-cheng-xu-she-ji/&sharesource=qzone&title=笔记：仿真程序设计&pics=https://roboz-up.github.io/images/avatar.png?v=1585924310953&summary="><i class="fa fa-qq"></i></a>
-                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://roboz-up.github.io/post/bi-ji-fang-zhen-cheng-xu-she-ji/&sharesource=weibo&title=笔记：仿真程序设计 + " - " + &pic="https://roboz-up.github.io/images/avatar.png?v=1585924310953 "><i class="fa fa-weibo "></i></a>
+                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://roboz-up.github.io/post/bi-ji-fang-zhen-cheng-xu-she-ji/&sharesource=qzone&title=笔记：仿真程序设计&pics=https://roboz-up.github.io/images/avatar.png?v=1585926570596&summary="><i class="fa fa-qq"></i></a>
+                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://roboz-up.github.io/post/bi-ji-fang-zhen-cheng-xu-she-ji/&sharesource=weibo&title=笔记：仿真程序设计 + " - " + &pic="https://roboz-up.github.io/images/avatar.png?v=1585926570596 "><i class="fa fa-weibo "></i></a>
 
                                                                     </span>
                                                                     
@@ -1757,7 +1969,7 @@ QQ：3168788134</p>
                     CheckVersion();
                     
                     var newDate = new Date();
-                    newDate.setTime(1585924310953);
+                    newDate.setTime(1585926570596);
                     console.log(" Blog Update Time: " + newDate.toLocaleDateString());
                     console.log("\n %c \u26a1Theme:Chic Author's Blog:https://blog.itjoker.cn  Write By ITJoker  \n\n", "color: #ffffff; background: rgba(49, 49, 49, 0.85); padding:5px 0;border-radius:5px;");
                 </script>
