@@ -84,7 +84,7 @@
                         <input id="switch_default" type="checkbox" class="switch_default">
                         <label for="switch_default" class="toggleBtn"></label>
             </div>
-            <form id="gridea-search-form" data-update="1585965232117" action="/search/index.html">
+            <form id="gridea-search-form" data-update="1586013040240" action="/search/index.html">
                 <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
             </form>
         </div>
@@ -103,7 +103,7 @@
                         <!--zh-->
                         <a id="mobile-toggle-theme-zh" class="a zh">&nbsp;&#x6697;&#x9ED1;</a>
                     </div>
-                    <form id="gridea-search-form" data-update="1585965232117" action="/search/index.html">
+                    <form id="gridea-search-form" data-update="1586013040240" action="/search/index.html">
                         <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
                     </form>
                     <!--en-->
@@ -176,9 +176,9 @@
                                         </a>
                                         <span class="post-time">&#x65E5;&#x671F;: <a href="#">2020-03-22</a></span>
                                         <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a
-                                    href="#">45.8
+                                    href="#">78.3
                                     &#x5206;&#x949F;</a></span>
-                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">12951</a></span>
+                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">21532</a></span>
                                         
                                             <span class="post-category">&#x5206;&#x7C7B;:
                                 
@@ -193,7 +193,7 @@
                                     
                         </header>
                         <div class="post-content">
-                            <h1 id="最后更新时间2020325">⏰最后更新时间：2020.3.25</h1>
+                            <h1 id="最后更新时间202044">⏰最后更新时间：2020.4.4</h1>
 <figure data-type="image" tabindex="1"><img src="https://roboz-up.github.io/post-images/1584851623468.png" alt="" loading="lazy"></figure>
 <h1 id="预-备-知-识">预 备 知 识</h1>
 <ul>
@@ -887,6 +887,698 @@ S4和S3组合使用，用于指出当前正在使用哪个段寄存器。</li>
 <li>在8086中，一个基本的总线周期由4个时钟周期组成。</li>
 </ul>
 <h1 id="第三章-指令系统">第三章 指令系统</h1>
+<h2 id="指令格式">指令格式</h2>
+<p>指令是计算机能够识别和执行的操作命令，由二进制数“0”、“1”组成。每条指令的编码格式由机器指令系统规定。机器指令的集合称为指令系统。指令由操作码和操作数两部分组成。</p>
+<ul>
+<li>操作码  ：说明指令操作的性质和功能，如传送、运算、移位、跳转等操作，它是指令中不可缺少的组成部分。常用OP表示。</li>
+<li>操作数  ： 用于提供指令中要处理的数据或数据所在的地址信息。是指令执行的参与者，即各种操作的对象。<br>
+一条指令常由6个字段组成，字段1为前缀字段，字段2~6为基本字段。指令长度超过16字节为非法指令。</li>
+</ul>
+<h3 id="前缀字段">前缀字段</h3>
+<p>前缀字段用于修改指令操作的某些属性，为可选字段。<br>
+（1）段超越前缀：用于指明某个段寄存器取代指令中默认的段寄存器。<br>
+（2）操作数宽度前缀：用于改变当前操作数的默认宽度值。<br>
+（3）地址宽度前缀：用于改变当前地址的默认宽度值。<br>
+（4）重复前缀：用于重复串的操作。<br>
+（5）总线锁定前缀：用于产生LOCK信号，防止其他设备中断CPU在总线上的操作。</p>
+<h3 id="操作码字段1~2字节">操作码字段(1~2字节)</h3>
+<p>规定了指令的操作性质和功能。此字段不可省略。</p>
+<h3 id="寻址方式字段2字节">寻址方式字段（2字节）</h3>
+<p>规定了操作数的寻址方式，包括操作数长度、采用的寻址方式、操作数的存放位置。</p>
+<h3 id="位移量字段1-2或4字节">位移量字段（1、2或4字节）</h3>
+<p>当寻址方式中有位移量时，指令中将出现此字段。通常用带符号数(补码)表示。</p>
+<h3 id="立即数字段12或4字节">立即数字段(1，2或4字节)</h3>
+<p>当寻址方式是立即数寻址时，需用此字段。立即数为带符号数，以补码形式存储。</p>
+<p>操作码字段是必选字段，其它各字段可根据不同的寻址方式选用。</p>
+<h2 id="寻址方式">寻址方式</h2>
+<ul>
+<li>寻址：寻找操作数的地址。</li>
+<li>寻址方式：寻找操作数/操作数地址的方法。</li>
+</ul>
+<p>根据操作数存放位置不同，指令中操作数分为：<br>
+（1）立即操作数：操作数包含在指令中，存放在代码段，其取指令的同时，操作数也随着取出，称这种操作数为立即操作数，寻址方式为立即寻址。<br>
+（2）寄存器操作数：这种操作数存放在CPU内部的某个寄存器中，在指令中提供存放操作数的寄存器名。CPU执行指令时，在指定的寄存器中存取操作数，寻址方式为寄存器寻址。<br>
+（3）存储器操作数：操作数存放在内存储器中，如数据段和附加段。CPU对存储器操作数进行操作时，指令中提供操作数在寄存器中存放的地址，这种寻址方式为存储器寻址。<br>
+（4）I/O端口操作数：操作数存放在I/O接口的端口中，CPU通过I/O接口与输入输出设备交换信息，这种寻址方式为I/O寻址。</p>
+<p>速度由快到慢：立即寻址、寄存器寻址、存储器寻址和I/O寻址。</p>
+<p>在80X86微机系统中，程序中采用的是逻辑地址方式，即内存单元的地址由段基值和偏移地址两部分组成。在实模式工作方式下，段基值由段寄存器提供，偏移地址由指令提供。</p>
+<p>物理地址=段基值×10H+偏移地址</p>
+<ul>
+<li>段基值在段定义之后便可确定，通常由系统分配。</li>
+<li>偏移地址由指令中的寻址方式确定，由下列元素组成：基址寄存器、变址寄存器、比例因子、位移量，这4部分称为偏移地址4元素。</li>
+</ul>
+<p>由偏移地址4种元素按某种计算方法组合形成的偏移地址称为有效地址EA（Effective Address）。</p>
+<p>计算方法：EA=基址+（间址×比例因子）+位移量</p>
+<ul>
+<li>采用16位寻址：用BX和BP作基址寄存器，SI和DI作变址寄存器，比例因子为1（省略），位移量是8位或16位。</li>
+<li>采用32位寻址： 32位的通用寄存器都可作基址寄存器或变址寄存器（ESP不用于变址），可采用2、4、8几种比例因子，可使用8位、16位和32位的位移量。</li>
+</ul>
+<h3 id="11种寻址方式及对应的有效地址">11种寻址方式及对应的有效地址</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">寻址方式</th>
+<th style="text-align:center">有效地址EA</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">立即</td>
+<td style="text-align:center">imm</td>
+<td style="text-align:center">操作数在代码段</td>
+</tr>
+<tr>
+<td style="text-align:center">寄存器</td>
+<td style="text-align:center">通用寄存器</td>
+<td style="text-align:center">操作数在CPU内部</td>
+</tr>
+<tr>
+<td style="text-align:center">直接</td>
+<td style="text-align:center">EA=直接地址</td>
+<td style="text-align:center">(1)</td>
+</tr>
+<tr>
+<td style="text-align:center">寄存器间接</td>
+<td style="text-align:center">EA=(基址或变址)</td>
+<td style="text-align:center">(1)</td>
+</tr>
+<tr>
+<td style="text-align:center">寄存器相对</td>
+<td style="text-align:center">EA=(基址或变址)+位移量</td>
+<td style="text-align:center">(1)</td>
+</tr>
+<tr>
+<td style="text-align:center">基址加变址</td>
+<td style="text-align:center">EA=(基址+变址)</td>
+<td style="text-align:center">(1)</td>
+</tr>
+<tr>
+<td style="text-align:center">带位移的基址加变址</td>
+<td style="text-align:center">EA=(基址+变址)+位移量</td>
+<td style="text-align:center">(1)</td>
+</tr>
+<tr>
+<td style="text-align:center">比例变址</td>
+<td style="text-align:center">EA=(变址) x 比例因子</td>
+<td style="text-align:center">(1)、(2)</td>
+</tr>
+<tr>
+<td style="text-align:center">带位移的比例变址</td>
+<td style="text-align:center">EA=(变址) x 比例因子+位移量</td>
+<td style="text-align:center">(1)、(2)</td>
+</tr>
+<tr>
+<td style="text-align:center">基址加比例变址</td>
+<td style="text-align:center">EA=(基址)+(变址) x 比例因子</td>
+<td style="text-align:center">(1)、(2)</td>
+</tr>
+<tr>
+<td style="text-align:center">带位移的基址加比例变址</td>
+<td style="text-align:center">EA=(基址)+(变址) x 比例因子+位移量</td>
+<td style="text-align:center">(1)、(2)</td>
+</tr>
+</tbody>
+</table>
+<p>(1)操作数在内存的数据段、附加段、堆栈段。<br>
+(2)只适用于32位寻址。</p>
+<h3 id="寻址方式分类">寻址方式分类</h3>
+<p>(1)与数据有关的寻址方式：确定内存单元的地址<br>
+(2)与转移地址有关的寻址方式：确定转移地址</p>
+<h3 id="立即寻址方式">立即寻址方式</h3>
+<p>指定的操作数紧跟在操作码之后，直接存放在代码段中操作数可以是8位、16位。<br>
+立即数在指令中表示一个常数。只能作为源操作数给目标单元（寄存器或存储单元）赋值。<br>
+如：MOV  AL，20H                 ；AL ←20H<br>
+MOV  AX，1234H             ；AX ←1234H</p>
+<p>立即数作为指令的一部分直接从指令预取单元中取出，不需要再次访问存储器，因此这种寻址方式执行速度快。</p>
+<h3 id="直接寻址方式">直接寻址方式</h3>
+<p>操作数有效地址（16位或32位）直接包含在指令中，它位于操作码之后，存放在代码段中，按低地址存放低字节，高地址存放高字节。</p>
+<p>两种表示形式：<br>
+一种以常数形式给出有效地址（数值地址），用方括号表示；<br>
+一种用符号地址代替数值地址，方括号可有可无，符号地址必须在程序中定义（变量定义语句）。</p>
+<p>例如：MOV AX, [2000H]<br>
+MOV BX, VALUE     或    MOV BX, [VALUE]</p>
+<p>8086指令中有效地址（EA）由以下3部分组成：<br>
+EA=基址＋变址＋位移量</p>
+<ul>
+<li>位移量（displacement）：存放在指令中的一个8位或16位的数，但它不是立即数，而是一个地址；</li>
+<li>基址（base）：存放在基址寄存器（BX、BP）中的内容。它是有效地址中的基址部分，通常用于指向数据段中数组或字符串的首地址。</li>
+<li>变址（index）：存放在变址寄存器（SI、DI）中的内容。通常用来指向数组中某个元素或字符串的某个字符。</li>
+</ul>
+<p>根据有效地址中含有的成分不同，分别构成不同的寻址方式 。<br>
+在执行指令时，先由段寄存器给给出的段基值和指令给出的有效地址算出操作数的物理地址，然后到该物理单元中存取数据。</p>
+<p>MOV  BL,[1020H]   ; 将数据段（DS）×10H+1020H中的8位数传送到BL中<br>
+MOV  AX,[10A0H]  ; 将数据段（DS）×10H+10A0H中的16位数传送到AX中<br>
+MOV  BH,ES:[0010H]  ; 将附加段（ES）×10H+0010H中的8位数传送到BH中<br>
+MOV  [0060H],1234H  ; 将立即数1234H传送到数据段（DS）×10H+0060H单元中<br>
+MOV  ES:[1000H],78H  ; 将立即数78H传送到附加段（ES）×10H+1000H单元中</p>
+<ul>
+<li>注意：<br>
+直接寻址方式既可以用于源操作数，也可以用于目的操作数，但不允许在同一条指令中同时使用。</li>
+</ul>
+<h3 id="寄存器寻址方式">寄存器寻址方式</h3>
+<p>操作数在寄存器中，CPU中的8位、16位通用寄存器都可以存放操作数。既能作为源操作数，也可以作为目的操作数，在指令中由寄存器的名称表示。<br>
+功能：操作数直接存放在寄存器中。</p>
+<p>如：<br>
+MOV  BL,20H       ；BL ← 20H，目标为寄存器寻址<br>
+MOV  AX，BX      ；AX ←（BX）</p>
+<p>由于存取此类操作数在CPU内部进行，不需要访问存储器，所以执行速度较快。<br>
+指令中可以引用的寄存器及其符号名称如下：<br>
+8位寄存器有：AH、AL、BH、BL、CH、CL、DH和DL等；<br>
+16位寄存器：AX、BX、CX、DX、SI、DI、SP、BP和段寄存器等。</p>
+<ul>
+<li>注意：<br>
+如果指令中的源操作数和目的操作数都是寄存器寻址时，寄存器的类型要匹配。</li>
+</ul>
+<h3 id="寄存器间接寻址方式">寄存器间接寻址方式</h3>
+<p>操作数存放在存储器中，操作数的有效地址EA存放在某个寄存器中。</p>
+<p>（1）16位寻址：EA= (SI)、(DI)、 (BX)、(BP)<br>
+前三个默认情况下，操作数在数据段，物理地址=（DS）×10H+（BX、SI、DI）；后面一个默认情况下，操作数在堆栈中，物理地址=（SS）×10H+（BP）。<br>
+例如：<br>
+MOV AX，[BX]        ； AX     ((DS)*10H+(BX))<br>
+MOV AX，[BP]         ； AX     ((SS)*10H+(BP))<br>
+MOV AX，ES：[BX]； AX     ((ES)*10H+(BX))<br>
+MOV AX，DS：[BP]； AX     ((DS)*10H+(BP))<br>
+（2）32位寻址：EA= (EAX)、(EBX)、 (ECX)、(EDX)、(ESP)、(EBP) 、(ESI)、(EDI)<br>
+ESP、EBP默认操作数存放在堆栈段，其它默认操作数存放在数据段。<br>
+举例：<br>
+MOV  AL,[BX]   ；将数据段（DS）×10H+（BX）中８位数据传送到AL<br>
+MOV  AX,[BP]　；将堆栈段（SS）×10H+（BP）中１６位数据传送到AX<br>
+MOV  CH,ES:[BX]　；将附加段（ES）×10H+（BX）中８位数据传送到AX<br>
+MOV  [SI],1234H　；将立即数1234H传送到数据段（DS）×10H+（SI）<br>
+MOV  ES:[DI],78H ；将立即数78H传送到附加段（ES）×10H+（DI）</p>
+<p>在寄存器间接寻址中，用基址寄存器BX和BP间接寻址的，又称为基址寻址。<br>
+用变址寄存器SI和DI间接寻址的称为变址寻址。</p>
+<ul>
+<li>注意：<br>
+寄存器间接寻址和寄存器寻址的区别是，前者寄存器中存放的是操作数的有效地址，后者寄存器中存放的是操作数。<br>
+寄存器间接寻址既可以用于源操作数，也可以用于目的操作数，但不可以在一条指令中同时使用。</li>
+</ul>
+<h3 id="寄存器相对寻址方式">寄存器相对寻址方式</h3>
+<p>寄存器的内容与位移量之和形成操作数的有效地址。<br>
+即： EA=(寄存器)+位移量。位移量是一个带符号的数，可以是8位、16位或32位。</p>
+<p>(1) 16位寻址：EA={(BX)、(BP)、(SI)、(DI)}+位移量(带符号8或16位整数)，BX默认段寄存器DS，BP默认段寄存器SS。<br>
+8位位移量范围：-128~+127<br>
+16位位移量范围：-32768~+32767<br>
+举例：<br>
+MOV  AL,[BX+10H] ；源操作数在数据段， EA=（BX）+10H<br>
+MOV  AX,[BP+30H] ；源操作数在堆栈段， EA=（BP）+30H<br>
+MOV  [DI+34H],1234H  ；目的操作数在数据段， EA=（DI）+34H<br>
+MOV  ES:[DI+20H],78H  ; 目的操作数在附加段， EA=（DI）+20H<br>
+(2) 32位寻址：EA=(8个32位通用寄存器)+位移量(带符号8、16或32位整数)</p>
+<ul>
+<li>注意：指令格式中的位移量既可以是常数，也可以是符号地址；允许和寄存器一起写在方括号内（“+”不能省略），也允许单独卸载方括号外（“+”可省略）。</li>
+</ul>
+<p>例：MOV  AX,[SI+10H]    =      MOV  AX,10H [SI]<br>
+MOV  BX,[DI+COUNT]     =     MOV  BX,COUNT [DI]<br>
+MOV AX，2040H[BX]  =    MOV AX，[BX+2040H]；DS段(DS)*10H+(BX)+2040H中的字数据送AX<br>
+MOV AX，2040H[SI]   =   MOV AX，[SI+2040H]；DS段(DS)*10H+(SI)+2040H中的字数据送AX</p>
+<p>对一维数组的操作寻址非常方便</p>
+<h3 id="基址加变址寻址方式">基址加变址寻址方式</h3>
+<p>EA=(基址寄存器)+(变址寄存器) ，由基址寄存器来决定默认的段寄存器（段基址寄存器）</p>
+<p>举例：<br>
+MOV  AL,[BX+SI] ;将数据段（DS）×10H+（BX）＋（SI）中的数据传送到AL<br>
+MOV  AX,[BP+DI] ;将堆栈段（SS）×10H+（BP）＋（DI）中的数据传送到AX<br>
+MOV  CH,ES:[BX+SI] ;将附加段（ES）×10H+（BX）＋（SI）中的数据传送到CH<br>
+MOV  [BX+DI],34H ;将立即数34H传送到数据段（DS）×10H+（BX）＋（DI）</p>
+<p>对于二维数组的操作处理很方便</p>
+<h3 id="带位移的基址加变址寻址方式">带位移的基址加变址寻址方式</h3>
+<p>EA=(变址寄存器)+(基址寄存器)+偏移量</p>
+<h3 id="比例变址寻址">比例变址寻址</h3>
+<p>EA=（变址寄存器）×比例因子，比例因子可取2、4或8<br>
+例如：MOV EAX, [ESI*4]</p>
+<h3 id="带位移的比例变址寻址">带位移的比例变址寻址</h3>
+<p>EA=(变址寄存器) ×比例因子+位移量<br>
+例如：<br>
+MOV  EAX，1200H[ESI<em>4]<br>
+MOV  EAX, TABLE[ESI</em>4]</p>
+<h3 id="基址加比例变址寻址32位寻址">基址加比例变址寻址（32位寻址）</h3>
+<p>EA= (基址寄存器) +(变址寄存器)<em>比例因子<br>
+如：MOV  AX，[ESI+EBX</em>4]（默认段DS）</p>
+<h3 id="带位移的基址加比例变址寻址">带位移的基址加比例变址寻址</h3>
+<p>EA =(基址寄存器)+(变址寄存器)<em>比例因子+位移量<br>
+如：MOV AX，[EBX+EDI</em>8+40H]<br>
+MOV ECX，2000H[EDX*4][EAX]</p>
+<ul>
+<li>比例变址寻址、带位移的比例变址寻址、基址加比例变址寻址、带位移的基址加比例变址寻址只适用于32位寻址方式。</li>
+</ul>
+<h3 id="寄存器间接寻址的默认段">寄存器间接寻址的默认段</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">段寄存器</th>
+<th style="text-align:center">16位寄存器</th>
+<th style="text-align:center">32位寄存器</th>
+<th style="text-align:center">寄存器寻址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">CS</td>
+<td style="text-align:center">IP</td>
+<td style="text-align:center">EIP</td>
+<td style="text-align:center">代码段</td>
+</tr>
+<tr>
+<td style="text-align:center">SS</td>
+<td style="text-align:center">SP或BP</td>
+<td style="text-align:center">ESP或EBP</td>
+<td style="text-align:center">堆栈段</td>
+</tr>
+<tr>
+<td style="text-align:center">DS</td>
+<td style="text-align:center">BX、DI、SI</td>
+<td style="text-align:center">EAX、EBX、ECX、EDX、EDI、ESI</td>
+<td style="text-align:center">数据段</td>
+</tr>
+<tr>
+<td style="text-align:center">ES</td>
+<td style="text-align:center">串指令的DI</td>
+<td style="text-align:center">串指令的EDI</td>
+<td style="text-align:center">附加段</td>
+</tr>
+<tr>
+<td style="text-align:center">FS</td>
+<td style="text-align:center">无默认值</td>
+<td style="text-align:center">无默认值</td>
+<td style="text-align:center">附加段</td>
+</tr>
+<tr>
+<td style="text-align:center">GS</td>
+<td style="text-align:center">无默认值</td>
+<td style="text-align:center">无默认值</td>
+<td style="text-align:center">附加段</td>
+</tr>
+</tbody>
+</table>
+<h2 id="指令系统">指令系统</h2>
+<p>8086的指令系统分为整数指令、浮点数指令和操作系统指令。</p>
+<ul>
+<li>整数指令：数据传送类、算术运算类、逻辑运算类、串操作类、控制转移类、处理器控制类指令等。</li>
+<li>浮点数指令：数据传送、算术运算、比较、超越函数、常量、控制等指令。</li>
+</ul>
+<h3 id="指令操作数符号说明">指令操作数符号说明：</h3>
+<p>ac: 累加器(AL, AX)<br>
+reg  ：通用寄存器。长度可以是8位、16位<br>
+reg8、reg16：8位、16位通用寄存器<br>
+seg  ：段寄存器<br>
+mem   ：存储器。长度可以是8位、16位<br>
+mem8、mem16 ：8位、16位存储器<br>
+imm   ：立即数。长度可以是8位、16位<br>
+imm8、imm16：8位、16位<br>
+Port: I/O端口<br>
+src：源操作数<br>
+dst：目标操作数<br>
+OP1，OP2，OP3：操作数<br>
+exp: 表达式</p>
+<h3 id="与运算有关的标志">与运算有关的标志</h3>
+<p>标志寄存器FR中存放运算结果的属性。<br>
+CF：进位/借位标志。加、减运算最高位产生进位/借位时置1。<br>
+AF：辅助进位/借位标志。加、减运算时低半字节位产生进位<br>
+/借位时置1。<br>
+OF：溢出标志。有符号数二进制加、减运算结果超出范围时<br>
+置1。<br>
+ZF：零标志。结果为零时置1。<br>
+SF：符号标志。结果为负时置1。<br>
+PF：奇偶标志。结果“1”的个数为偶数时置1。</p>
+<h3 id="指令执行对标志位影响的符号说明">指令执行对标志位影响的符号说明：</h3>
+<p>x ：表示相应标志位状态依运算或操作结果决定<br>
+0 : 表示相应标志位无条件清“0”<br>
+1 ：表示相应标志位无条件置“1”<br>
+u : 表示相应标志位状态未定义,状态随机</p>
+<ul>
+<li>: 表示相应标志位状态不受影响,保持原状态<br>
+r ： 恢复原来保存的值 （如执行POPF）</li>
+</ul>
+<h3 id="数据传送指令">数据传送指令</h3>
+<p>数据传送指令负责把数据、地址或立即数传送到寄存器、存储器或端口号寄存器。它相对于高级语言里的赋值语句。<br>
+通用数据传送：MOV    PUSH     POP    XCHG<br>
+累加器专用传送（输入输出）：  IN    OUT    XLAT<br>
+地址传送：  LEA   LDS    LES<br>
+标志寄存器传送：  LAHF    SAHF      PUSHF     POPF<br>
+类型转换指令：CBW   CWD</p>
+<ul>
+<li>这类指令一般不影响标志位</li>
+</ul>
+<h3 id="通用数据传送指令">通用数据传送指令</h3>
+<h4 id="mov传送指令">MOV传送指令</h4>
+<p>格式： MOV    Seg/Reg/Mem， Seg/Reg/Mem/Imm<br>
+其中：Seg—（段寄存器），Reg—Register（通用寄存器），Mem—Memory（存储器），Imm—Immediate（立即数），它们可以是8位、16位。<br>
+功能：指令的功能是把源操作数（第二操作数）的值传给目的操作数（第一操作数）。指令执行后，目的操作数的值被改变，而源操作数的值不变。在存储单元是该指令的一个操作数时，该操作数的寻址方式可以是任意一种存储单元寻址方式。</p>
+<ul>
+<li>注意：对MOV指令有以下几条具体规定，其中有些规定对其它指令也同样有效。<br>
+1）两个操作数的数据类型要相同，要同为8位、16位<br>
+2）两个操作数不能同时为段寄存器<br>
+3）代码段寄存器CS不能为目的操作数，但可作为源操作数<br>
+4）立即数不能直接传给段寄存器<br>
+5）立即数不能作为目的操作数<br>
+6）指令指针IP，不能作为MOV指令的操作数<br>
+7）两个操作数不能同时为存储单元</li>
+</ul>
+<h4 id="xchg数据交换指令">XCHG数据交换指令</h4>
+<p>指令的格式为：XCHG	reg/mem，reg/mem<br>
+功能：将源操作数与目的操作数相交换。 （字节或字）<br>
+说明：交换能在通用寄存器之间、通用寄存器与存储器之间进行。但段寄存器和立即数不能作为操作数。存储器之间不能直接进行数据交换。</p>
+<h4 id="堆栈指令">堆栈指令</h4>
+<p>堆栈是一个特殊的存储区域，用于存储在程序执行过程中需要保存的信息，如在子程序调用过程中的“断点”和“现场”等。<br>
+堆栈采用的是“后进先出”向低地址方向生成的数据结构，即栈底为高地址方向，栈顶为低地址方向。由堆栈指针SP指示栈顶的数据，当堆栈为空时，SP指向栈底。堆栈以字、双字为单位存取数据（不允许字节数据）。<br>
+它主要有两大类操作：进栈操作和出栈操作。</p>
+<h5 id="入栈指令push">入栈指令PUSH</h5>
+<p>指令格式：PUSH　Seg/Reg/Mem<br>
+一个字进栈，系统自动完成两步操作：SP←SP-2，（SP）←操作数；<br>
+功能：将寄存器、段寄存器或存储器中的一个字数据压入堆栈，堆栈指针减2。</p>
+<h5 id="出栈指令pop">出栈指令POP</h5>
+<p>指令格式：POP　Seg/Reg/Mem<br>
+弹出一个字，系统自动完成两步操作： 操作数←（SP)，SP←SP+2；<br>
+功能：将栈顶元素弹出送至某一寄存器、段寄存器（除CS外）或存储器，堆栈指针加2。</p>
+<h4 id="其他堆栈操作指令">其他堆栈操作指令</h4>
+<h5 id="所有寄存器进栈指令pusha">所有寄存器进栈指令PUSHA</h5>
+<p>指令的格式为：PUSHA<br>
+功能：16位通用寄存器依次进栈，次序为AX、CX、DX、BX，指令执行前的SP、BP、SI、DI。指令执行后(SP)-16→(SP)仍指向栈顶。</p>
+<h5 id="所有寄存器出栈指令popa">所有寄存器出栈指令POPA</h5>
+<p>指令的格式为：POPA<br>
+功能：16位通用寄存器依次出栈，次序为DI、SI、BP、SP，指令执行前的BX、DX、CX、AX。指令执行后(SP)+16→(SP) 仍指向栈顶。需要说明的是：SP出栈只是修改了指针使其后的BX能够出栈，而堆栈中原先由PUSHA指令存入的SP的原始内容被丢弃，并未真正送到SP寄存器中。</p>
+<ul>
+<li>上述两条堆栈指令均不影响标志位</li>
+</ul>
+<h4 id="累加器专用传送指令">累加器专用传送指令</h4>
+<h5 id="xlat-查表转换指令">XLAT   查表转换指令</h5>
+<p>转换指令有两个隐含操作数BX和AL。<br>
+格式：XLAT    OPR 或  XLAT<br>
+执行操作： AL←（（BX）+（AL））<br>
+功能：BX指向表的首地址(DS段内)，AL装入要转换的代码在表中的序号，并将XLAT指令执行的结果存于AL中。 （查表得到字节数据送入AL中。）</p>
+<h4 id="io数据传送指令">I/O数据传送指令</h4>
+<p>这组指令仅限于使用累加器AX或AL传送信息。</p>
+<p>8086中，所有I/O端口与CPU之间的通信都由IN和OUT指令来完成。其中IN指令完成从I/O端口到CPU的数据传送（输入），OUT指令完成从CPU到I/O端口的数据传送（输出）。外部设备最多有216个I/O端口，端口号为0000～0FFFFH。其中前256个端口（00～0FFH）可以直接在指令中指定，这就是所谓的长格式。当端口号≥256时，只能使用短格式，此时必须先将端口号放到DX寄存器中（端口号为0000～0FFFFH），然后再用IN和OUT指令来传送信息。<br>
+（注意：这里的端口号或DX的内容均为地址，而传送的是端口中的信息，在使用短格式时，DX内容就是端口号本身）。</p>
+<h5 id="输入指令in将端口的数据送入cpu累加器">输入指令IN（将端口的数据送入CPU累加器）</h5>
+<p>输入指令用来从指定的外设寄存器取信息送入累加器。它有几种形式：</p>
+<p>长格式：         IN   AL, PORT （字节）<br>
+（00H~FFH）      IN   AX, PORT  （字）<br>
+执行操作：（AL）← （PORT）                  （字节）<br>
+（AX） ←（PORT+1,  PORT）（字）</p>
+<p>短格式：      IN   AL, DX   （字节）<br>
+（大于00FFH）  IN   AX, DX   （字）<br>
+执行操作：（AL）←（（DX））               （字节）<br>
+（AX）←（（DX）+1,（DX））（字）</p>
+<ul>
+<li>注意：该指令的作用是从端口中读入一个字节或字，并保存在寄存器AL或AX中。如果某输入设备的端口地址在0 ~ 255（00H ~ FFH）范围之内，那么，可在指令IN中直接给出，否则，要把该端口地址先存入寄存器DX中，然后在指令中由DX来给出其端口地址。</li>
+</ul>
+<p>例如：<br>
+IN   AL， 60H  ；从端口60H读入一个字节到AL中<br>
+IN   AX，20H  ；把端口20H、21H按“高高低低”组成的字读入AX<br>
+MOV   DX，2F8H<br>
+IN    AL，DX ；从端口2F8H读入一个字节到AL中<br>
+IN    AX，DX；把端口2F8H、2F9H按“高高低低”组成的字读入AX<br>
+IN  AL，0FAH   ；从端口0FAH读一个字节到AL<br>
+MOV DX，3AEH；  I/O地址大于255时．应通过DX间接寻址，不允许加放括号<br>
+IN  AX，DX   ；从DX指定的端口读入一个字到AX</p>
+<h5 id="out输出指令将cpu累加器中数据写入端口">OUT输出指令（将CPU累加器中数据写入端口）</h5>
+<p>输出指令用来把累加器的内容送往指定的外设存储器，它有几种形式：</p>
+<p>长格式：       OUT   PORT, AL  （字节）<br>
+（00H~FFH）    OUT   PORT, AX  （字）<br>
+执行操作：（PORT）←（AL）                 （字节）<br>
+（PORT+1, PORT）←（AX）（字）</p>
+<p>短格式：        OUT   DX, AL  （字节）<br>
+（大于00FFH）    OUT   DX, AX  （字）<br>
+执行操作：（（DX））←（AL）               （字节）<br>
+（（DX）+1,（DX））←（AX）（字）</p>
+<ul>
+<li>注意：该指令的作用是把寄存器AL或AX的内容输出到指定端口。如果某输出设备的端口地址在0~255范围之内，那么，可在指令OUT中直接给出，否则，要把该端口地址先存入寄存器DX中，然后在指令中由DX来给出其端口地址。</li>
+</ul>
+<p>例如：<br>
+OUT   61H，AL；把AL的内容输出到端口61H中<br>
+OUT   20H，AX；把AX的内容输出到端口20H、21H中<br>
+MOV  DX， 3C0H<br>
+OUT   DX，AL；把AL的内容输出到端口3C0H中<br>
+OUT   DX，AX；把AX的内容输出到端口3C0H、3C1H中</p>
+<h4 id="地址传送指令">地址传送指令</h4>
+<p>这一组指令完成将地址送到指定的寄存器的功能。</p>
+<h5 id="有效地址送寄存器指令lea-load-effective-address">有效地址送寄存器指令LEA (Load Effective Address)</h5>
+<p>指令的格式为：LEA	dst，src<br>
+功能：将源操作数的有效地址送到指定的寄存器中。<br>
+说明：①源操作数必须是一个内存操作数；②目的操作数必须是一个16位的通用寄存器。这条指令通常用来建立串操作指令所须的寄存器指针。</p>
+<h5 id="指针送寄存器及相应段寄存器指令lds和les">指针送寄存器及相应段寄存器指令LDS和LES</h5>
+<h6 id="lds-load-pointer-into-ds">LDS (Load pointer into DS)</h6>
+<p>指令的格式为： LDS  REG，OPS<br>
+功能：完成一个地址指针的传送。地址指针包括段地址部分和偏移量部分。指令将段地址（EA+2）送入DS，偏移量部分(EA)送入一个16位的基址寄存器或变址寄存器。<br>
+要求：源操作数必须是存储器寻址，目的操作数是16位通用寄存器。<br>
+例如：LDS  SI，[BX] ；将把BX所指的32位地址指针的段地址部分送入DS，偏移量部分送入SI。<br>
+本组指令的目的寄存器不允许使用段寄存器，且不影响标志位。</p>
+<h6 id="les-load-pointer-into-es">LES (Load pointer into ES)</h6>
+<p>指令的格式为： LES  REG，OPS<br>
+这条指令除将地址指针的段地址部分送入ES外，与LDS类似。<br>
+例如： LES  DI，[BX+COUNT]</p>
+<h4 id="标志寄存器传送指令">标志寄存器传送指令</h4>
+<h5 id="标志送ah指令-lahf">标志送AH指令： LAHF</h5>
+<p>执行操作：（AH）←（FLAGS的低八位，只送状态位进入对应位置，其余位空着）</p>
+<h5 id="ah送标志寄存器指令sahf">AH送标志寄存器指令：SAHF</h5>
+<p>执行操作：   （FLAGS的低八位）←（AH）</p>
+<h5 id="标志进栈指令pushf">标志进栈指令：PUSHF</h5>
+<p>执行操作： （SP）←（SP） - 2<br>
+（（SP）+1,  （SP））←（FLAGS）</p>
+<h5 id="标志出栈指令popf">标志出栈指令：POPF</h5>
+<p>执行操作： （FLAGS）←（（SP）+1,（SP））<br>
+（SP）←（SP）+ 2</p>
+<h3 id="算术运算指令">算术运算指令</h3>
+<p>算术运算指令是反映CPU计算能力的一组指令，也是编程时常使用的一组指令。它包括：加、减、乘、除及其相关的辅助指令。</p>
+<p>该组指令的操作数可以是8位、16位,也可以是压缩、非压缩BCD码。算术运算指令一般会影响FR 寄存器中的状态标志位。</p>
+<p>加法指令      ADD、ADC、INC<br>
+减法指令      SUB、SBB、DEC、NEG、CMP<br>
+乘法指令      MUL、IMUL<br>
+除法指令      DIV、IDIV<br>
+十进制调整指令      DAA、DAS、 AAA、AAS、AAM、AAD</p>
+<h4 id="加法指令">加法指令</h4>
+<h5 id="不带进位的加法指令-add-dstsrc">不带进位的加法指令：    ADD  DST，SRC</h5>
+<p>功能：将目的操作数与源操作数相加，结果存入目的地址中，源地址的内容不改变。<br>
+执行操作：（DST）← （SRC）+（DST）</p>
+<h5 id="带进位加法指令-adc-dstsrc">带进位加法指令：  ADC  DST，SRC</h5>
+<p>功能：将目的操作数加源操作数再加低位进位，结果送目的地址。执行操作：（DST） （SRC）+（DST）+ CF</p>
+<h5 id="加1指令-inc-dst">加1指令：        INC  DST</h5>
+<p>功能：将目的操作数加1，结果送目的地址。<br>
+执行操作：  （DST）← （DST）+ 1<br>
+注意:  除INC指令不影响CF标志外，均对条件(状态)标志位有影响。<br>
+INC常用于: 寄存器或存储器单元自增，修改计数器或地址, 比加法指令简便、效率高。</p>
+<h4 id="减法指令">减法指令</h4>
+<h5 id="减法指令-sub-dstsrc">减法指令： SUB  DST，SRC</h5>
+<p>功能：目的操作数减去源操作数，结果存于目的地址，源地址的内容不变。<br>
+执行操作：  （DST）←（DST）- （SRC）</p>
+<h5 id="带借位减法指令-sbb-dstsrc">带借位减法指令： SBB  DST，SRC</h5>
+<p>功能：目的操作数减源操作数再减低位借位CF，结果送目的地址<br>
+执行操作：  （DST）←（DST） - （SRC）- CF</p>
+<h5 id="减1指令-dec-opr">减1指令： DEC  OPR</h5>
+<p>功能：将目的操作数减1，结果送目的地址。<br>
+执行操作：   （OPR） ← （OPR） - 1</p>
+<h5 id="求补指令-neg-opr">求补指令： NEG  OPR</h5>
+<p>功能：将目的操作数的每一位求反（包括符号位）后加1，结果送目的地址。<br>
+（正变负，用补码表示；负变正，用源码表示。）<br>
+执行操作：（OPR） ←  - （OPR）<br>
+NEG指令的功能:改变操作数的符号可用于取操作数的绝对</p>
+<h5 id="比较指令-cmp-opr1-opr2">比较指令： CMP  OPR1, OPR2</h5>
+<p>功能：目的操作数减源操作数，结果只影响标志位，不送入目的地址。比较指令执行后，源操作数和目的操作数都保持不变，程序通过测试CMP指令执行后形成的标志位来判断两数的大小。<br>
+执行操作：（OPR1） - （OPR2）</p>
+<p>注意:  除DEC指令不影响 CF标志外，均对状态标志位有影响。</p>
+<table border=0 cellpadding=0 cellspacing=0 width=448 style='border-collapse:
+ collapse;table-layout:fixed;width:336pt'>
+ <col width=64 span=7 style='width:48pt'>
+ <tr height=18 style='height:13.8pt'>
+  <td colspan=3 height=18 class=xl6329631 width=192 style='height:13.8pt;
+  width:144pt'>标志位</td>
+  <td class=xl6329631 width=64 style='border-left:none;width:48pt'>CF</td>
+  <td class=xl6329631 width=64 style='border-left:none;width:48pt'>ZF</td>
+  <td class=xl6329631 width=64 style='border-left:none;width:48pt'>SF</td>
+  <td class=xl6329631 width=64 style='border-left:none;width:48pt'>OF</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td colspan=3 height=18 class=xl6329631 style='height:13.8pt'>A = B</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>0</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>1</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>0</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>0</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td colspan=2 rowspan=2 height=36 class=xl6329631 style='height:27.6pt'>无符号数</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>A&gt;B</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>0</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>0</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>-</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>-</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl6329631 style='height:13.8pt;border-top:none;
+  border-left:none'>A&lt;B</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>1</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>0</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>-</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>-</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td rowspan=6 height=108 class=xl6329631 style='height:82.8pt;border-top:
+  none'>有符号数</td>
+  <td rowspan=2 class=xl6329631 style='border-top:none'>A、B同号</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>A&gt;B</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>-</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>0</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>0</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>0</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl6329631 style='height:13.8pt;border-top:none;
+  border-left:none'>A&lt;B</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>-</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>0</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>1</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>0</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td rowspan=4 height=72 class=xl6329631 style='height:55.2pt;border-top:none'>A、B异号</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>A&gt;B</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>-</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>0</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>0</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>0</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl6329631 style='height:13.8pt;border-top:none;
+  border-left:none'>A&lt;B</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>-</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>0</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>1</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>0</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl6329631 style='height:13.8pt;border-top:none;
+  border-left:none'>A&gt;B</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>-</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>0</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>0</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>1</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl6329631 style='height:13.8pt;border-top:none;
+  border-left:none'>A&lt;B</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>-</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>0</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>1</td>
+  <td class=xl6329631 style='border-top:none;border-left:none'>1</td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+ </tr>
+ <![endif]>
+</table>
+<p>说明：<br>
+（1）无论A和B是有符号数还是无符号数，若ZF=1且CF=SF=OF=0.则A=B。<br>
+（2）A、B为无符号数，判断他们的大小，使用CF和ZF。若CF=0且ZF=0，则A&gt;B；若CF=1且ZF=0，则A&lt;B。<br>
+（3）A、B为有符号数，判断他们的大小，使用SF、OF和ZF。当A、B同号或异号时，SF和OF形成的标志位有区别，若ZF=0且OF⊕SF=1，则A&lt;B；若ZF=0且OF⊕SF=0，则A&gt;B。</p>
+<h4 id="乘法指令">乘法指令</h4>
+<p>乘法指令影响OF和CF标志：<br>
+MUL指令——若乘积的高一半（AH或DX）为0，则OF=CF=0；否则OF=CF=1。（用来检查字节相乘的结果是字节还是字，或字相乘的结果是字还是双字）<br>
+IMUL指令——若乘积的高一半是低一半的符号扩展，则OF=CF=0；否则均为1。</p>
+<p>乘法指令对其他状态标志没有定义：<br>
+指令执行后这些标志是任意的、不可预测（就是谁也不知道是0还是1）。<br>
+对标志没有影响是指令的执行不改变标志的状态。<br>
+注意:乘法指令中的源操作数可以是除立即数以外的任何一种寻址方式.</p>
+<h5 id="无符号数乘法指令-mul-src">无符号数乘法指令：        MUL   SRC</h5>
+<p>功能： 若是字节数据相乘，（AL）与SRC相乘得到字数据存入AX中；若是字数据相乘，则（AX）与SRC相乘得到双字数据，高字存入DX、低字存入AX中。</p>
+<p>执行操作：字节操作数  （AX）←（AL） ×（SRC）<br>
+字操作数      （DX，AX）←（AX） × （SRC）</p>
+<h5 id="有符号数乘法指令-imul-src">有符号数乘法指令：        IMUL  SRC</h5>
+<p>注：IMUL指令除计算对象是带符号二进制数外，其他都与MUL一样，但计算结果不同。</p>
+<h4 id="除法指令">除法指令</h4>
+<p>当被除数远大于除数时，所得的商就有可能超出它所能表达的范围。如果存放商的寄存器AL/AX不能表达，便产生溢出，8086CPU中就产生编号为0的内部中断——除法错中断。</p>
+<p>说明：<br>
+1）对DIV指令，除数为0，或者在字节除时商超过8位，或者在字除时商超过16位，则发生除法溢出。<br>
+2）对IDIV指令，除数为0，或者在字节除时商不在-128～127范围内，或者在字除时商不在-32768～32767范围内，则发生除法溢出。</p>
+<h5 id="无符号数除法指令-div-src">无符号数除法指令：   DIV  SRC</h5>
+<h5 id="带符号数除法指令-idiv-src">带符号数除法指令：   IDIV  SRC</h5>
+<p>执行操作：<br>
+字节操作  （AL）←（AX）/（SRC）的商<br>
+（AH）←（AX）/（SRC） 的余数</p>
+<p>字操作      （AX）←（DX：AX）/（SRC）的商<br>
+（DX） ←（DX：AX）/（SRC） 的余数</p>
+<p>注意：除法指令DIV和IDIV虽然对标志的影响未定义，但可产生溢出。</p>
+<p>例：<br>
+无符号除法：<br>
+MOV AX，0400H      ；AX=400H=1024<br>
+MOV BL，0B4H         ；BL=B4H=180<br>
+DIV BL                          ；商AL＝05H＝5；余数AH＝7CH＝124</p>
+<p>有符号除法：<br>
+MOV AX，0400H      ；AX=400H=1024<br>
+MOV BL，0B4H         ；BL=B4H=－76<br>
+IDIV BL                         ；商AL＝F3H＝－13；余数AH＝24H＝36</p>
+<p>注：带符号除法的余数符号和被除数符号相同。</p>
+<h4 id="类型转换指令指令">类型转换指令指令</h4>
+<h5 id="字节扩展为字指令-cbw-al-ax">字节扩展为字指令  CBW          AL ← AX</h5>
+<p>执行操作： 若（AL）的最高有效位为0，则（AH)= 00H<br>
+若（AL）的最高有效位为1，则（AH)= FFH</p>
+<h5 id="字扩展成双字指令cwd-ax-dxax">字扩展成双字指令CWD         AX ← （DX,AX）</h5>
+<p>执行操作：若（AX）的最高有效位为0，则（DX)= 0000H<br>
+若（AX）的最高有效位为1，则（DX)= FFFFH</p>
+<h4 id="十进制调整指令">十进制调整指令</h4>
+<p>BCD码（8421码）：用二进制编码的十进制数，又称二--十进制数</p>
+<p>压缩的BCD码（组合型）：用 4 位二进制数表示 1 位十进制数<br>
+例： （59）<sub>10</sub> ＝（0101 1001）<sub>BCD</p>
+<p>非压缩的BCD码（非组合型）：用 8 位二进制数表示 1 位十进制数<br>
+例：（ 59 ）<sub>10</sub> ＝ （0000 0101   0000 1001 ）<sub>BCD</p>
+<h5 id="压缩的bcd码调整指令">压缩的BCD码调整指令</h5>
+<p>DAA      加法的十进制调整指令<br>
+（将AL中的和调整为压缩BCD数）<br>
+DAS      减法的十进制调整指令<br>
+（将AL中的差调整为压缩BCD数）</p>
+<h5 id="非压缩的bcd码调整指令">非压缩的BCD码调整指令</h5>
+<p>AAA      加法的ASCII码调整指令<br>
+（将AL中的和调整为非压缩BCD数）<br>
+AAS      减法的ASCII码调整指令<br>
+(将AL中的差调整为非压缩BCD数)<br>
+AAM      乘法的ASCII码调整指令<br>
+(将AL中的积调整为非压缩BCD)<br>
+AAD      除法的ASCII码调整指令<br>
+(调整AX中的被除数,相除的商即为非压缩BCD数)</p>
+<h4 id="进位标志cfcarry-flag">进位标志CF（Carry Flag）</h4>
+<p>当运算结果的最高有效位有进位（加法）或借位（减法）时，进位标志置1，即CF = 1；否则CF = 0。</p>
+<p>例如：<br>
+3AH + 7CH＝B6H，没有进位：CF = 0<br>
+AAH + 7CH＝（1）26H，有进位：CF = 1</p>
+<h4 id="零标志zfzero-flag">零标志ZF（Zero Flag）</h4>
+<p>若运算结果为0，则ZF = 1，否则ZF = 0。<br>
+例如：<br>
+3AH + 7CH＝B6H，结果不是零：ZF = 0<br>
+86H + 7CH＝（1）00H，结果是零：ZF = 1<br>
+注意：ZF为1表示的结果是0。</p>
+<h4 id="符号标志sfsign-flag">符号标志SF（Sign Flag）</h4>
+<p>运算结果最高位为1，则SF = 1；否则SF = 0。<br>
+例如：<br>
+3AH + 7CH＝B6H，最高位D7＝1：SF = 1<br>
+86H + 7CH＝（1）00H，最高位D7＝0：SF = 0</p>
+<p>注意：有符号数据利用最高有效位表示数据的符号。所以，最高有效位就是符号标志的状态。</p>
+<h4 id="奇偶标志pfparity-flag">奇偶标志PF（Parity Flag）</h4>
+<p>当运算结果最低字节中“1”的个数为零或偶数时，PF = 1；否则PF = 0。<br>
+例如：<br>
+3AH + 7CH＝B6H＝10110110B，<br>
+结果中有5个1，是奇数：PF = 0</p>
+<p>注意：PF标志仅反映最低8位中“1”的个数是偶或奇，即使是进行16位字操作。</p>
+<h4 id="辅助进位标志afauxiliary-carry-flag">辅助进位标志AF（Auxiliary Carry Flag）</h4>
+<p>运算时D3位（低半字节）有进位或借位时，AF = 1；否则AF = 0。</p>
+<p>例如：<br>
+3AH + 7CH＝B6H，D3有进位：AF = 1</p>
+<p>注意：这个标志主要由处理器内部使用，用于十进制算术运算指令中，用户一般不必关心。</p>
+<h4 id="溢出标志ofoverflow-flag">溢出标志OF（Overflow Flag）</h4>
+<p>若算术运算的结果有溢出，则OF=1；否则 OF＝0。<br>
+例如：<br>
+3AH + 7CH＝B6H，产生溢出：OF = 1<br>
+AAH + 7CH＝（1）26H，没有溢出：OF = 0</p>
+<h3 id="逻辑指令">逻辑指令</h3>
+<p>逻辑指令包括逻辑运算指令和移位操作指令两大类。<br>
+其中逻辑运算指令是一组重要的指令，它包括：逻辑与（AND）、逻辑或（OR）、逻辑非（NOT）和异或指令（XOR），逻辑运算指令也是经常使用的指令。<br>
+移位操作指令是另一组经常使用的指令，它包括算术移位、逻辑移位、双精度移位、循环移位和带进位的循环移位等五大类。</p>
 <h1 id="第四章-汇编语言及其程序设计">第四章 汇编语言及其程序设计</h1>
 <h1 id="第五章-存储器">第五章 存储器</h1>
 <h1 id="第六章-中断技术">第六章 中断技术</h1>
@@ -902,7 +1594,7 @@ S4和S3组合使用，用于指出当前正在使用哪个段寄存器。</li>
                         
                             <div class="post-toc">
                                 <ul class="markdownIt-TOC">
-<li><a href="#%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0%E6%97%B6%E9%97%B42020325">⏰最后更新时间：2020.3.25</a></li>
+<li><a href="#%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0%E6%97%B6%E9%97%B4202044">⏰最后更新时间：2020.4.4</a></li>
 <li><a href="#%E9%A2%84-%E5%A4%87-%E7%9F%A5-%E8%AF%86">预 备 知 识</a>
 <ul>
 <li><a href="#%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A8">微处理器</a></li>
@@ -1163,7 +1855,144 @@ S4和S3组合使用，用于指出当前正在使用哪个段寄存器。</li>
 </li>
 </ul>
 </li>
-<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F">第三章 指令系统</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F">第三章 指令系统</a>
+<ul>
+<li><a href="#%E6%8C%87%E4%BB%A4%E6%A0%BC%E5%BC%8F">指令格式</a>
+<ul>
+<li><a href="#%E5%89%8D%E7%BC%80%E5%AD%97%E6%AE%B5">前缀字段</a></li>
+<li><a href="#%E6%93%8D%E4%BD%9C%E7%A0%81%E5%AD%97%E6%AE%B51~2%E5%AD%97%E8%8A%82">操作码字段(1~2字节)</a></li>
+<li><a href="#%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E5%AD%97%E6%AE%B52%E5%AD%97%E8%8A%82">寻址方式字段（2字节）</a></li>
+<li><a href="#%E4%BD%8D%E7%A7%BB%E9%87%8F%E5%AD%97%E6%AE%B51-2%E6%88%964%E5%AD%97%E8%8A%82">位移量字段（1、2或4字节）</a></li>
+<li><a href="#%E7%AB%8B%E5%8D%B3%E6%95%B0%E5%AD%97%E6%AE%B512%E6%88%964%E5%AD%97%E8%8A%82">立即数字段(1，2或4字节)</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F">寻址方式</a>
+<ul>
+<li><a href="#11%E7%A7%8D%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E5%8F%8A%E5%AF%B9%E5%BA%94%E7%9A%84%E6%9C%89%E6%95%88%E5%9C%B0%E5%9D%80">11种寻址方式及对应的有效地址</a></li>
+<li><a href="#%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E5%88%86%E7%B1%BB">寻址方式分类</a></li>
+<li><a href="#%E7%AB%8B%E5%8D%B3%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F">立即寻址方式</a></li>
+<li><a href="#%E7%9B%B4%E6%8E%A5%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F">直接寻址方式</a></li>
+<li><a href="#%E5%AF%84%E5%AD%98%E5%99%A8%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F">寄存器寻址方式</a></li>
+<li><a href="#%E5%AF%84%E5%AD%98%E5%99%A8%E9%97%B4%E6%8E%A5%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F">寄存器间接寻址方式</a></li>
+<li><a href="#%E5%AF%84%E5%AD%98%E5%99%A8%E7%9B%B8%E5%AF%B9%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F">寄存器相对寻址方式</a></li>
+<li><a href="#%E5%9F%BA%E5%9D%80%E5%8A%A0%E5%8F%98%E5%9D%80%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F">基址加变址寻址方式</a></li>
+<li><a href="#%E5%B8%A6%E4%BD%8D%E7%A7%BB%E7%9A%84%E5%9F%BA%E5%9D%80%E5%8A%A0%E5%8F%98%E5%9D%80%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F">带位移的基址加变址寻址方式</a></li>
+<li><a href="#%E6%AF%94%E4%BE%8B%E5%8F%98%E5%9D%80%E5%AF%BB%E5%9D%80">比例变址寻址</a></li>
+<li><a href="#%E5%B8%A6%E4%BD%8D%E7%A7%BB%E7%9A%84%E6%AF%94%E4%BE%8B%E5%8F%98%E5%9D%80%E5%AF%BB%E5%9D%80">带位移的比例变址寻址</a></li>
+<li><a href="#%E5%9F%BA%E5%9D%80%E5%8A%A0%E6%AF%94%E4%BE%8B%E5%8F%98%E5%9D%80%E5%AF%BB%E5%9D%8032%E4%BD%8D%E5%AF%BB%E5%9D%80">基址加比例变址寻址（32位寻址）</a></li>
+<li><a href="#%E5%B8%A6%E4%BD%8D%E7%A7%BB%E7%9A%84%E5%9F%BA%E5%9D%80%E5%8A%A0%E6%AF%94%E4%BE%8B%E5%8F%98%E5%9D%80%E5%AF%BB%E5%9D%80">带位移的基址加比例变址寻址</a></li>
+<li><a href="#%E5%AF%84%E5%AD%98%E5%99%A8%E9%97%B4%E6%8E%A5%E5%AF%BB%E5%9D%80%E7%9A%84%E9%BB%98%E8%AE%A4%E6%AE%B5">寄存器间接寻址的默认段</a></li>
+</ul>
+</li>
+<li><a href="#%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F">指令系统</a>
+<ul>
+<li><a href="#%E6%8C%87%E4%BB%A4%E6%93%8D%E4%BD%9C%E6%95%B0%E7%AC%A6%E5%8F%B7%E8%AF%B4%E6%98%8E">指令操作数符号说明：</a></li>
+<li><a href="#%E4%B8%8E%E8%BF%90%E7%AE%97%E6%9C%89%E5%85%B3%E7%9A%84%E6%A0%87%E5%BF%97">与运算有关的标志</a></li>
+<li><a href="#%E6%8C%87%E4%BB%A4%E6%89%A7%E8%A1%8C%E5%AF%B9%E6%A0%87%E5%BF%97%E4%BD%8D%E5%BD%B1%E5%93%8D%E7%9A%84%E7%AC%A6%E5%8F%B7%E8%AF%B4%E6%98%8E">指令执行对标志位影响的符号说明：</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%81%E6%8C%87%E4%BB%A4">数据传送指令</a></li>
+<li><a href="#%E9%80%9A%E7%94%A8%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%81%E6%8C%87%E4%BB%A4">通用数据传送指令</a>
+<ul>
+<li><a href="#mov%E4%BC%A0%E9%80%81%E6%8C%87%E4%BB%A4">MOV传送指令</a></li>
+<li><a href="#xchg%E6%95%B0%E6%8D%AE%E4%BA%A4%E6%8D%A2%E6%8C%87%E4%BB%A4">XCHG数据交换指令</a></li>
+<li><a href="#%E5%A0%86%E6%A0%88%E6%8C%87%E4%BB%A4">堆栈指令</a>
+<ul>
+<li><a href="#%E5%85%A5%E6%A0%88%E6%8C%87%E4%BB%A4push">入栈指令PUSH</a></li>
+<li><a href="#%E5%87%BA%E6%A0%88%E6%8C%87%E4%BB%A4pop">出栈指令POP</a></li>
+</ul>
+</li>
+<li><a href="#%E5%85%B6%E4%BB%96%E5%A0%86%E6%A0%88%E6%93%8D%E4%BD%9C%E6%8C%87%E4%BB%A4">其他堆栈操作指令</a>
+<ul>
+<li><a href="#%E6%89%80%E6%9C%89%E5%AF%84%E5%AD%98%E5%99%A8%E8%BF%9B%E6%A0%88%E6%8C%87%E4%BB%A4pusha">所有寄存器进栈指令PUSHA</a></li>
+<li><a href="#%E6%89%80%E6%9C%89%E5%AF%84%E5%AD%98%E5%99%A8%E5%87%BA%E6%A0%88%E6%8C%87%E4%BB%A4popa">所有寄存器出栈指令POPA</a></li>
+</ul>
+</li>
+<li><a href="#%E7%B4%AF%E5%8A%A0%E5%99%A8%E4%B8%93%E7%94%A8%E4%BC%A0%E9%80%81%E6%8C%87%E4%BB%A4">累加器专用传送指令</a>
+<ul>
+<li><a href="#xlat-%E6%9F%A5%E8%A1%A8%E8%BD%AC%E6%8D%A2%E6%8C%87%E4%BB%A4">XLAT   查表转换指令</a></li>
+</ul>
+</li>
+<li><a href="#io%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%81%E6%8C%87%E4%BB%A4">I/O数据传送指令</a>
+<ul>
+<li><a href="#%E8%BE%93%E5%85%A5%E6%8C%87%E4%BB%A4in%E5%B0%86%E7%AB%AF%E5%8F%A3%E7%9A%84%E6%95%B0%E6%8D%AE%E9%80%81%E5%85%A5cpu%E7%B4%AF%E5%8A%A0%E5%99%A8">输入指令IN（将端口的数据送入CPU累加器）</a></li>
+<li><a href="#out%E8%BE%93%E5%87%BA%E6%8C%87%E4%BB%A4%E5%B0%86cpu%E7%B4%AF%E5%8A%A0%E5%99%A8%E4%B8%AD%E6%95%B0%E6%8D%AE%E5%86%99%E5%85%A5%E7%AB%AF%E5%8F%A3">OUT输出指令（将CPU累加器中数据写入端口）</a></li>
+</ul>
+</li>
+<li><a href="#%E5%9C%B0%E5%9D%80%E4%BC%A0%E9%80%81%E6%8C%87%E4%BB%A4">地址传送指令</a>
+<ul>
+<li><a href="#%E6%9C%89%E6%95%88%E5%9C%B0%E5%9D%80%E9%80%81%E5%AF%84%E5%AD%98%E5%99%A8%E6%8C%87%E4%BB%A4lea-load-effective-address">有效地址送寄存器指令LEA (Load Effective Address)</a></li>
+<li><a href="#%E6%8C%87%E9%92%88%E9%80%81%E5%AF%84%E5%AD%98%E5%99%A8%E5%8F%8A%E7%9B%B8%E5%BA%94%E6%AE%B5%E5%AF%84%E5%AD%98%E5%99%A8%E6%8C%87%E4%BB%A4lds%E5%92%8Cles">指针送寄存器及相应段寄存器指令LDS和LES</a>
+<ul>
+<li><a href="#lds-load-pointer-into-ds">LDS (Load pointer into DS)</a></li>
+<li><a href="#les-load-pointer-into-es">LES (Load pointer into ES)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E6%A0%87%E5%BF%97%E5%AF%84%E5%AD%98%E5%99%A8%E4%BC%A0%E9%80%81%E6%8C%87%E4%BB%A4">标志寄存器传送指令</a>
+<ul>
+<li><a href="#%E6%A0%87%E5%BF%97%E9%80%81ah%E6%8C%87%E4%BB%A4-lahf">标志送AH指令： LAHF</a></li>
+<li><a href="#ah%E9%80%81%E6%A0%87%E5%BF%97%E5%AF%84%E5%AD%98%E5%99%A8%E6%8C%87%E4%BB%A4sahf">AH送标志寄存器指令：SAHF</a></li>
+<li><a href="#%E6%A0%87%E5%BF%97%E8%BF%9B%E6%A0%88%E6%8C%87%E4%BB%A4pushf">标志进栈指令：PUSHF</a></li>
+<li><a href="#%E6%A0%87%E5%BF%97%E5%87%BA%E6%A0%88%E6%8C%87%E4%BB%A4popf">标志出栈指令：POPF</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E6%8C%87%E4%BB%A4">算术运算指令</a>
+<ul>
+<li><a href="#%E5%8A%A0%E6%B3%95%E6%8C%87%E4%BB%A4">加法指令</a>
+<ul>
+<li><a href="#%E4%B8%8D%E5%B8%A6%E8%BF%9B%E4%BD%8D%E7%9A%84%E5%8A%A0%E6%B3%95%E6%8C%87%E4%BB%A4-add-dstsrc">不带进位的加法指令：    ADD  DST，SRC</a></li>
+<li><a href="#%E5%B8%A6%E8%BF%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E6%8C%87%E4%BB%A4-adc-dstsrc">带进位加法指令：  ADC  DST，SRC</a></li>
+<li><a href="#%E5%8A%A01%E6%8C%87%E4%BB%A4-inc-dst">加1指令：        INC  DST</a></li>
+</ul>
+</li>
+<li><a href="#%E5%87%8F%E6%B3%95%E6%8C%87%E4%BB%A4">减法指令</a>
+<ul>
+<li><a href="#%E5%87%8F%E6%B3%95%E6%8C%87%E4%BB%A4-sub-dstsrc">减法指令： SUB  DST，SRC</a></li>
+<li><a href="#%E5%B8%A6%E5%80%9F%E4%BD%8D%E5%87%8F%E6%B3%95%E6%8C%87%E4%BB%A4-sbb-dstsrc">带借位减法指令： SBB  DST，SRC</a></li>
+<li><a href="#%E5%87%8F1%E6%8C%87%E4%BB%A4-dec-opr">减1指令： DEC  OPR</a></li>
+<li><a href="#%E6%B1%82%E8%A1%A5%E6%8C%87%E4%BB%A4-neg-opr">求补指令： NEG  OPR</a></li>
+<li><a href="#%E6%AF%94%E8%BE%83%E6%8C%87%E4%BB%A4-cmp-opr1-opr2">比较指令： CMP  OPR1, OPR2</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B9%98%E6%B3%95%E6%8C%87%E4%BB%A4">乘法指令</a>
+<ul>
+<li><a href="#%E6%97%A0%E7%AC%A6%E5%8F%B7%E6%95%B0%E4%B9%98%E6%B3%95%E6%8C%87%E4%BB%A4-mul-src">无符号数乘法指令：        MUL   SRC</a></li>
+<li><a href="#%E6%9C%89%E7%AC%A6%E5%8F%B7%E6%95%B0%E4%B9%98%E6%B3%95%E6%8C%87%E4%BB%A4-imul-src">有符号数乘法指令：        IMUL  SRC</a></li>
+</ul>
+</li>
+<li><a href="#%E9%99%A4%E6%B3%95%E6%8C%87%E4%BB%A4">除法指令</a>
+<ul>
+<li><a href="#%E6%97%A0%E7%AC%A6%E5%8F%B7%E6%95%B0%E9%99%A4%E6%B3%95%E6%8C%87%E4%BB%A4-div-src">无符号数除法指令：   DIV  SRC</a></li>
+<li><a href="#%E5%B8%A6%E7%AC%A6%E5%8F%B7%E6%95%B0%E9%99%A4%E6%B3%95%E6%8C%87%E4%BB%A4-idiv-src">带符号数除法指令：   IDIV  SRC</a></li>
+</ul>
+</li>
+<li><a href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E6%8C%87%E4%BB%A4%E6%8C%87%E4%BB%A4">类型转换指令指令</a>
+<ul>
+<li><a href="#%E5%AD%97%E8%8A%82%E6%89%A9%E5%B1%95%E4%B8%BA%E5%AD%97%E6%8C%87%E4%BB%A4-cbw-al-ax">字节扩展为字指令  CBW          AL ← AX</a></li>
+<li><a href="#%E5%AD%97%E6%89%A9%E5%B1%95%E6%88%90%E5%8F%8C%E5%AD%97%E6%8C%87%E4%BB%A4cwd-ax-dxax">字扩展成双字指令CWD         AX ← （DX,AX）</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8D%81%E8%BF%9B%E5%88%B6%E8%B0%83%E6%95%B4%E6%8C%87%E4%BB%A4">十进制调整指令</a>
+<ul>
+<li><a href="#%E5%8E%8B%E7%BC%A9%E7%9A%84bcd%E7%A0%81%E8%B0%83%E6%95%B4%E6%8C%87%E4%BB%A4">压缩的BCD码调整指令</a></li>
+<li><a href="#%E9%9D%9E%E5%8E%8B%E7%BC%A9%E7%9A%84bcd%E7%A0%81%E8%B0%83%E6%95%B4%E6%8C%87%E4%BB%A4">非压缩的BCD码调整指令</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BF%9B%E4%BD%8D%E6%A0%87%E5%BF%97cfcarry-flag">进位标志CF（Carry Flag）</a></li>
+<li><a href="#%E9%9B%B6%E6%A0%87%E5%BF%97zfzero-flag">零标志ZF（Zero Flag）</a></li>
+<li><a href="#%E7%AC%A6%E5%8F%B7%E6%A0%87%E5%BF%97sfsign-flag">符号标志SF（Sign Flag）</a></li>
+<li><a href="#%E5%A5%87%E5%81%B6%E6%A0%87%E5%BF%97pfparity-flag">奇偶标志PF（Parity Flag）</a></li>
+<li><a href="#%E8%BE%85%E5%8A%A9%E8%BF%9B%E4%BD%8D%E6%A0%87%E5%BF%97afauxiliary-carry-flag">辅助进位标志AF（Auxiliary Carry Flag）</a></li>
+<li><a href="#%E6%BA%A2%E5%87%BA%E6%A0%87%E5%BF%97ofoverflow-flag">溢出标志OF（Overflow Flag）</a></li>
+</ul>
+</li>
+<li><a href="#%E9%80%BB%E8%BE%91%E6%8C%87%E4%BB%A4">逻辑指令</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%8F%8A%E5%85%B6%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1">第四章 汇编语言及其程序设计</a></li>
 <li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%AD%98%E5%82%A8%E5%99%A8">第五章 存储器</a></li>
 <li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E4%B8%AD%E6%96%AD%E6%8A%80%E6%9C%AF">第六章 中断技术</a></li>
@@ -1205,8 +2034,8 @@ S4和S3组合使用，用于指出当前正在使用哪个段寄存器。</li>
                         <i class="post-share"></i>
                         <span>&#x5206;&#x4EAB;:</span>
                                                                     <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://roboz-up.github.io/post/bi-ji-wei-ji-yuan-li-ji-jie-kou-ji-zhu/"><i class="fa fa-qrcode"></i></a>
-                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://roboz-up.github.io/post/bi-ji-wei-ji-yuan-li-ji-jie-kou-ji-zhu/&sharesource=qzone&title=笔记：微机原理及接口技术&pics=https://roboz-up.github.io/images/avatar.png?v=1585965232117&summary="><i class="fa fa-qq"></i></a>
-                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://roboz-up.github.io/post/bi-ji-wei-ji-yuan-li-ji-jie-kou-ji-zhu/&sharesource=weibo&title=笔记：微机原理及接口技术 + " - " + &pic="https://roboz-up.github.io/images/avatar.png?v=1585965232117 "><i class="fa fa-weibo "></i></a>
+                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://roboz-up.github.io/post/bi-ji-wei-ji-yuan-li-ji-jie-kou-ji-zhu/&sharesource=qzone&title=笔记：微机原理及接口技术&pics=https://roboz-up.github.io/images/avatar.png?v=1586013040240&summary="><i class="fa fa-qq"></i></a>
+                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://roboz-up.github.io/post/bi-ji-wei-ji-yuan-li-ji-jie-kou-ji-zhu/&sharesource=weibo&title=笔记：微机原理及接口技术 + " - " + &pic="https://roboz-up.github.io/images/avatar.png?v=1586013040240 "><i class="fa fa-weibo "></i></a>
 
                                                                     </span>
                                                                     
@@ -1391,7 +2220,7 @@ S4和S3组合使用，用于指出当前正在使用哪个段寄存器。</li>
                     CheckVersion();
                     
                     var newDate = new Date();
-                    newDate.setTime(1585965232117);
+                    newDate.setTime(1586013040240);
                     console.log(" Blog Update Time: " + newDate.toLocaleDateString());
                     console.log("\n %c \u26a1Theme:Chic Author's Blog:https://blog.itjoker.cn  Write By ITJoker  \n\n", "color: #ffffff; background: rgba(49, 49, 49, 0.85); padding:5px 0;border-radius:5px;");
                 </script>
