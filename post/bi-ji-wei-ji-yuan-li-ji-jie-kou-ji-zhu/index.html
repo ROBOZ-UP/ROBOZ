@@ -1,86 +1,196 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
- <head>
-     <meta charset="utf-8" />
-  <title>笔记：微机原理及接口技术 | ROBOZ</title>
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-  <link rel="stylesheet" href="https://roboz-up.github.io/styles/main.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-   <script src="https://cdn.staticfile.org/highlight.js/9.15.9/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
- </head>
- <body>
-     <div class="sidebar animated fadeInDown">
-   <div class="logo-title">
-    <div class="title">
-     <img src="https://roboz-up.github.io/images/avatar.png?v=1588225861357" style="width:127px;" />
+<html>
 
-     <div class="description">
-      <p>阿俊的平行空间</p>
-     </div>
-    </div>
-   </div>
-   <ul class="social-links">
+<head>
+    <meta charset="utf-8" />
+<title>
+    ROBOZ
+</title>
+<!--[if lt IE 9]><script src="//cdn.bootcss.com/html5shiv/r29/html5.js"></script><![endif]-->
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<meta name="author" content="ROBOZ">
+<meta name="description" content="阿俊的平行空间">
+<meta name="keywords" content="">
+<script async src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/css/style.min.css" />
+<link rel="stylesheet" href="https://roboz-up.github.io/styles/main.css" />
+<link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/script/tocbot.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/script/script.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/script/icon.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.12/CDN/js/Card/prism.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.12/CDN/css/Card/prism.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js"></script>
 
+        <script src="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic@latest/assets/media/script/APlayer.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+        
+            <!--CDN样式-->
+            <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@latest/CDN/js/hit-kounter-lc-0.3.0.js"></script>
+            <script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+            
+                <script>
+                    (function() {
+                        var bp = document.createElement('script');
+                        var curProtocol = window.location.protocol.split(':')[0];
+                        if (curProtocol === 'https') {
+                            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+                        } else {
+                            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                        }
+                        var s = document.getElementsByTagName("script")[0];
+                        s.parentNode.insertBefore(bp, s);
+                    })();
+                </script>
+                
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo">
+                <a href="https://roboz-up.github.io">
+                    ROBOZ
+                </a>
+            </div>
+
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/">
+                        首页
+                    </a>
+                    
+                    <a class="menu-item" href="/archives">
+                        文章
+                    </a>
+                    
+                    <a class="menu-item" href="/tags">
+                        分类
+                    </a>
+                    
+                    <a class="menu-item" href="/post/about">
+                        关于
+                    </a>
+                    
+                        <input id="switch_default" type="checkbox" class="switch_default">
+                        <label for="switch_default" class="toggleBtn"></label>
+            </div>
+            <form id="gridea-search-form" data-update="1588225993613" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
+            </form>
+        </div>
+    </nav>
 
     
+        <nav class="navbar-mobile" id="nav-mobile">
+            <div class="container">
+                <div class="navbar-header">
+                    <div>
+                        <a href="https://roboz-up.github.io">
+                            ROBOZ
+                        </a>
+                        <!--en-->
+                        <a id="mobile-toggle-theme-en" class="a en">&nbsp;Dark</a>
+                        <!--zh-->
+                        <a id="mobile-toggle-theme-zh" class="a zh">&nbsp;&#x6697;&#x9ED1;</a>
+                    </div>
+                    <form id="gridea-search-form" data-update="1588225993613" action="/search/index.html">
+                        <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
+                    </form>
+                    <!--en-->
+                    <div class="menu-toggle" id="menu-toggle-en" onclick="mobileBtn()">&#9776; Menu</div>
+                    <!--zh-->
+                    <div class="menu-toggle" id="menu-toggle-zh" onclick="mobileBtn()">&#9776; &#x83DC;&#x5355;</div>
 
-    
+                </div>
+                <div class="menu" id="mobile-menu">
+                    
+                        <a class="menu-item" href="/">
+                            首页
+                        </a>
+                        
+                        <a class="menu-item" href="/archives">
+                            文章
+                        </a>
+                        
+                        <a class="menu-item" href="/tags">
+                            分类
+                        </a>
+                        
+                        <a class="menu-item" href="/post/about">
+                            关于
+                        </a>
+                        
+                </div>
+            </div>
+        </nav>
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementById("menu-toggle-en");
+        var toggleMenu_zh = document.getElementById("menu-toggle-zh");
 
-    
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.display != "none") {
+            if (toggleMenu.classList.contains("active")) {
+                toggleMenu.classList.remove("active")
+                mobileMenu.classList.remove("active")
+            } else {
+                toggleMenu.classList.add("active")
+                mobileMenu.classList.add("active")
+            }
+        } else if (toggleMenu_zh.display != "none") {
+            if (toggleMenu_zh.classList.contains("active")) {
+                toggleMenu_zh.classList.remove("active")
+                mobileMenu.classList.remove("active")
+            } else {
+                toggleMenu_zh.classList.add("active")
+                mobileMenu.classList.add("active")
+            }
+        }
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-   </ul>
-   <div class="footer">
-    <div class="by_farbox">
-   Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-    </div>
-    
-
-    </div>
-   </div>
-  </div>
-  <div class="main">
-     <div class="page-top animated fadeInDown">
-    <div class="nav">
-    
-     <li><a  href="/">首页</a></li>
-
-     <li><a  href="/archives">文章</a></li>
-
-     <li><a  href="/tags">分类</a></li>
-
-     <li><a  href="/post/about">关于</a></li>
-
-    </div>
-    <div class="information">
-     <div class="back_btn">
-      <li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li>
-     </div>
-    </div>
-   </div>
-   <div class="autopagerize_page_element">
-    <div class="content">
-     <div class="post-page">
-      <div class="post animated fadeInDown">
-       <div class="post-title">
-        <h3><a>笔记：微机原理及接口技术</a></h3>
-       </div>
-       <div class="post-content">
-        <h1 id="最后更新时间202045">⏰最后更新时间：2020.4.5</h1>
+    }
+</script>
+            <div class="main">
+                <div class="container">
+                    <article class="post-wrap">
+                        <header class="post-header">
+                            <h1 class="post-title">
+                                笔记：微机原理及接口技术
+                            </h1>
+                            
+                                    <!--zh-->
+                                    <div class="post-meta zh">
+                                        &#x4F5C;&#x8005;:
+                                        <a itemprop="author" rel="author" href="/">
+                                            ROBOZ
+                                        </a>
+                                        <span class="post-time">&#x65E5;&#x671F;: <a href="#">2020-03-22</a></span>
+                                        <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a
+                                    href="#">103.3
+                                    &#x5206;&#x949F;</a></span>
+                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">28166</a></span>
+                                        
+                                            <span class="post-category">&#x5206;&#x7C7B;:
+                                
+                                <a href="https://roboz-up.github.io/tag/Y2pfBAN1G/">笔记</a>
+                                
+                            </span>
+                                            
+                                                阅读量:
+                                                <span data-hk-page="current"> - </span>
+                                                
+                                    </div>
+                                    
+                        </header>
+                        <div class="post-content">
+                            <h1 id="最后更新时间202045">⏰最后更新时间：2020.4.5</h1>
 <figure data-type="image" tabindex="1"><img src="https://roboz-up.github.io/post-images/1584851623468.png" alt="" loading="lazy"></figure>
 <h1 id="预-备-知-识">预 备 知 识</h1>
 <ul>
@@ -1893,50 +2003,728 @@ ESC 20H，AL；整数加法指令：FADD ST(0),ST</p>
 <h1 id="联系站长">联系站长</h1>
 <h1 id="qq3168788134">QQ：3168788134</h1>
 
-       </div>
-       <div class="post-footer">
-        <div class="meta">
-         <div class="info">
-          <i class="fa fa-sun-o"></i>
-          <span class="date">2020-03-22</span>
-          <i class="fa fa-tag"></i>
-          
-          <a class="tag" href="https://roboz-up.github.io/tag/Y2pfBAN1G/" title="笔记">笔记 </a>
-          
-         </div>
-        </div>
-       </div>
-      </div>
-      <div class="share">
-       <div class="evernote">
-        <a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a>
-       </div>
-       <div class="weibo">
-        <a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a>
-       </div>
-       <div class="twitter">
-        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://roboz-up.github.io/post/bi-ji-wei-ji-yuan-li-ji-jie-kou-ji-zhu/,;"></a>
-       </div>
-      </div>
-      <div class="pagination">
-       <ul class="clearfix">
+                        </div>
+                        
+                            <div class="post-toc">
+                                <ul class="markdownIt-TOC">
+<li><a href="#%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0%E6%97%B6%E9%97%B4202045">⏰最后更新时间：2020.4.5</a></li>
+<li><a href="#%E9%A2%84-%E5%A4%87-%E7%9F%A5-%E8%AF%86">预 备 知 识</a>
+<ul>
+<li><a href="#%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A8">微处理器</a></li>
+<li><a href="#%E5%BE%AE%E5%9E%8B%E8%AE%A1%E7%AE%97%E6%9C%BA">微型计算机</a></li>
+<li><a href="#%E5%8D%95%E7%89%87%E6%9C%BA">单片机</a></li>
+<li><a href="#%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E5%8C%85%E6%8B%AC">嵌入式系统包括</a></li>
+<li><a href="#%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80">程序设计语言</a></li>
+<li><a href="#c%E8%AF%AD%E8%A8%80%E4%B8%8E%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%9A%84%E5%8C%BA%E5%88%AB">C语言与汇编语言的区别</a></li>
+<li><a href="#%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80">汇编语言</a></li>
+<li><a href="#%E5%BE%AE%E6%9C%BA%E7%9A%84%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87">微机的性能指标</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%BE%AE%E5%9E%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80">第一章 微型计算机基础</a>
+<ul>
+<li><a href="#11-%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E6%95%B0%E5%88%B6%E4%B8%8E%E7%BC%96%E7%A0%81%E5%8F%8A%E5%85%B6%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA">1.1  计算机中数制与编码及其数的表示</a>
+<ul>
+<li><a href="#%E8%BF%9B%E4%BD%8D%E8%AE%A1%E6%95%B0%E5%88%B6">进位计数制</a></li>
+<li><a href="#%E6%95%B0%E5%88%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2">数制之间的转换</a>
+<ul>
+<li><a href="#%E5%8D%81%E8%BF%9B%E5%88%B6%E6%95%B0%E4%B8%8E%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2">十进制数与二进制数之间的转换</a></li>
+<li><a href="#%E5%8D%81%E8%BF%9B%E5%88%B6%E6%95%B0%E4%B8%8E%E5%85%AB%E8%BF%9B%E5%88%B6%E6%95%B0%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2">十进制数与八进制数之间的转换</a></li>
+<li><a href="#%E5%8D%81%E8%BF%9B%E5%88%B6%E4%B8%8E%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2">十进制与十六进制之间的转换</a></li>
+<li><a href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%8E%E5%85%AB%E8%BF%9B%E5%88%B6-%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E6%95%B0%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2">二进制与八进制、十六进制数之间的转换</a></li>
+</ul>
+</li>
+<li><a href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BC%96%E7%A0%81%E6%96%B9%E6%B3%95">常用的编码方法</a>
+<ul>
+<li><a href="#%E5%8D%81%E8%BF%9B%E5%88%B6%E6%95%B0%E7%9A%84%E7%BC%96%E7%A0%81">十进制数的编码</a></li>
+<li><a href="#%E9%9D%9E%E6%95%B0%E5%80%BC%E5%9E%8B%E6%95%B0%E6%8D%AE%E7%9A%84%E7%BC%96%E7%A0%81">非数值型数据的编码</a>
+<ul>
+<li><a href="#%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81">字符编码</a></li>
+<li><a href="#%E6%B1%89%E5%AD%97%E7%9A%84%E7%BC%96%E7%A0%81">汉字的编码</a></li>
+<li><a href="#%E9%80%BB%E8%BE%91%E6%95%B0%E6%8D%AE%E7%9A%84%E7%BC%96%E7%A0%81">逻辑数据的编码</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA">计算机中数的表示</a>
+<ul>
+<li><a href="#%E7%9C%9F%E5%80%BC%E4%B8%8E%E6%9C%BA%E5%99%A8%E6%95%B0">真值与机器数</a></li>
+<li><a href="#%E6%9C%89%E7%AC%A6%E5%8F%B7%E6%95%B0%E4%B8%8E%E6%97%A0%E7%AC%A6%E5%8F%B7%E6%95%B0">有符号数与无符号数</a></li>
+<li><a href="#%E5%8E%9F%E7%A0%81-%E5%8F%8D%E7%A0%81-%E8%A1%A5%E7%A0%81"><strong>原码  反码  补码</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#12-%E5%BE%AE%E5%9E%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F">1.2 微型计算机系统</a>
+<ul>
+<li><a href="#%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A8-2">微处理器</a></li>
+<li><a href="#%E5%AD%98%E5%82%A8%E5%99%A8">存储器</a></li>
+<li><a href="#%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BA%BF">系统总线</a></li>
+<li><a href="#io%E6%8E%A5%E5%8F%A3%E7%94%B5%E8%B7%AF%E5%92%8Cio%E8%AE%BE%E5%A4%87">I/O接口电路和I/O设备</a>
+<ul>
+<li><a href="#io%E6%8E%A5%E5%8F%A3%E7%94%B5%E8%B7%AF%E4%B8%80%E8%88%AC%E7%94%B1%E4%B8%89%E7%A7%8D%E5%AF%84%E5%AD%98%E5%99%A8%E7%BB%84%E6%88%90">I/O接口电路一般由三种寄存器组成</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BD%AF%E4%BB%B6">软件</a>
+<ul>
+<li><a href="#%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6">系统软件</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#13-%E5%BE%AE%E5%9E%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8F%91%E5%B1%95%E6%A6%82%E8%BF%B0">1.3  微型计算机发展概述</a>
+<ul>
+<li><a href="#%E5%8F%8C%E6%A0%B8%E6%8A%80%E6%9C%AF">双核技术</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A8%E7%9A%84%E7%BB%93%E6%9E%84">第二章 微处理器的结构</a>
+<ul>
+<li><a href="#80868088cpu%E7%9A%84%E5%86%85%E9%83%A8%E7%BB%93%E6%9E%84">8086/8088CPU的内部结构</a>
+<ul>
+<li><a href="#80868088cpu%E5%8A%9F%E8%83%BD%E7%BB%93%E6%9E%84">8086/8088CPU功能结构</a>
+<ul>
+<li><a href="#%E6%80%BB%E7%BA%BF%E6%8E%A5%E5%8F%A3%E9%83%A8%E4%BB%B6biu">总线接口部件BIU</a>
+<ul>
+<li><a href="#%E6%AE%B5%E5%AF%84%E5%AD%98%E5%99%A8">段寄存器</a></li>
+<li><a href="#%E6%8C%87%E4%BB%A4%E6%8C%87%E9%92%88%E5%AF%84%E5%AD%98%E5%99%A8ip">指令指针寄存器（IP）</a></li>
+<li><a href="#%E5%9C%B0%E5%9D%80%E5%8A%A0%E6%B3%95%E5%99%A8">地址加法器</a></li>
+<li><a href="#%E6%8C%87%E4%BB%A4%E9%98%9F%E5%88%97">指令队列</a></li>
+<li><a href="#%E6%80%BB%E7%BA%BF%E6%8E%A7%E5%88%B6%E7%94%B5%E8%B7%AF">总线控制电路</a></li>
+</ul>
+</li>
+<li><a href="#%E6%89%A7%E8%A1%8C%E9%83%A8%E4%BB%B6eu">执行部件EU</a></li>
+<li><a href="#%E9%80%9A%E7%94%A8%E5%AF%84%E5%AD%98%E5%99%A8">通用寄存器</a>
+<ul>
+<li><a href="#%E6%A0%87%E5%BF%97%E5%AF%84%E5%AD%98%E5%99%A8fr">标志寄存器(FR)</a></li>
+<li><a href="#%E7%AE%97%E6%9C%AF%E9%80%BB%E8%BE%91%E9%83%A8%E4%BB%B6alu">算术逻辑部件(ALU)</a></li>
+<li><a href="#%E6%89%A7%E8%A1%8C%E9%83%A8%E4%BB%B6%E6%8E%A7%E5%88%B6%E7%94%B5%E8%B7%AF">执行部件控制电路</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#8086%E7%9A%84%E5%AF%84%E5%AD%98%E5%99%A8%E7%BB%93%E6%9E%84">8086的寄存器结构</a>
+<ul>
+<li><a href="#%E9%80%9A%E7%94%A8%E5%AF%84%E5%AD%98%E5%99%A8-2">通用寄存器</a></li>
+<li><a href="#ax-%E7%B4%AF%E5%8A%A0%E5%99%A8">AX 累加器</a></li>
+<li><a href="#bx-%E5%9F%BA%E5%9D%80%E5%AF%84%E5%AD%98%E5%99%A8">BX 基址寄存器</a></li>
+<li><a href="#cx-%E8%AE%A1%E6%95%B0%E5%99%A8">CX 计数器</a></li>
+<li><a href="#dx-%E6%95%B0%E6%8D%AE%E5%AF%84%E5%AD%98%E5%99%A8">DX 数据寄存器</a></li>
+<li><a href="#bp-%E5%9F%BA%E5%9D%80%E6%8C%87%E9%92%88%E5%AF%84%E5%AD%98%E5%99%A8">BP 基址指针寄存器</a></li>
+<li><a href="#sp-%E5%A0%86%E6%A0%88%E6%8C%87%E9%92%88">SP 堆栈指针</a></li>
+<li><a href="#si-%E6%BA%90%E5%8F%98%E5%9D%80%E5%AF%84%E5%AD%98%E5%99%A8">SI 源变址寄存器</a></li>
+<li><a href="#di-%E7%9B%AE%E7%9A%84%E5%8F%98%E5%9D%80%E5%AF%84%E5%AD%98%E5%99%A8">DI 目的变址寄存器</a></li>
+</ul>
+</li>
+<li><a href="#%E6%AE%B5%E5%AF%84%E5%AD%98%E5%99%A8-2">段寄存器</a>
+<ul>
+<li><a href="#cs-%E4%BB%A3%E7%A0%81%E6%AE%B5%E5%AF%84%E5%AD%98%E5%99%A8">CS 代码段寄存器</a></li>
+<li><a href="#ds-%E6%95%B0%E6%8D%AE%E6%AE%B5%E5%AF%84%E5%AD%98%E5%99%A8">DS 数据段寄存器</a></li>
+<li><a href="#ss-%E5%A0%86%E6%A0%88%E6%AE%B5%E5%AF%84%E5%AD%98%E5%99%A8">SS 堆栈段寄存器</a></li>
+<li><a href="#es-%E9%99%84%E5%8A%A0%E6%AE%B5%E5%AF%84%E5%AD%98%E5%99%A8">ES 附加段寄存器</a></li>
+</ul>
+</li>
+<li><a href="#ip-%E6%8C%87%E4%BB%A4%E6%8C%87%E9%92%88%E5%AF%84%E5%AD%98%E5%99%A8">IP 指令指针寄存器</a></li>
+<li><a href="#fr-%E6%A0%87%E8%AF%86%E5%AF%84%E5%AD%98%E5%99%A8">FR 标识寄存器</a>
+<ul>
+<li><a href="#%E7%8A%B6%E6%80%81%E6%A0%87%E5%BF%97">状态标志</a>
+<ul>
+<li><a href="#of-%E6%BA%A2%E5%87%BA%E6%A0%87%E5%BF%97">OF  溢出标志</a></li>
+<li><a href="#sf-%E7%AC%A6%E5%8F%B7%E6%A0%87%E5%BF%97">SF  符号标志</a></li>
+<li><a href="#zf-%E9%9B%B6%E6%A0%87%E5%BF%97">ZF  零标志</a></li>
+<li><a href="#cf-%E8%BF%9B%E4%BD%8D%E6%A0%87%E5%BF%97">CF  进位标志</a></li>
+<li><a href="#af-%E8%BE%85%E5%8A%A9%E8%BF%9B%E4%BD%8D%E6%A0%87%E5%BF%97">AF  辅助进位标志</a></li>
+<li><a href="#pf-%E5%A5%87%E5%81%B6%E6%A0%87%E5%BF%97">PF  奇偶标志</a></li>
+</ul>
+</li>
+<li><a href="#%E6%8E%A7%E5%88%B6%E6%A0%87%E5%BF%97">控制标志</a>
+<ul>
+<li><a href="#df-%E6%96%B9%E5%90%91%E6%A0%87%E5%BF%97">DF   方向标志</a></li>
+<li><a href="#i-f-%E4%B8%AD%E6%96%AD%E5%85%81%E8%AE%B8%E6%A0%87%E5%BF%97">I F   中断允许标志</a></li>
+<li><a href="#tf-%E5%8D%95%E6%AD%A5%E6%A0%87%E5%BF%97%E9%99%B7%E9%98%B1%E6%A0%87%E5%BF%97">TF   单步标志（陷阱标志）</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#8086%E7%9A%84%E5%AD%98%E5%82%A8%E5%99%A8%E7%BB%84%E7%BB%87">8086的存储器组织</a>
+<ul>
+<li><a href="#%E5%AD%98%E5%82%A8%E5%99%A8%E7%BB%84%E7%BB%87%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E6%A0%BC%E5%BC%8F">存储器组织与数据存储格式</a>
+<ul>
+<li><a href="#%E5%AD%98%E5%82%A8%E5%8D%95%E5%85%83%E5%9C%B0%E5%9D%80">存储单元地址</a></li>
+<li><a href="#%E5%AD%98%E5%82%A8%E5%8D%95%E5%85%83%E7%9A%84%E5%86%85%E5%AE%B9">存储单元的内容</a></li>
+<li><a href="#%E5%A5%87%E5%9C%B0%E5%9D%80%E5%AD%98%E5%82%A8%E4%BD%93%E5%92%8C%E5%81%B6%E5%9C%B0%E5%9D%80%E5%AD%98%E5%82%A8%E4%BD%93">奇地址存储体和偶地址存储体</a></li>
+<li><a href="#8086%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%AD%97%E8%8A%82%E5%92%8C%E5%AD%97%E4%B8%A4%E7%A7%8D%E6%93%8D%E4%BD%9C%E6%8C%87%E4%BB%A4">8086指令系统中，字节和字两种操作指令。</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AD%98%E5%82%A8%E5%99%A8%E5%88%86%E6%AE%B5%E7%BB%93%E6%9E%84">存储器分段结构</a>
+<ul>
+<li><a href="#%E6%A0%B9%E6%8D%AE%E6%AE%B5%E5%86%85%E5%AD%98%E6%94%BE%E4%BF%A1%E6%81%AF%E7%9A%84%E4%B8%8D%E5%90%8C%E5%88%86%E4%B8%BA">根据段内存放信息的不同分为</a></li>
+</ul>
+</li>
+<li><a href="#%E9%80%BB%E8%BE%91%E5%9C%B0%E5%9D%80%E4%B8%8E%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80%E7%9A%84%E8%BD%AC%E6%8D%A2">逻辑地址与物理地址的转换</a>
+<ul>
+<li><a href="#%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80">物理地址</a></li>
+<li><a href="#%E9%80%BB%E8%BE%91%E5%9C%B0%E5%9D%80">逻辑地址</a></li>
+<li><a href="#%E6%AE%B5%E5%9F%BA%E5%80%BC">段基值</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#8086%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F%E5%8F%8A%E5%BC%95%E8%84%9A%E4%BF%A1%E5%8F%B7">8086的工作模式及引脚信号</a>
+<ul>
+<li><a href="#8086%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F">8086的工作模式</a>
+<ul>
+<li><a href="#%E6%9C%80%E5%B0%8F%E6%A8%A1%E5%BC%8F">最小模式</a></li>
+<li><a href="#%E6%9C%80%E5%A4%A7%E6%A8%A1%E5%BC%8F">最大模式</a></li>
+<li><a href="#8087">8087</a></li>
+<li><a href="#8089%E5%8D%8F%E5%A4%84%E7%90%86%E5%99%A8">8089协处理器</a></li>
+</ul>
+</li>
+<li><a href="#8086%E7%9A%84%E5%BC%95%E8%84%9A%E4%BF%A1%E5%8F%B7">8086的引脚信号</a>
+<ul>
+<li><a href="#ad15~ad0address-data-bus-2~16">AD15~AD0(Address Data Bus ，2~16)</a>
+<ul>
+<li><a href="#%E6%80%BB%E7%BA%BF%E5%88%86%E6%97%B6%E5%A4%8D%E7%94%A8">总线分时复用</a></li>
+<li><a href="#%E4%B8%89%E6%80%81">三态</a></li>
+</ul>
+</li>
+<li><a href="#a19s6~a16s3address-status-bus35~38">A19/S6~A16/S3(Address Status Bus，35~38)</a>
+<ul>
+<li><a href="#%E5%8F%AF%E5%B1%8F%E8%94%BD%E4%B8%AD%E6%96%AD">可屏蔽中断</a></li>
+</ul>
+</li>
+<li><a href="#bhes7bus-high-enablestatus34">BHE/S7（Bus High Enable/Status，34）</a></li>
+<li><a href="#mnmxminimummaximum-model-control33">MN/MX(Minimum/Maximum Model Control，33)</a></li>
+<li><a href="#rdread32">RD(Read，32）</a></li>
+<li><a href="#testtest23">TEST(Test，23)</a></li>
+<li><a href="#readyready22">READY(Ready，22)</a></li>
+<li><a href="#resetreset21">RESET(Reset，21)</a></li>
+<li><a href="#clkclock19">CLK(Clock，19)</a></li>
+<li><a href="#vcc40">VCC(40)</a></li>
+<li><a href="#gnd1-20">GND(1、20)</a></li>
+<li><a href="#nminon-maskable-interrupt17">NMI(Non-Maskable Interrupt，17)</a></li>
+<li><a href="#intrinterrupt-request18">INTR(Interrupt Request，18)</a>
+<ul>
+<li><a href="#%E5%8F%AF%E5%B1%8F%E8%94%BD%E4%B8%AD%E6%96%AD%E5%92%8C%E9%9D%9E%E5%B1%8F%E8%94%BD%E4%B8%AD%E6%96%AD%E7%9A%84%E5%8C%BA%E5%88%AB">可屏蔽中断和非屏蔽中断的区别</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9C%80%E5%B0%8F%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%8424%E5%88%B031%E5%BC%95%E8%84%9A">最小模式下的24到31引脚</a>
+<ul>
+<li><a href="#intainterrupt-acknowledge24">INTA(Interrupt Acknowledge，24）</a></li>
+<li><a href="#aleaddress-lock-enable25">ALE(Address Lock Enable，25)</a></li>
+<li><a href="#dendata-enable26">DEN(Data Enable，26)</a></li>
+<li><a href="#dtrdata-transmitreceive27">DT/R(Data Transmit/Receive，27)</a></li>
+<li><a href="#miomemoryinput-output28">M/IO(Memory/Input &amp;Output，28)</a></li>
+<li><a href="#wr-write29%E4%B8%89%E6%80%81">WR (Write，29，三态)</a></li>
+<li><a href="#holdhold-reqest31">HOLD(Hold Reqest，31)</a></li>
+<li><a href="#hlda-hold-acknowledge30">HLDA (Hold Acknowledge，30)</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9C%80%E5%A4%A7%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84%E5%BC%95%E8%84%9A%E4%BF%A1%E5%8F%B7">最大工作模式下的引脚信号</a>
+<ul>
+<li><a href="#rqgtrequestgrant30-31">RQ/GT(Request/Grant，30、31)</a></li>
+<li><a href="#lock">LOCK</a></li>
+<li><a href="#s2-s1-s0bus-cycles-status">S2、S1、S0(Bus Cycles Status)</a></li>
+<li><a href="#qs1qs0-instruction-queue-status">QS1,QS0 (Instruction Queue Status)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#8086%E7%9A%84%E6%80%BB%E7%BA%BF%E6%93%8D%E4%BD%9C%E6%97%B6%E5%BA%8F">8086的总线操作时序</a>
+<ul>
+<li><a href="#%E6%97%B6%E9%92%9F%E5%91%A8%E6%9C%9Fclock-cycle">时钟周期（Clock Cycle）</a></li>
+<li><a href="#%E6%8C%87%E4%BB%A4%E5%91%A8%E6%9C%9Finstruction-cyclefetch-decode-execute-cycle">指令周期（Instruction Cycle，fetch-decode-execute cycle）</a></li>
+<li><a href="#%E6%80%BB%E7%BA%BF%E5%91%A8%E6%9C%9Fbus-cycle">总线周期（Bus Cycle）</a></li>
+<li><a href="#%E6%80%BB%E7%BA%BF%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4">总线操作步骤</a>
+<ul>
+<li><a href="#%E6%80%BB%E7%BA%BF%E6%93%8D%E4%BD%9C">总线操作</a></li>
+<li><a href="#%E4%B8%80%E4%B8%AA%E6%80%BB%E7%BA%BF%E5%91%A8%E6%9C%9F%E9%80%9A%E5%B8%B8%E5%88%86%E4%B8%BA%E5%9B%9B%E4%B8%AA%E9%98%B6%E6%AE%B5">一个总线周期通常分为四个阶段</a>
+<ul>
+<li><a href="#%E6%80%BB%E7%BA%BF%E8%AF%B7%E6%B1%82%E5%92%8C%E4%BB%B2%E8%A3%81%E9%98%B6%E6%AE%B5">总线请求和仲裁阶段</a></li>
+<li><a href="#%E5%AF%BB%E5%9D%80%E9%98%B6%E6%AE%B5">寻址阶段</a></li>
+<li><a href="#%E4%BC%A0%E9%80%81%E6%95%B0%E6%8D%AE%E9%98%B6%E6%AE%B5">传送数据阶段</a></li>
+<li><a href="#%E7%BB%93%E6%9D%9F%E9%98%B6%E6%AE%B5">结束阶段</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#8086%E7%9A%84%E6%80%BB%E7%BA%BF%E6%93%8D%E4%BD%9C%E6%97%B6%E5%BA%8F-2">8086的总线操作时序</a>
+<ul>
+<li><a href="#%E6%80%BB%E7%BA%BF%E6%93%8D%E4%BD%9C-2">总线操作</a></li>
+<li><a href="#%E6%80%BB%E7%BA%BF%E6%97%B6%E5%BA%8F">总线时序</a>
+<ul>
+<li><a href="#%E6%9C%80%E5%B0%8F%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84%E8%AF%BB%E6%80%BB%E7%BA%BF%E5%91%A8%E6%9C%9F">最小模式下的读总线周期</a></li>
+<li><a href="#%E6%9C%80%E5%B0%8F%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84%E5%86%99%E6%80%BB%E7%BA%BF%E5%91%A8%E6%9C%9F">最小模式下的写总线周期</a></li>
+<li><a href="#%E7%A9%BA%E9%97%B2%E5%91%A8%E6%9C%9F">空闲周期</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F">第三章 指令系统</a>
+<ul>
+<li><a href="#%E6%8C%87%E4%BB%A4%E6%A0%BC%E5%BC%8F">指令格式</a>
+<ul>
+<li><a href="#%E5%89%8D%E7%BC%80%E5%AD%97%E6%AE%B5">前缀字段</a></li>
+<li><a href="#%E6%93%8D%E4%BD%9C%E7%A0%81%E5%AD%97%E6%AE%B51~2%E5%AD%97%E8%8A%82">操作码字段(1~2字节)</a></li>
+<li><a href="#%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E5%AD%97%E6%AE%B52%E5%AD%97%E8%8A%82">寻址方式字段（2字节）</a></li>
+<li><a href="#%E4%BD%8D%E7%A7%BB%E9%87%8F%E5%AD%97%E6%AE%B51-2%E6%88%964%E5%AD%97%E8%8A%82">位移量字段（1、2或4字节）</a></li>
+<li><a href="#%E7%AB%8B%E5%8D%B3%E6%95%B0%E5%AD%97%E6%AE%B512%E6%88%964%E5%AD%97%E8%8A%82">立即数字段(1，2或4字节)</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F">寻址方式</a>
+<ul>
+<li><a href="#11%E7%A7%8D%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E5%8F%8A%E5%AF%B9%E5%BA%94%E7%9A%84%E6%9C%89%E6%95%88%E5%9C%B0%E5%9D%80">11种寻址方式及对应的有效地址</a></li>
+<li><a href="#%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E5%88%86%E7%B1%BB">寻址方式分类</a></li>
+<li><a href="#%E7%AB%8B%E5%8D%B3%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F">立即寻址方式</a></li>
+<li><a href="#%E7%9B%B4%E6%8E%A5%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F">直接寻址方式</a></li>
+<li><a href="#%E5%AF%84%E5%AD%98%E5%99%A8%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F">寄存器寻址方式</a></li>
+<li><a href="#%E5%AF%84%E5%AD%98%E5%99%A8%E9%97%B4%E6%8E%A5%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F">寄存器间接寻址方式</a></li>
+<li><a href="#%E5%AF%84%E5%AD%98%E5%99%A8%E7%9B%B8%E5%AF%B9%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F">寄存器相对寻址方式</a></li>
+<li><a href="#%E5%9F%BA%E5%9D%80%E5%8A%A0%E5%8F%98%E5%9D%80%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F">基址加变址寻址方式</a></li>
+<li><a href="#%E5%B8%A6%E4%BD%8D%E7%A7%BB%E7%9A%84%E5%9F%BA%E5%9D%80%E5%8A%A0%E5%8F%98%E5%9D%80%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F">带位移的基址加变址寻址方式</a></li>
+<li><a href="#%E6%AF%94%E4%BE%8B%E5%8F%98%E5%9D%80%E5%AF%BB%E5%9D%80">比例变址寻址</a></li>
+<li><a href="#%E5%B8%A6%E4%BD%8D%E7%A7%BB%E7%9A%84%E6%AF%94%E4%BE%8B%E5%8F%98%E5%9D%80%E5%AF%BB%E5%9D%80">带位移的比例变址寻址</a></li>
+<li><a href="#%E5%9F%BA%E5%9D%80%E5%8A%A0%E6%AF%94%E4%BE%8B%E5%8F%98%E5%9D%80%E5%AF%BB%E5%9D%8032%E4%BD%8D%E5%AF%BB%E5%9D%80">基址加比例变址寻址（32位寻址）</a></li>
+<li><a href="#%E5%B8%A6%E4%BD%8D%E7%A7%BB%E7%9A%84%E5%9F%BA%E5%9D%80%E5%8A%A0%E6%AF%94%E4%BE%8B%E5%8F%98%E5%9D%80%E5%AF%BB%E5%9D%80">带位移的基址加比例变址寻址</a></li>
+<li><a href="#%E5%AF%84%E5%AD%98%E5%99%A8%E9%97%B4%E6%8E%A5%E5%AF%BB%E5%9D%80%E7%9A%84%E9%BB%98%E8%AE%A4%E6%AE%B5">寄存器间接寻址的默认段</a></li>
+</ul>
+</li>
+<li><a href="#%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F">指令系统</a>
+<ul>
+<li><a href="#%E6%8C%87%E4%BB%A4%E6%93%8D%E4%BD%9C%E6%95%B0%E7%AC%A6%E5%8F%B7%E8%AF%B4%E6%98%8E">指令操作数符号说明：</a></li>
+<li><a href="#%E4%B8%8E%E8%BF%90%E7%AE%97%E6%9C%89%E5%85%B3%E7%9A%84%E6%A0%87%E5%BF%97">与运算有关的标志</a></li>
+<li><a href="#%E6%8C%87%E4%BB%A4%E6%89%A7%E8%A1%8C%E5%AF%B9%E6%A0%87%E5%BF%97%E4%BD%8D%E5%BD%B1%E5%93%8D%E7%9A%84%E7%AC%A6%E5%8F%B7%E8%AF%B4%E6%98%8E">指令执行对标志位影响的符号说明：</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%81%E6%8C%87%E4%BB%A4">数据传送指令</a></li>
+<li><a href="#%E9%80%9A%E7%94%A8%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%81%E6%8C%87%E4%BB%A4">通用数据传送指令</a>
+<ul>
+<li><a href="#mov%E4%BC%A0%E9%80%81%E6%8C%87%E4%BB%A4">MOV传送指令</a></li>
+<li><a href="#xchg%E6%95%B0%E6%8D%AE%E4%BA%A4%E6%8D%A2%E6%8C%87%E4%BB%A4">XCHG数据交换指令</a></li>
+<li><a href="#%E5%A0%86%E6%A0%88%E6%8C%87%E4%BB%A4">堆栈指令</a>
+<ul>
+<li><a href="#%E5%85%A5%E6%A0%88%E6%8C%87%E4%BB%A4push">入栈指令PUSH</a></li>
+<li><a href="#%E5%87%BA%E6%A0%88%E6%8C%87%E4%BB%A4pop">出栈指令POP</a></li>
+</ul>
+</li>
+<li><a href="#%E5%85%B6%E4%BB%96%E5%A0%86%E6%A0%88%E6%93%8D%E4%BD%9C%E6%8C%87%E4%BB%A4">其他堆栈操作指令</a>
+<ul>
+<li><a href="#%E6%89%80%E6%9C%89%E5%AF%84%E5%AD%98%E5%99%A8%E8%BF%9B%E6%A0%88%E6%8C%87%E4%BB%A4pusha">所有寄存器进栈指令PUSHA</a></li>
+<li><a href="#%E6%89%80%E6%9C%89%E5%AF%84%E5%AD%98%E5%99%A8%E5%87%BA%E6%A0%88%E6%8C%87%E4%BB%A4popa">所有寄存器出栈指令POPA</a></li>
+</ul>
+</li>
+<li><a href="#%E7%B4%AF%E5%8A%A0%E5%99%A8%E4%B8%93%E7%94%A8%E4%BC%A0%E9%80%81%E6%8C%87%E4%BB%A4">累加器专用传送指令</a>
+<ul>
+<li><a href="#xlat-%E6%9F%A5%E8%A1%A8%E8%BD%AC%E6%8D%A2%E6%8C%87%E4%BB%A4">XLAT   查表转换指令</a></li>
+</ul>
+</li>
+<li><a href="#io%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%81%E6%8C%87%E4%BB%A4">I/O数据传送指令</a>
+<ul>
+<li><a href="#%E8%BE%93%E5%85%A5%E6%8C%87%E4%BB%A4in%E5%B0%86%E7%AB%AF%E5%8F%A3%E7%9A%84%E6%95%B0%E6%8D%AE%E9%80%81%E5%85%A5cpu%E7%B4%AF%E5%8A%A0%E5%99%A8">输入指令IN（将端口的数据送入CPU累加器）</a></li>
+<li><a href="#out%E8%BE%93%E5%87%BA%E6%8C%87%E4%BB%A4%E5%B0%86cpu%E7%B4%AF%E5%8A%A0%E5%99%A8%E4%B8%AD%E6%95%B0%E6%8D%AE%E5%86%99%E5%85%A5%E7%AB%AF%E5%8F%A3">OUT输出指令（将CPU累加器中数据写入端口）</a></li>
+</ul>
+</li>
+<li><a href="#%E5%9C%B0%E5%9D%80%E4%BC%A0%E9%80%81%E6%8C%87%E4%BB%A4">地址传送指令</a>
+<ul>
+<li><a href="#%E6%9C%89%E6%95%88%E5%9C%B0%E5%9D%80%E9%80%81%E5%AF%84%E5%AD%98%E5%99%A8%E6%8C%87%E4%BB%A4lea-load-effective-address">有效地址送寄存器指令LEA (Load Effective Address)</a></li>
+<li><a href="#%E6%8C%87%E9%92%88%E9%80%81%E5%AF%84%E5%AD%98%E5%99%A8%E5%8F%8A%E7%9B%B8%E5%BA%94%E6%AE%B5%E5%AF%84%E5%AD%98%E5%99%A8%E6%8C%87%E4%BB%A4lds%E5%92%8Cles">指针送寄存器及相应段寄存器指令LDS和LES</a>
+<ul>
+<li><a href="#lds-load-pointer-into-ds">LDS (Load pointer into DS)</a></li>
+<li><a href="#les-load-pointer-into-es">LES (Load pointer into ES)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E6%A0%87%E5%BF%97%E5%AF%84%E5%AD%98%E5%99%A8%E4%BC%A0%E9%80%81%E6%8C%87%E4%BB%A4">标志寄存器传送指令</a>
+<ul>
+<li><a href="#%E6%A0%87%E5%BF%97%E9%80%81ah%E6%8C%87%E4%BB%A4-lahf">标志送AH指令： LAHF</a></li>
+<li><a href="#ah%E9%80%81%E6%A0%87%E5%BF%97%E5%AF%84%E5%AD%98%E5%99%A8%E6%8C%87%E4%BB%A4sahf">AH送标志寄存器指令：SAHF</a></li>
+<li><a href="#%E6%A0%87%E5%BF%97%E8%BF%9B%E6%A0%88%E6%8C%87%E4%BB%A4pushf">标志进栈指令：PUSHF</a></li>
+<li><a href="#%E6%A0%87%E5%BF%97%E5%87%BA%E6%A0%88%E6%8C%87%E4%BB%A4popf">标志出栈指令：POPF</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E6%8C%87%E4%BB%A4">算术运算指令</a>
+<ul>
+<li><a href="#%E5%8A%A0%E6%B3%95%E6%8C%87%E4%BB%A4">加法指令</a>
+<ul>
+<li><a href="#%E4%B8%8D%E5%B8%A6%E8%BF%9B%E4%BD%8D%E7%9A%84%E5%8A%A0%E6%B3%95%E6%8C%87%E4%BB%A4-add-dstsrc">不带进位的加法指令：    ADD  DST，SRC</a></li>
+<li><a href="#%E5%B8%A6%E8%BF%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E6%8C%87%E4%BB%A4-adc-dstsrc">带进位加法指令：  ADC  DST，SRC</a></li>
+<li><a href="#%E5%8A%A01%E6%8C%87%E4%BB%A4-inc-dst">加1指令：        INC  DST</a></li>
+</ul>
+</li>
+<li><a href="#%E5%87%8F%E6%B3%95%E6%8C%87%E4%BB%A4">减法指令</a>
+<ul>
+<li><a href="#%E5%87%8F%E6%B3%95%E6%8C%87%E4%BB%A4-sub-dstsrc">减法指令： SUB  DST，SRC</a></li>
+<li><a href="#%E5%B8%A6%E5%80%9F%E4%BD%8D%E5%87%8F%E6%B3%95%E6%8C%87%E4%BB%A4-sbb-dstsrc">带借位减法指令： SBB  DST，SRC</a></li>
+<li><a href="#%E5%87%8F1%E6%8C%87%E4%BB%A4-dec-opr">减1指令： DEC  OPR</a></li>
+<li><a href="#%E6%B1%82%E8%A1%A5%E6%8C%87%E4%BB%A4-neg-opr">求补指令： NEG  OPR</a></li>
+<li><a href="#%E6%AF%94%E8%BE%83%E6%8C%87%E4%BB%A4-cmp-opr1-opr2">比较指令： CMP  OPR1, OPR2</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B9%98%E6%B3%95%E6%8C%87%E4%BB%A4">乘法指令</a>
+<ul>
+<li><a href="#%E6%97%A0%E7%AC%A6%E5%8F%B7%E6%95%B0%E4%B9%98%E6%B3%95%E6%8C%87%E4%BB%A4-mul-src">无符号数乘法指令：        MUL   SRC</a></li>
+<li><a href="#%E6%9C%89%E7%AC%A6%E5%8F%B7%E6%95%B0%E4%B9%98%E6%B3%95%E6%8C%87%E4%BB%A4-imul-src">有符号数乘法指令：        IMUL  SRC</a></li>
+</ul>
+</li>
+<li><a href="#%E9%99%A4%E6%B3%95%E6%8C%87%E4%BB%A4">除法指令</a>
+<ul>
+<li><a href="#%E6%97%A0%E7%AC%A6%E5%8F%B7%E6%95%B0%E9%99%A4%E6%B3%95%E6%8C%87%E4%BB%A4-div-src">无符号数除法指令：   DIV  SRC</a></li>
+<li><a href="#%E5%B8%A6%E7%AC%A6%E5%8F%B7%E6%95%B0%E9%99%A4%E6%B3%95%E6%8C%87%E4%BB%A4-idiv-src">带符号数除法指令：   IDIV  SRC</a></li>
+</ul>
+</li>
+<li><a href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E6%8C%87%E4%BB%A4%E6%8C%87%E4%BB%A4">类型转换指令指令</a>
+<ul>
+<li><a href="#%E5%AD%97%E8%8A%82%E6%89%A9%E5%B1%95%E4%B8%BA%E5%AD%97%E6%8C%87%E4%BB%A4-cbw-al-ax">字节扩展为字指令  CBW          AL ← AX</a></li>
+<li><a href="#%E5%AD%97%E6%89%A9%E5%B1%95%E6%88%90%E5%8F%8C%E5%AD%97%E6%8C%87%E4%BB%A4cwd-ax-dxax">字扩展成双字指令CWD         AX ← （DX,AX）</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8D%81%E8%BF%9B%E5%88%B6%E8%B0%83%E6%95%B4%E6%8C%87%E4%BB%A4">十进制调整指令</a>
+<ul>
+<li><a href="#%E5%8E%8B%E7%BC%A9%E7%9A%84bcd%E7%A0%81%E8%B0%83%E6%95%B4%E6%8C%87%E4%BB%A4">压缩的BCD码调整指令</a></li>
+<li><a href="#%E9%9D%9E%E5%8E%8B%E7%BC%A9%E7%9A%84bcd%E7%A0%81%E8%B0%83%E6%95%B4%E6%8C%87%E4%BB%A4">非压缩的BCD码调整指令</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BF%9B%E4%BD%8D%E6%A0%87%E5%BF%97cfcarry-flag">进位标志CF（Carry Flag）</a></li>
+<li><a href="#%E9%9B%B6%E6%A0%87%E5%BF%97zfzero-flag">零标志ZF（Zero Flag）</a></li>
+<li><a href="#%E7%AC%A6%E5%8F%B7%E6%A0%87%E5%BF%97sfsign-flag">符号标志SF（Sign Flag）</a></li>
+<li><a href="#%E5%A5%87%E5%81%B6%E6%A0%87%E5%BF%97pfparity-flag">奇偶标志PF（Parity Flag）</a></li>
+<li><a href="#%E8%BE%85%E5%8A%A9%E8%BF%9B%E4%BD%8D%E6%A0%87%E5%BF%97afauxiliary-carry-flag">辅助进位标志AF（Auxiliary Carry Flag）</a></li>
+<li><a href="#%E6%BA%A2%E5%87%BA%E6%A0%87%E5%BF%97ofoverflow-flag">溢出标志OF（Overflow Flag）</a></li>
+</ul>
+</li>
+<li><a href="#%E9%80%BB%E8%BE%91%E6%8C%87%E4%BB%A4">逻辑指令</a>
+<ul>
+<li><a href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E6%8C%87%E4%BB%A4">逻辑运算指令</a>
+<ul>
+<li><a href="#%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8C%87%E4%BB%A4and-dstregmem-srcregmemimm">逻辑与指令：AND  DST（reg/mem）, SRC（reg/mem/imm）</a></li>
+<li><a href="#%E9%80%BB%E8%BE%91%E6%88%96%E6%8C%87%E4%BB%A4or-dstregmem-srcregmemimm">逻辑或指令：OR  DST（reg/mem）, SRC（reg/mem/imm）</a></li>
+<li><a href="#%E5%BC%82%E6%88%96%E6%8C%87%E4%BB%A4-xor-dstregmem-srcregmemimm">异或指令：    XOR  DST（reg/mem）, SRC（reg/mem/imm）</a></li>
+<li><a href="#%E9%80%BB%E8%BE%91%E9%9D%9E%E6%8C%87%E4%BB%A4-not-opr-regmem">逻辑非指令： NOT  OPR （reg/mem）</a></li>
+<li><a href="#%E6%B5%8B%E8%AF%95%E6%8C%87%E4%BB%A4-test-opr1regopr2regmemimm">测试指令：    TEST  OPR1（reg），OPR2(reg/mem/imm)</a></li>
+</ul>
+</li>
+<li><a href="#%E7%A7%BB%E4%BD%8D%E6%8C%87%E4%BB%A4">移位指令</a>
+<ul>
+<li><a href="#%E7%A7%BB%E4%BD%8D%E6%8C%87%E4%BB%A4-2">移位指令</a></li>
+<li><a href="#%E5%BE%AA%E7%8E%AF%E7%A7%BB%E4%BD%8D%E6%8C%87%E4%BB%A4">循环移位指令</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%B2%E6%93%8D%E4%BD%9C%E6%8C%87%E4%BB%A4">串操作指令</a>
+<ul>
+<li><a href="#%E4%B8%8E-rep-%E9%85%8D%E5%90%88%E5%B7%A5%E4%BD%9C%E7%9A%84-movs-stos-lods%E7%9A%84%E6%8C%87%E4%BB%A4">与 REP 配合工作的 MOVS / STOS / LODS的指令</a>
+<ul>
+<li><a href="#%E9%87%8D%E5%A4%8D%E5%89%8D%E7%BC%80%E6%8C%87%E4%BB%A4rep">重复前缀指令REP</a></li>
+<li><a href="#%E4%B8%B2%E4%BC%A0%E9%80%81%E6%8C%87%E4%BB%A4move-string-instruction">串传送指令（Move String Instruction）</a></li>
+<li><a href="#%E4%B8%B2%E5%AD%98%E5%82%A8%E6%8C%87%E4%BB%A4store-string-instruction">串存储指令（Store String Instruction）</a></li>
+<li><a href="#%E4%B8%B2%E8%A3%85%E5%85%A5%E6%8C%87%E4%BB%A4load-string-instruction">串装入指令（Load String Instruction）</a></li>
+<li><a href="#%E4%B8%B2%E8%BE%93%E5%85%A5%E6%8C%87%E4%BB%A4ins">串输入指令INS</a></li>
+<li><a href="#%E4%B8%B2%E8%BE%93%E5%87%BA%E6%8C%87%E4%BB%A4outs">串输出指令OUTS</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%8E-repzrepnz%E9%85%8D%E5%90%88%E5%B7%A5%E4%BD%9C%E7%9A%84cmps-%E5%92%8C-scas%E6%8C%87%E4%BB%A4">与 REPZ（REPNZ）配合工作的CMPS 和 SCAS指令</a>
+<ul>
+<li><a href="#%E7%9B%B8%E7%AD%89%E9%87%8D%E5%A4%8D%E5%89%8D%E7%BC%80%E6%8C%87%E4%BB%A4-reperepz">相等重复前缀指令 REPE/REPZ</a></li>
+<li><a href="#%E4%B8%8D%E7%AD%89%E9%87%8D%E5%A4%8D%E5%89%8D%E7%BC%80%E6%8C%87%E4%BB%A4-repnerepnz">不等重复前缀指令 REPNE/REPNZ</a></li>
+<li><a href="#%E4%B8%B2%E6%AF%94%E8%BE%83%E6%8C%87%E4%BB%A4-cmps">串比较指令 CMPS</a></li>
+<li><a href="#%E4%B8%B2%E6%89%AB%E6%8F%8F%E6%8C%87%E4%BB%A4-scas">串扫描指令 SCAS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E6%8E%A7%E5%88%B6%E8%BD%AC%E7%A7%BB%E6%8C%87%E4%BB%A4">控制转移指令</a>
+<ul>
+<li><a href="#jmp%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F">JMP寻址方式：</a></li>
+<li><a href="#%E6%97%A0%E6%9D%A1%E4%BB%B6%E8%BD%AC%E7%A7%BB%E6%8C%87%E4%BB%A4-jmp-op1regmem%E6%A0%87%E5%8F%B7">无条件转移指令    JMP   OP1（reg/mem/标号）</a></li>
+<li><a href="#%E6%9D%A1%E4%BB%B6%E8%BD%AC%E7%A7%BB%E6%8C%87%E4%BB%A4">条件转移指令</a></li>
+<li><a href="#%E5%BE%AA%E7%8E%AF%E6%8C%87%E4%BB%A4">循环指令</a>
+<ul>
+<li><a href="#%E5%BE%AA%E7%8E%AF%E6%8C%87%E4%BB%A4-loop">循环指令 LOOP</a></li>
+<li><a href="#%E7%9B%B8%E7%AD%89%E4%B8%BA%E9%9B%B6%E5%BE%AA%E7%8E%AF%E6%8C%87%E4%BB%A4-loopeloopz">相等/为零循环指令  LOOPE/LOOPZ</a></li>
+<li><a href="#%E4%B8%8D%E7%9B%B8%E7%AD%89%E4%B8%8D%E4%B8%BA%E9%9B%B6%E5%BE%AA%E7%8E%AF%E6%8C%87%E4%BB%A4loopneloopnz">不相等/不为零循环指令LOOPNE/LOOPNZ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E5%AD%90%E7%A8%8B%E5%BA%8F">子程序</a>
+<ul>
+<li><a href="#%E5%AD%90%E7%A8%8B%E5%BA%8F%E8%B0%83%E7%94%A8%E6%8C%87%E4%BB%A4-call">子程序调用指令   CALL</a></li>
+<li><a href="#%E8%BF%94%E5%9B%9E%E6%8C%87%E4%BB%A4-ret">返回指令  RET</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%AD%E6%96%AD">中断</a>
+<ul>
+<li><a href="#%E4%B8%AD%E6%96%AD%E5%90%91%E9%87%8F%E8%A1%A8%E5%92%8C%E4%B8%AD%E6%96%AD%E6%9C%8D%E5%8A%A1%E7%A8%8B%E5%BA%8F">中断向量表和中断服务程序</a></li>
+<li><a href="#%E4%B8%AD%E6%96%AD%E6%8C%87%E4%BB%A4-int">中断指令 INT</a></li>
+<li><a href="#%E6%BA%A2%E5%87%BA%E6%8C%87%E4%BB%A4-into">溢出指令 INTO</a></li>
+<li><a href="#%E4%B8%AD%E6%96%AD%E8%BF%94%E5%9B%9E%E6%8C%87%E4%BB%A4-iret">中断返回指令 IRET</a></li>
+<li><a href="#%E4%B8%AD%E6%96%AD%E5%92%8C%E5%AD%90%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%AF%94%E8%BE%83">中断和子程序的比较</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E5%A4%84%E7%90%86%E6%9C%BA%E6%8E%A7%E5%88%B6%E5%92%8C%E6%9D%82%E9%A1%B9%E6%8C%87%E4%BB%A4">处理机控制和杂项指令</a>
+<ul>
+<li><a href="#%E6%A0%87%E5%BF%97%E5%A4%84%E7%90%86%E6%8C%87%E4%BB%A4">标志处理指令</a></li>
+<li><a href="#cpu%E6%8E%A7%E5%88%B6%E7%B1%BB%E6%8C%87%E4%BB%A4">CPU控制类指令</a>
+<ul>
+<li><a href="#%E7%A9%BA%E6%93%8D%E4%BD%9C%E6%8C%87%E4%BB%A4-nopno-operation-instruction">空操作指令   NOP（No Operation Instruction）</a></li>
+<li><a href="#%E6%9A%82%E5%81%9C%E6%8C%87%E4%BB%A4-hltenter-halt-state-instruction">暂停指令   HLT（Enter Halt State Instruction）</a></li>
+<li><a href="#%E6%8D%A2%E7%A0%81%E6%8C%87%E4%BB%A4esc">换码指令ESC</a></li>
+<li><a href="#%E7%AD%89%E5%BE%85%E6%8C%87%E4%BB%A4-waitput-processor-in-wait-state-instruction">等待指令  WAIT（Put Processor in Wait State Instruction）</a></li>
+<li><a href="#%E5%B0%81%E9%94%81%E6%95%B0%E6%8D%AE%E6%8C%87%E4%BB%A4locklock-bus-instruction">封锁数据指令LOCK（Lock Bus Instruction）</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%8F%8A%E5%85%B6%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1">第四章 汇编语言及其程序设计</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%AD%98%E5%82%A8%E5%99%A8">第五章 存储器</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E4%B8%AD%E6%96%AD%E6%8A%80%E6%9C%AF">第六章 中断技术</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-io%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF">第七章 I/O接口技术</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-da%E4%B8%8Ead%E8%BD%AC%E6%8D%A2%E5%99%A8%E6%8E%A5%E5%8F%A3">第八章 D/A与A/D转换器接口</a></li>
+<li><a href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E5%BE%AE%E6%9C%BA%E6%80%BB%E7%BA%BF">第九章 微机总线</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E7%AB%A0-%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E6%8E%A5%E5%8F%A3">第十章 人机交互接口</a></li>
+<li><a href="#%E5%A6%82%E9%9C%80%E8%BD%AC%E8%BD%BD-%E5%8F%8D%E9%A6%88-%E4%BA%A4%E6%B5%81">如需转载、反馈、交流</a></li>
+<li><a href="#%E8%81%94%E7%B3%BB%E7%AB%99%E9%95%BF">联系站长</a></li>
+<li><a href="#qq3168788134">QQ：3168788134</a></li>
+</ul>
 
-        <li class="pre pagbuttons"><a class="btn" role="navigation" href="https://roboz-up.github.io/post/bi-ji-fang-zhen-cheng-xu-she-ji/" title="笔记：仿真程序设计">上一篇</a></li>
-         
-        
-        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://roboz-up.github.io/post/ge-ren-wang-zhan-de-chuang-jian/" title=" 个人免费网站的创建">下一篇</a></li>
-        
-       </ul>
-      </div>
-        
-     </div>
+                            </div>
+                            
+                                
+                                    
+                                            <!--zh-->
+                                            <section class="post-copyright zh">
+                                                <p class="copyright-item ">
+                                                    <span>&#x4F5C;&#x8005;:</span>
+                                                    <span>ROBOZ</span>
+                                                </p>
+
+                                                <p class="copyright-item">
+                                                    <span>&#x6C38;&#x4E45;&#x94FE;&#x63A5;:</span>
+                                                    <span><a href="https://roboz-up.github.io/post/bi-ji-wei-ji-yuan-li-ji-jie-kou-ji-zhu/">https://roboz-up.github.io/post/bi-ji-wei-ji-yuan-li-ji-jie-kou-ji-zhu/</a></span>
+                                                </p>
+
+                                                <p class="copyright-item">
+                                                    <span>&#x534F;&#x8BAE;:</span>
+                                                    <span>MIT License</span>
+                                                </p>
+                                            </section>
+                                            
+                                                
+                                                    
+                                                                    <!--Share-->
+                                                                    <span style="margin-right:15px">
+                        <i class="post-share"></i>
+                        <span>&#x5206;&#x4EAB;:</span>
+                                                                    <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://roboz-up.github.io/post/bi-ji-wei-ji-yuan-li-ji-jie-kou-ji-zhu/"><i class="fa fa-qrcode"></i></a>
+                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://roboz-up.github.io/post/bi-ji-wei-ji-yuan-li-ji-jie-kou-ji-zhu/&sharesource=qzone&title=笔记：微机原理及接口技术&pics=https://roboz-up.github.io/images/avatar.png?v=1588225993613&summary="><i class="fa fa-qq"></i></a>
+                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://roboz-up.github.io/post/bi-ji-wei-ji-yuan-li-ji-jie-kou-ji-zhu/&sharesource=weibo&title=笔记：微机原理及接口技术 + " - " + &pic="https://roboz-up.github.io/images/avatar.png?v=1588225993613 "><i class="fa fa-weibo "></i></a>
+
+                                                                    </span>
+                                                                    
+                                                                            <!--zh-->
+                                                                            <section class="post-tags zh ">
+                                                                                <div>
+                                                                                    <span>&#x6807;&#x7B7E;:</span>
+                                                                                    <span class="tag ">
+                        
+                        
+                        <a href="https://roboz-up.github.io/tag/Y2pfBAN1G/">#
+                    笔记
+                        </a>
+                        
+                            
+                                </span>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <a href="javascript:window.history.back();">
+                        &#x8FD4;&#x56DE;</a>
+                                                                                    <span>&dot;</span>
+                                                                                    <a href="#">&#x4E3B;&#x9875;</a>
+                                                                                </div>
+                                                                            </section>
+
+                                                                            
+                                                                                <!---->
+                                                                                <section class="post-nav">
+                                                                                    
+                                                                                        <a class="prev" rel="prev" href="https://roboz-up.github.io/post/bi-ji-fang-zhen-cheng-xu-she-ji/">
+                                                                                            笔记：仿真程序设计
+                                                                                        </a>
+                                                                                        
+                                                                                            
+                                                                                                <a class="next" rel="next" href="https://roboz-up.github.io/post/ge-ren-wang-zhan-de-chuang-jian/">
+                                                                                                    个人免费网站的创建
+                                                                                                </a>
+                                                                                                
+                                                                                </section>
+                    </article>
+                </div>
+                
+                                            
+            </div>
     </div>
-   </div>
-  </div>
-  <script src="https://roboz-up.github.io/media/scripts/jquery.js"></script>
-  <script src="https://roboz-up.github.io/media/scripts/jquery-migrate-1.2.1.min.js"></script>
-  <script src="https://roboz-up.github.io/media/scripts/jquery.appear.js"></script>
+    </div>
+    </div>
+    
+    <div id="player"></div>
+    
+        <footer id="footer" class="footer">
+            <div class="copyright">
+                
+                        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+                            
+                                <b id="hitokoto"></b><br>
+                                
+                                        <svg viewBox="0 0 1024 1024" style="margin-left: 5px;margin-right: 5px;" version="1.0" width="8" height="8" class="my-face">
+            <path
+                d="M863.597631 513.574282l-271.33965-140.213484L729.783667 81.926656c3.583731-7.87141 7.167462-15.742819 7.167462-25.214109C736.887134 25.226908 708.345275 0.012799 672.635953 0.012799a63.611229 63.611229 0 0 0-39.293053 12.607055c-1.791866 1.59988-3.519736 3.19976-5.311602 3.19976L147.87531 418.925381a55.547834 55.547834 0 0 0-19.646527 47.356448c1.791866 17.278704 14.27093 33.021523 32.125591 42.492813l271.33965 141.749369L292.504463 945.221908c-12.479064 25.214109-1.791866 53.563983 23.166262 69.306802 10.751194 6.335525 23.230258 9.47129 35.709322 9.47129 16.062795 0 32.125591-4.735645 44.604655-15.742819l480.091993-403.297753a55.547834 55.547834 0 0 0 19.646526-47.228458 61.243407 61.243407 0 0 0-32.12559-44.156688z"
+                fill="#93b5cf"></path>
+        </svg>
+                                        ROBOZ &copy;Copyright
+                                            <script>
+                                                var date = new Date();
+                                                document.write("" + date.getFullYear());
+                                            </script>
+                                            | Powered by
+                                            <a href="https://github.com/" target="_blank">
+                                                Github
+                                            </a>
+            </div>
+            <div id="update" style="display:none;">
+                on
+            </div>
+            
+                <div id="version" style="display:none;">
+                    1.7.3
+                </div>
+                
+                    <script>
+                        var pat = '';
+                        
+                        document.write('<div id="home_path" style="display:none;">' + document.location.protocol + '//' + window.document.location.hostname + pat + '</div>')
+                    </script>
+        </footer>
+        
+                <script>
+                    
 
+                    function LoadPlayer() {
+                        var music_array = [];
+                        
+                        music_array.push({
+                            name: '白夜',
+                            url: 'http://music.163.com/song/media/outer/url?id=509311810.mp3',
+                            artist: '尹姝贻',
+                            cover: '',
+                        });
+                        
+                        music_array.push({
+                            name: '我的一个道姑朋友',
+                            url: 'http://music.163.com/song/media/outer/url?id=1367452194.mp3',
+                            artist: '双笙',
+                            cover: '',
+                        });
+                        
+                        music_array.push({
+                            name: '红昭愿',
+                            url: 'http://music.163.com/song/media/outer/url?id=452986458.mp3',
+                            artist: '音阙诗听',
+                            cover: '',
+                        });
+                        
+                        music_array.push({
+                            name: '浮白',
+                            url: 'http://music.163.com/song/media/outer/url?id=1336866698.mp3',
+                            artist: '花粥/王胜娚',
+                            cover: '',
+                        });
+                        
+                        music_array.push({
+                            name: '绿色',
+                            url: 'http://music.163.com/song/media/outer/url?id=1345848098.mp3',
+                            artist: '陈雪凝',
+                            cover: '',
+                        });
+                        
+                        music_array.push({
+                            name: 'いつも何度でも',
+                            url: 'http://music.163.com/song/media/outer/url?id=480353.mp3',
+                            artist: '宗次郎',
+                            cover: '',
+                        });
+                        
+                        music_array.push({
+                            name: '紫色激情',
+                            url: 'http://music.163.com/song/media/outer/url?id=458473562.mp3',
+                            artist: '水玥兒',
+                            cover: '',
+                        });
+                        
+                        music_array.push({
+                            name: 'Kiss the Rain',
+                            url: 'http://music.163.com/song/media/outer/url?id=479320305.mp3',
+                            artist: '이루마',
+                            cover: '',
+                        });
+                        
+                        music_array.push({
+                            name: '夜、萤火虫和你',
+                            url: 'http://music.163.com/song/media/outer/url?id=509720124.mp3',
+                            artist: 'AniFace',
+                            cover: '',
+                        });
+                        
+                        music_array.push({
+                            name: '千与千寻',
+                            url: 'http://music.163.com/song/media/outer/url?id=469838125.mp3',
+                            artist: '久石让',
+                            cover: '',
+                        });
+                        
+                        console.log(" MusicList: " + music_array);
+                        
+                        const ap = new APlayer({
+                            container: document.getElementById('player'),
+                            audio: music_array
+                        });
+                        
+                    }
+                    LoadPlayer();
+                    
+                    
+                    
+                    hitokoto();
+                    
+                    getStar();
+                    hljs.initHighlighting();
+                    console.clear();
+                    
+                    CheckVersion();
+                    
+                    var newDate = new Date();
+                    newDate.setTime(1588225993613);
+                    console.log(" Blog Update Time: " + newDate.toLocaleDateString());
+                    console.log("\n %c \u26a1Theme:Chic Author's Blog:https://blog.itjoker.cn  Write By ITJoker  \n\n", "color: #ffffff; background: rgba(49, 49, 49, 0.85); padding:5px 0;border-radius:5px;");
+                </script>
+                
+        </div>
+</body>
+<script>
+    scroll();
+</script>
 
- </body>
 </html>
