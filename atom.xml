@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://roboz-up.github.io</id>
     <title>ROBOZ</title>
-    <updated>2020-04-30T07:52:40.294Z</updated>
+    <updated>2020-04-30T08:05:39.484Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://roboz-up.github.io"/>
     <link rel="self" href="https://roboz-up.github.io/atom.xml"/>
@@ -16,7 +16,7 @@
         <link href="https://roboz-up.github.io/post/bi-ji-fang-zhen-cheng-xu-she-ji/">
         </link>
         <updated>2020-03-25T08:46:00.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="最后更新时间202044">⏰最后更新时间：2020.4.4</h1>
+        <content type="html"><![CDATA[<h1 id="最后更新时间2020430">⏰最后更新时间：2020.4.30</h1>
 <figure data-type="image" tabindex="1"><img src="https://roboz-up.github.io/post-images/1585126206802.png" alt="" loading="lazy"></figure>
 <h1 id="第一章-matlab基础知识">第一章 MATLAB基础知识</h1>
 <h2 id="帮助命令">帮助命令</h2>
@@ -1358,10 +1358,8 @@ X=fsolve(@fun,X0,option)<br>
 <h1 id="第十一章-matlab应用接口">第十一章 MATLAB应用接口</h1>
 <h1 id="第十二章-matlab的学科应用">第十二章 MATLAB的学科应用</h1>
 <h1 id="如需转载-反馈-交流">如需转载、反馈、交流</h1>
-<h1 id="联系站长">联系站长</h1>
-<h1 id="qq3168788134">QQ：3168788134</h1>
 <h1 id="️-联系">☎️ 联系📞</h1>
-<h1 id="qq3168788134-2">QQ：3168788134</h1>
+<h1 id="qq3168788134">QQ：3168788134</h1>
 <p><a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=k_H88fzp0_LivfD8-g" style="text-decoration:none;"><img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_12.png"/></a></p>
 ]]></content>
     </entry>
@@ -1371,7 +1369,7 @@ X=fsolve(@fun,X0,option)<br>
         <link href="https://roboz-up.github.io/post/bi-ji-wei-ji-yuan-li-ji-jie-kou-ji-zhu/">
         </link>
         <updated>2020-03-22T04:27:34.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="最后更新时间202045">⏰最后更新时间：2020.4.5</h1>
+        <content type="html"><![CDATA[<h1 id="最后更新时间2020430">⏰最后更新时间：2020.4.30</h1>
 <figure data-type="image" tabindex="1"><img src="https://roboz-up.github.io/post-images/1584851623468.png" alt="" loading="lazy"></figure>
 <h1 id="预-备-知-识">预 备 知 识</h1>
 <ul>
@@ -3181,10 +3179,8 @@ ESC 20H，AL；整数加法指令：FADD ST(0),ST</p>
 <h1 id="第九章-微机总线">第九章 微机总线</h1>
 <h1 id="第十章-人机交互接口">第十章 人机交互接口</h1>
 <h1 id="如需转载-反馈-交流">如需转载、反馈、交流</h1>
-<h1 id="联系站长">联系站长</h1>
-<h1 id="qq3168788134">QQ：3168788134</h1>
 <h1 id="️-联系">☎️ 联系📞</h1>
-<h1 id="qq3168788134-2">QQ：3168788134</h1>
+<h1 id="qq3168788134">QQ：3168788134</h1>
 <p><a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=k_H88fzp0_LivfD8-g" style="text-decoration:none;"><img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_12.png"/></a></p>
 ]]></content>
     </entry>
@@ -3198,7 +3194,7 @@ ESC 20H，AL；整数加法指令：FADD ST(0),ST</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>📮基于Gridea和Github建立个人免费网站的经验分享。</p>
 <!-- more -->
-<h1 id="最后更新时间2020322">⏰最后更新时间：2020.3.22</h1>
+<h1 id="最后更新时间2020430">⏰最后更新时间：2020.4.30</h1>
 <figure data-type="image" tabindex="1"><img src="https://roboz-up.github.io/post-images/1584695375986.jpg" alt="" loading="lazy"></figure>
 <h1 id="环境搭建与准备">环境搭建与准备</h1>
 <h2 id="下载安装-gridea">下载安装 Gridea</h2>
@@ -3238,10 +3234,8 @@ https://blog.csdn.net/ltstud/article/details/75949726/
 </code></pre>
 <figure data-type="image" tabindex="7"><img src="https://roboz-up.github.io/post-images/1584703992782.png" alt="" loading="lazy"></figure>
 <h1 id="如需转载-反馈-交流">如需转载、反馈、交流</h1>
-<h1 id="联系站长">联系站长</h1>
-<h1 id="qq3168788134">QQ：3168788134</h1>
 <h1 id="️-联系">☎️ 联系📞</h1>
-<h1 id="qq3168788134-2">QQ：3168788134</h1>
+<h1 id="qq3168788134">QQ：3168788134</h1>
 <p><a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=k_H88fzp0_LivfD8-g" style="text-decoration:none;"><img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_12.png"/></a></p>
 ]]></content>
     </entry>
