@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://roboz-up.github.io</id>
     <title>ROBOZ</title>
-    <updated>2020-04-30T08:28:44.517Z</updated>
+    <updated>2020-05-01T03:14:43.614Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://roboz-up.github.io"/>
     <link rel="self" href="https://roboz-up.github.io/atom.xml"/>
@@ -11,13 +11,20 @@
     <icon>https://roboz-up.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, ROBOZ</rights>
     <entry>
+        <title type="html"><![CDATA[图床测试]]></title>
+        <id>https://roboz-up.github.io/post/tu-chuang-ce-shi/</id>
+        <link href="https://roboz-up.github.io/post/tu-chuang-ce-shi/">
+        </link>
+        <updated>2020-05-01T02:50:34.000Z</updated>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[笔记：仿真程序设计]]></title>
         <id>https://roboz-up.github.io/post/bi-ji-fang-zhen-cheng-xu-she-ji/</id>
         <link href="https://roboz-up.github.io/post/bi-ji-fang-zhen-cheng-xu-she-ji/">
         </link>
         <updated>2020-03-25T08:46:00.000Z</updated>
         <content type="html"><![CDATA[<h1 id="最后更新时间2020430">⏰最后更新时间：2020.4.30</h1>
-<figure data-type="image" tabindex="1"><img src="https://roboz-up.github.io/post-images/1585126206802.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/05/01/Ht5CPFWogxbkGTE.png" alt="" loading="lazy"></figure>
 <h1 id="第一章-matlab基础知识">第一章 MATLAB基础知识</h1>
 <h2 id="帮助命令">帮助命令</h2>
 <h3 id="help命令">help命令</h3>
@@ -1367,7 +1374,7 @@ X=fsolve(@fun,X0,option)<br>
         </link>
         <updated>2020-03-22T04:27:34.000Z</updated>
         <content type="html"><![CDATA[<h1 id="最后更新时间2020430">⏰最后更新时间：2020.4.30</h1>
-<figure data-type="image" tabindex="1"><img src="https://roboz-up.github.io/post-images/1584851623468.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/05/01/gHNOETMRqb4yha1.png" alt="" loading="lazy"></figure>
 <h1 id="预-备-知-识">预 备 知 识</h1>
 <ul>
 <li>
@@ -3189,31 +3196,31 @@ ESC 20H，AL；整数加法指令：FADD ST(0),ST</p>
         <content type="html"><![CDATA[<p>📮基于Gridea和Github建立个人免费网站的经验分享。</p>
 <!-- more -->
 <h1 id="最后更新时间2020430">⏰最后更新时间：2020.4.30</h1>
-<figure data-type="image" tabindex="1"><img src="https://roboz-up.github.io/post-images/1584695375986.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/05/01/7HBlnMy392oZmYP.jpg" alt="" loading="lazy"></figure>
 <h1 id="环境搭建与准备">环境搭建与准备</h1>
 <h2 id="下载安装-gridea">下载安装 Gridea</h2>
 <pre><code>Gridea 官网：https://gridea.dev/
 </code></pre>
-<figure data-type="image" tabindex="2"><img src="https://roboz-up.github.io/post-images/1584696600131.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://i.loli.net/2020/05/01/FaJkMCt2WngclN7.png" alt="" loading="lazy"></figure>
 <h2 id="下载安装-git">下载安装 Git</h2>
 <pre><code>Git 官网：https://git-scm.com/
 
 网速慢的小可爱可以使用 淘宝NPM镜像
 https://npm.taobao.org/mirrors/git-for-windows/
 </code></pre>
-<figure data-type="image" tabindex="3"><img src="https://roboz-up.github.io/post-images/1584699726284.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="https://i.loli.net/2020/05/01/zFf2KyMdO36mrq4.png" alt="" loading="lazy"></figure>
 <h2 id="注册github账号已经有账号的小可爱直接跳过即可">注册Github账号（已经有账号的小可爱直接跳过即可）</h2>
 <pre><code>Github 官网： https://github.com/
 
 注册Github账号教程
 https://jingyan.baidu.com/article/86fae346e723303c49121abb.html/
 </code></pre>
-<figure data-type="image" tabindex="4"><img src="https://roboz-up.github.io/post-images/1584697256485.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://i.loli.net/2020/05/01/C58cPHu7kaMeGxQ.png" alt="" loading="lazy"></figure>
 <h1 id="配置gridea">配置Gridea</h1>
 <h2 id="创建github仓库及其网站">创建Github仓库及其网站</h2>
 <pre><code>登陆Github 新建仓库
 </code></pre>
-<figure data-type="image" tabindex="5"><img src="https://roboz-up.github.io/post-images/1584702124481.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="https://i.loli.net/2020/05/01/cFToh1vkJVAt2KS.png" alt="" loading="lazy"></figure>
 <h2 id="获取github私人token令牌">获取Github私人Token令牌</h2>
 <pre><code>令牌获取教程
 https://blog.csdn.net/ltstud/article/details/75949726/
@@ -3221,12 +3228,12 @@ https://blog.csdn.net/ltstud/article/details/75949726/
 <h2 id="建立gridea远程连接">建立Gridea远程连接</h2>
 <pre><code>打开Gridea 进行配置
 </code></pre>
-<figure data-type="image" tabindex="6"><img src="https://roboz-up.github.io/post-images/1584703457574.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="6"><img src="https://i.loli.net/2020/05/01/dU5CbFgRMBZiO2T.png" alt="" loading="lazy"></figure>
 <h1 id="应用gridea">应用Gridea</h1>
 <pre><code>配置完成后，先测试远程连接是否正常
 点击同步，进行网页美化与内容同步
 </code></pre>
-<figure data-type="image" tabindex="7"><img src="https://roboz-up.github.io/post-images/1584703992782.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="7"><img src="https://i.loli.net/2020/05/01/aKNHxTOSCvAR9gb.png" alt="" loading="lazy"></figure>
 <h1 id="a-target_blank-hrefhttpmailqqcomcgi-binqm_sharetqm_mailmeemailk_h88fzp0_livfd8-g-styletext-decorationnone-意见反馈a"><a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=k_H88fzp0_LivfD8-g" style="text-decoration:none;">✉ 意见反馈</a></h1>
 ]]></content>
     </entry>
