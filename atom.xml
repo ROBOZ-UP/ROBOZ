@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://roboz-up.github.io</id>
     <title>ROBOZ</title>
-    <updated>2020-05-04T15:01:50.552Z</updated>
+    <updated>2020-05-05T00:32:09.554Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://roboz-up.github.io"/>
     <link rel="self" href="https://roboz-up.github.io/atom.xml"/>
@@ -10,6 +10,18 @@
     <logo>https://roboz-up.github.io/images/avatar.png</logo>
     <icon>https://roboz-up.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, ROBOZ</rights>
+    <entry>
+        <title type="html"><![CDATA[每日一句记录]]></title>
+        <id>https://roboz-up.github.io/post/mei-ri-yi-ju/</id>
+        <link href="https://roboz-up.github.io/post/mei-ri-yi-ju/">
+        </link>
+        <updated>2020-05-04T06:59:20.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="202054">2020.5.4</h1>
+<p>生命的长度我是拓展不了了，但是我可以试着把它拉宽一点，这样子就能印出彩虹了。</p>
+<h1 id="202055">2020.5.5</h1>
+<p>心若不动，风又奈何。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[笔记：仿真程序设计]]></title>
         <id>https://roboz-up.github.io/post/bi-ji-fang-zhen-cheng-xu-she-ji/</id>
