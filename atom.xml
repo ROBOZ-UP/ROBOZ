@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://roboz-up.github.io</id>
     <title>ROBOZ</title>
-    <updated>2020-05-05T07:53:17.039Z</updated>
+    <updated>2020-05-06T02:50:25.472Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://roboz-up.github.io"/>
     <link rel="self" href="https://roboz-up.github.io/atom.xml"/>
@@ -11,7 +11,7 @@
     <icon>https://roboz-up.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, ROBOZ</rights>
     <entry>
-        <title type="html"><![CDATA[每日一句记录]]></title>
+        <title type="html"><![CDATA[每日一句]]></title>
         <id>https://roboz-up.github.io/post/mei-ri-yi-ju/</id>
         <link href="https://roboz-up.github.io/post/mei-ri-yi-ju/">
         </link>
@@ -20,6 +20,8 @@
 <p>生命的长度我是拓展不了了，但是我可以试着把它拉宽一点，这样子就能印出彩虹了。</p>
 <h1 id="202055">2020.5.5</h1>
 <p>心若不动，风又奈何。</p>
+<h1 id="202056">2020.5.6</h1>
+<p>松花酿酒，春水煎茶。</p>
 ]]></content>
     </entry>
     <entry>
@@ -1378,71 +1380,43 @@ X=fsolve(@fun,X0,option)<br>
         <link href="https://roboz-up.github.io/post/shi-yong-wang-zhan-ji/">
         </link>
         <updated>2020-03-23T14:01:05.000Z</updated>
-        <content type="html"><![CDATA[<p>⏰最后更新时间：2020.5.4</p>
+        <content type="html"><![CDATA[<p>⏰最后更新时间：2020.5.6</p>
 <h1 id="搜索引擎">搜索引擎</h1>
-<p>必应 - 综合搜索引擎<br>
-<a href="https://cn.bing.com/">https://cn.bing.com/</a></p>
-<p>Magi - 综合搜索引擎<br>
-<a href="https://magi.com/">https://magi.com/</a></p>
-<p>秘迹搜索 - 综合搜索引擎<br>
-<a href="https://mijisou.com/">https://mijisou.com/</a></p>
-<p>鸠摩搜索 - 文档搜索引擎<br>
-<a href="https://www.jiumodiary.com/">https://www.jiumodiary.com/</a></p>
-<p>爱学术 - 文档搜索引擎<br>
-<a href="https://www.ixueshu.com/">https://www.ixueshu.com/</a></p>
-<p>Datasheet - 电子元器件搜索引擎<br>
-<a href="http://datasheet.eepw.com.cn/">http://datasheet.eepw.com.cn/</a></p>
-<p>采芯网 - 电子元器件搜索引擎<br>
-<a href="https://www.findic.com/">https://www.findic.com/</a></p>
+<p><a href="https://cn.bing.com/">必应 - 综合搜索引擎</a></p>
+<p><a href="https://magi.com/">Magi - 综合搜索引擎</a></p>
+<p><a href="https://mijisou.com/">秘迹搜索 - 综合搜索引擎</a></p>
+<p><a href="https://www.jiumodiary.com/">鸠摩搜索 - 文档搜索引擎</a></p>
+<p><a href="https://www.ixueshu.com/">爱学术 - 文档搜索引擎</a></p>
+<p><a href="http://datasheet.eepw.com.cn/">Datasheet - 电子元器件搜索引擎</a></p>
+<p><a href="https://www.findic.com/">采芯网 - 电子元器件搜索引擎</a></p>
 <h1 id="资讯">资讯</h1>
-<p>CSDN<br>
-<a href="https://www.csdn.net/">https://www.csdn.net/</a></p>
-<p>简书<br>
-<a href="https://www.jianshu.com/">https://www.jianshu.com/</a></p>
-<p>W3school<br>
-<a href="https://www.w3school.com.cn/">https://www.w3school.com.cn/</a></p>
-<p>EEPW电子产品世界<br>
-<a href="http://www.eepw.com.cn/">http://www.eepw.com.cn/</a></p>
-<p>傲天分享站<br>
-<a href="https://aosky.wordpress.com/">https://aosky.wordpress.com/</a></p>
-<p>MSDN<br>
-<a href="https://msdn.itellyou.cn/">https://msdn.itellyou.cn/</a><br>
-NEXT<br>
-<a href="https://next.itellyou.cn/">https://next.itellyou.cn/</a></p>
-<p>叁夏资源<br>
-<a href="https://sansummers.com/">https://sansummers.com/</a></p>
+<p><a href="https://www.csdn.net/">CSDN</a></p>
+<p><a href="https://www.jianshu.com/">简书</a></p>
+<p><a href="https://www.w3school.com.cn/">W3school</a></p>
+<p><a href="http://www.eepw.com.cn/">EEPW电子产品世界</a></p>
+<p><a href="https://aosky.wordpress.com/">傲天分享站</a></p>
+<p><a href="https://msdn.itellyou.cn/">MSDN</a><br>
+<a href="https://next.itellyou.cn/">NEXT</a></p>
+<p><a href="https://sansummers.com/">叁夏资源</a></p>
 <h1 id="工具">工具</h1>
-<p>实用工具大全<br>
-<a href="https://tool.520101.com/">https://tool.520101.com/</a></p>
-<p>SO JSON在线解析<br>
-<a href="https://www.sojson.com/">https://www.sojson.com/</a></p>
-<p>SMMS图床<br>
-<a href="https://sm.ms/">https://sm.ms/</a></p>
-<p>阿里云开发者社区<br>
-<a href="https://developer.aliyun.com/">https://developer.aliyun.com/</a></p>
-<p>百度搜索资源平台<br>
-<a href="https://ziyuan.baidu.com/">https://ziyuan.baidu.com/</a></p>
-<p>芯片丝印反查网<br>
-<a href="http://www.smdmark.com/">http://www.smdmark.com/</a></p>
+<p><a href="https://tool.520101.com/">实用工具大全</a></p>
+<p><a href="https://www.sojson.com/">SO JSON在线解析</a></p>
+<p><a href="https://sm.ms/">SMMS图床</a></p>
+<p><a href="https://developer.aliyun.com/">阿里云开发者社区</a></p>
+<p><a href="https://ziyuan.baidu.com/">百度搜索资源平台</a></p>
+<p><a href="http://www.smdmark.com/">芯片丝印反查网</a></p>
 <h1 id="视频">视频</h1>
-<p>A站-ACFUN<br>
-<a href="https://www.acfun.cn/">https://www.acfun.cn/</a></p>
-<p>B站-哔哩哔哩<br>
-<a href="https://www.bilibili.com/">https://www.bilibili.com/</a></p>
-<p>91美剧网<br>
-<a href="https://91mjw.com/">https://91mjw.com/</a></p>
-<p>看精品<br>
-<a href="http://www.kanjp.com/">http://www.kanjp.com/</a></p>
-<p>爱酷看看<br>
-<a href="https://www.ikukk.com/">https://www.ikukk.com/</a></p>
+<p><a href="https://www.acfun.cn/">A站-ACFUN</a></p>
+<p><a href="https://www.bilibili.com/">B站-哔哩哔哩</a></p>
+<p><a href="https://91mjw.com/">91美剧网</a></p>
+<p><a href="http://www.kanjp.com/">看精品</a></p>
+<p><a href="https://www.ikukk.com/">爱酷看看</a></p>
 <h1 id="游戏">游戏</h1>
-<p>单机游戏合集<br>
-<a href="https://mubu.com/doc/2_vWBogdplk">https://mubu.com/doc/2_vWBogdplk</a></p>
-<p>游迅网<br>
-<a href="http://www.yxdown.com/">http://www.yxdown.com/</a></p>
+<p><a href="https://mubu.com/doc/2_vWBogdplk">单机游戏合集</a></p>
+<p><a href="http://www.yxdown.com/">游迅网</a></p>
 <h1 id="博客">博客</h1>
-<p>中国博客联盟<br>
-<a href="https://zgboke.org/">https://zgboke.org/</a></p>
+<p><a href="https://zgboke.org/">中国博客联盟</a></p>
+<p><a href="https://fehey.com/">海岛心hey</a></p>
 <h1 id="a-target_blank-hrefhttpmailqqcomcgi-binqm_sharetqm_mailmeemailk_h88fzp0_livfd8-g-styletext-decorationnone-意见反馈a"><a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=k_H88fzp0_LivfD8-g" style="text-decoration:none;">✉ 意见反馈</a></h1>
 ]]></content>
     </entry>
