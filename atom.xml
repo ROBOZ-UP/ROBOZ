@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://roboz-up.github.io</id>
     <title>ROBOZ</title>
-    <updated>2020-05-06T02:50:25.472Z</updated>
+    <updated>2020-05-06T10:25:01.748Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://roboz-up.github.io"/>
     <link rel="self" href="https://roboz-up.github.io/atom.xml"/>
@@ -1393,6 +1393,7 @@ X=fsolve(@fun,X0,option)<br>
 <p><a href="https://www.csdn.net/">CSDN</a></p>
 <p><a href="https://www.jianshu.com/">简书</a></p>
 <p><a href="https://www.w3school.com.cn/">W3school</a></p>
+<p><a href="https://404.life/">404模板网</a></p>
 <p><a href="http://www.eepw.com.cn/">EEPW电子产品世界</a></p>
 <p><a href="https://aosky.wordpress.com/">傲天分享站</a></p>
 <p><a href="https://msdn.itellyou.cn/">MSDN</a><br>
