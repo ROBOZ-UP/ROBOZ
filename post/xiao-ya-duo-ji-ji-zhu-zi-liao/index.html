@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+<title>
+    ROBOZ
+</title>
+<!--[if lt IE 9]><script src="//cdn.bootcss.com/html5shiv/r29/html5.js"></script><![endif]-->
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<meta name="author" content="ROBOZ">
+<meta name="description" content="阿俊的平行空间">
+<meta name="keywords" content="">
+<script async src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/css/style.min.css" />
+<link rel="stylesheet" href="https://roboz-up.github.io/styles/main.css" />
+<link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/script/tocbot.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/script/script.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/script/icon.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.12/CDN/js/Card/prism.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.12/CDN/css/Card/prism.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js"></script>
+
+    <!--点击特效-->
+    <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@latest/CDN/js/love.min.js"></script>
+    
+            <!--CDN样式-->
+            <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@latest/CDN/js/hit-kounter-lc-0.3.0.js"></script>
+            <script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+            
+                <script>
+                    (function() {
+                        var bp = document.createElement('script');
+                        var curProtocol = window.location.protocol.split(':')[0];
+                        if (curProtocol === 'https') {
+                            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+                        } else {
+                            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                        }
+                        var s = document.getElementsByTagName("script")[0];
+                        s.parentNode.insertBefore(bp, s);
+                    })();
+                </script>
+                
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo">
+                <a href="https://roboz-up.github.io">
+                    ROBOZ
+                </a>
+            </div>
+
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/">
+                        首页
+                    </a>
+                    
+                    <a class="menu-item" href="/archives">
+                        列表
+                    </a>
+                    
+                    <a class="menu-item" href="/tags">
+                        分类
+                    </a>
+                    
+                    <a class="menu-item" href="/post/about">
+                        关于
+                    </a>
+                    
+                        <input id="switch_default" type="checkbox" class="switch_default">
+                        <label for="switch_default" class="toggleBtn"></label>
+            </div>
+            <form id="gridea-search-form" data-update="1602934132569" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
+            </form>
+        </div>
+    </nav>
+
+    
+        <nav class="navbar-mobile" id="nav-mobile">
+            <div class="container">
+                <div class="navbar-header">
+                    <div>
+                        <a href="https://roboz-up.github.io">
+                            ROBOZ
+                        </a>
+                        <!--en-->
+                        <a id="mobile-toggle-theme-en" class="a en">&nbsp;Dark</a>
+                        <!--zh-->
+                        <a id="mobile-toggle-theme-zh" class="a zh">&nbsp;&#x6697;&#x9ED1;</a>
+                    </div>
+                    <form id="gridea-search-form" data-update="1602934132569" action="/search/index.html">
+                        <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
+                    </form>
+                    <!--en-->
+                    <div class="menu-toggle" id="menu-toggle-en" onclick="mobileBtn()">&#9776; Menu</div>
+                    <!--zh-->
+                    <div class="menu-toggle" id="menu-toggle-zh" onclick="mobileBtn()">&#9776; &#x83DC;&#x5355;</div>
+
+                </div>
+                <div class="menu" id="mobile-menu">
+                    
+                        <a class="menu-item" href="/">
+                            首页
+                        </a>
+                        
+                        <a class="menu-item" href="/archives">
+                            列表
+                        </a>
+                        
+                        <a class="menu-item" href="/tags">
+                            分类
+                        </a>
+                        
+                        <a class="menu-item" href="/post/about">
+                            关于
+                        </a>
+                        
+                </div>
+            </div>
+        </nav>
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementById("menu-toggle-en");
+        var toggleMenu_zh = document.getElementById("menu-toggle-zh");
+
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.display != "none") {
+            if (toggleMenu.classList.contains("active")) {
+                toggleMenu.classList.remove("active")
+                mobileMenu.classList.remove("active")
+            } else {
+                toggleMenu.classList.add("active")
+                mobileMenu.classList.add("active")
+            }
+        } else if (toggleMenu_zh.display != "none") {
+            if (toggleMenu_zh.classList.contains("active")) {
+                toggleMenu_zh.classList.remove("active")
+                mobileMenu.classList.remove("active")
+            } else {
+                toggleMenu_zh.classList.add("active")
+                mobileMenu.classList.add("active")
+            }
+        }
+
+    }
+</script>
+            <div class="main">
+                <div class="container">
+                    <article class="post-wrap">
+                        <header class="post-header">
+                            <h1 class="post-title">
+                                小芽舵机技术资料
+                            </h1>
+                            
+                                    <!--zh-->
+                                    <div class="post-meta zh">
+                                        &#x4F5C;&#x8005;:
+                                        <a itemprop="author" rel="author" href="/">
+                                            ROBOZ
+                                        </a>
+                                        <span class="post-time">&#x65E5;&#x671F;: <a href="#">2020-10-17</a></span>
+                                        <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a
+                                    href="#">16.3
+                                    &#x5206;&#x949F;</a></span>
+                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">4069</a></span>
+                                        
+                                                阅读量:
+                                                <span data-hk-page="current"> - </span>
+                                                
+                                    </div>
+                                    
+                        </header>
+                        <div class="post-content">
+                            <p>⏰最后更新时间：2020.10.17</p>
+<p>转载于<br>
+<a href="http://xiaoyatec.com/2016/07/11/ax-12-ax-12-ax-12a-robotis%e8%88%b5%e6%9c%ba%e6%8a%80%e6%9c%af%e8%b5%84%e6%96%99%ef%bc%88%e4%b8%ad%e6%96%87%e7%89%88%ef%bc%89/">AX-12/ AX-12+/ AX-12A ROBOTIS舵机技术资料（中文版）</a> | 北京小芽科技</p>
+<figure data-type="image" tabindex="1"><img src="http://xiaoyatec.com/wp-content/uploads/2016/07/20160711113031_13079.png" alt="" loading="lazy"></figure>
+<p>※ AX-12+是AX-12的升级版，在电路设计、制作材料、齿轮组等都做了升级；<br>
+※ AX-12A是AX-12+的升级版本，现在这个系列中只有AX-12A在售，其他的已经停产。</p>
+<p>AX-12A舵机是半双工的TTL通信方式，全双工转半双工的原理图如下：<br>
+<img src="http://xiaoyatec.com/wp-content/uploads/2016/07/20160711115702_42385.png" alt="" loading="lazy"></p>
+<p>普通用户可以用USB2Dynamixel串口转换器进行舵机控制，管脚说明如下图所示：<br>
+<img src="http://xiaoyatec.com/wp-content/uploads/2016/07/20160711115848_63993.png" alt="" loading="lazy"></p>
+<h1 id="技术参数">技术参数：</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">品名</th>
+<th style="text-align:center">Dynamixel AX-12 / AX-12+ /AX-12A</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">重量</td>
+<td style="text-align:center">53.5g(AX-12/AX-12+), 54.6g(AX-12A)</td>
+</tr>
+<tr>
+<td style="text-align:center">尺寸</td>
+<td style="text-align:center">32mm x 50mm x 40mm</td>
+</tr>
+<tr>
+<td style="text-align:center">精度</td>
+<td style="text-align:center">0.29°</td>
+</tr>
+<tr>
+<td style="text-align:center">齿轮减速比</td>
+<td style="text-align:center">254:1</td>
+</tr>
+<tr>
+<td style="text-align:center">静止扭矩 (N.m)</td>
+<td style="text-align:center">1.5N.m(12.0V, 1.5A)</td>
+</tr>
+<tr>
+<td style="text-align:center">空载速度 (RPM)</td>
+<td style="text-align:center">59rpm(12V)</td>
+</tr>
+<tr>
+<td style="text-align:center">操作范围</td>
+<td style="text-align:center">舵机模式 :  300 °    <br/>轮式模式 : 无限旋转</td>
+</tr>
+<tr>
+<td style="text-align:center">操作电压</td>
+<td style="text-align:center">9~12V (推荐电压 : 11.1V)</td>
+</tr>
+<tr>
+<td style="text-align:center">操作温度</td>
+<td style="text-align:center">-5°C ~ 70°C</td>
+</tr>
+<tr>
+<td style="text-align:center">指令信号</td>
+<td style="text-align:center">数据信号</td>
+</tr>
+<tr>
+<td style="text-align:center">通讯协议</td>
+<td style="text-align:center">半双工异步串口通讯(8bit,1stop, No Parity)</td>
+</tr>
+<tr>
+<td style="text-align:center">物理连接</td>
+<td style="text-align:center">TTL 多点总线(菊花链型连接)</td>
+</tr>
+<tr>
+<td style="text-align:center">ID</td>
+<td style="text-align:center">254 ID (0~253)</td>
+</tr>
+<tr>
+<td style="text-align:center">波特率</td>
+<td style="text-align:center">7343bps ~ 1Mbps</td>
+</tr>
+<tr>
+<td style="text-align:center">反馈功能</td>
+<td style="text-align:center">位置、温度、负载、输入电压、电流等</td>
+</tr>
+<tr>
+<td style="text-align:center">材质</td>
+<td style="text-align:center">外壳 : 工程塑料<br/>齿轮 : 工程塑料</td>
+</tr>
+</tbody>
+</table>
+<p>※ 堵转扭矩指的是瞬间禁止最大扭矩<br>
+※ 稳定动作的扭矩一般设计为堵转扭矩的1/5或者更少</p>
+<h1 id="控制列表">控制列表：</h1>
+<p>控制表包含了舵机的状态和操作信息。用户可以通过修改指令包数据来控制舵机。</p>
+<h2 id="eeprom-和-ram-存储">EEPROM 和 RAM 存储</h2>
+<p>RAM 区域中的数据在断电时不会被保存, 而保存在 EEPROM 区域的数据即使在断电时仍然会保存在 EEPROM內。</p>
+<h2 id="address-位址">Address ( 位址)</h2>
+<p>表示数据储存的位址,为了从控制列表中读取或者烧写数据，用户需要把数据分配到正确的指令包位置中。</p>
+<h2 id="access-存取">Access ( 存取)</h2>
+<p>Dynamixel 拥有两类数据：只读数据，这类数据一般用于传感器；可读写数据，这类数据主要作为驱动数据使用，多作为控制用途。</p>
+<h2 id="initial-value-初始值">Initial Value ( 初始值)</h2>
+<p>在EEPROM存储区域中, 在下面控制列表右边的初始值，为出厂设置的初始值；而在RAM区域，在控制列表的右边的初始值，为舵机上电启动时的初始值。</p>
+<h2 id="highestlowest-byte-高低位字节">Highest/Lowest Byte ( 高/低位字节)</h2>
+<p>在列表中, 有一些数据共享同一名称, 但会在名称末尾加上一个(L)或(H)来区分不同的地址,这类数据需要16比特的存储区域，并且这个区域会按照8比特的宽度来区分高（high）低（low）位。这两个位址必须由一个指令包同时读取或写入。</p>
+<h2 id="eeprom">EEPROM</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">地址（16进制）</th>
+<th style="text-align:center">名称</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">存取</th>
+<th style="text-align:center">初始值（16进制）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0 (0X00)</td>
+<td style="text-align:center">Model Number(L)<br/>舵机型号</td>
+<td style="text-align:center">Lowest byte of model number<br/>型号的低字节</td>
+<td style="text-align:center">R</td>
+<td style="text-align:center">12 (0X0C)</td>
+</tr>
+<tr>
+<td style="text-align:center">1 (0X01)</td>
+<td style="text-align:center">Model Number(H)<br/>舵机型号</td>
+<td style="text-align:center">Highest byte of model number<br/>型号的高字节</td>
+<td style="text-align:center">R</td>
+<td style="text-align:center">0 (0X00)</td>
+</tr>
+<tr>
+<td style="text-align:center">2 (0X02)</td>
+<td style="text-align:center">Version of Firmware<br/>固件的版本</td>
+<td style="text-align:center">Information on the version of firmware<br/>有关固件版本的信息</td>
+<td style="text-align:center">R</td>
+<td style="text-align:center">–</td>
+</tr>
+<tr>
+<td style="text-align:center">3 (0X03)</td>
+<td style="text-align:center">ID<br/></td>
+<td style="text-align:center">ID of Dynamixel<br/>Dynamixel的ID</td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">1 (0X01)</td>
+</tr>
+<tr>
+<td style="text-align:center">4 (0X04)</td>
+<td style="text-align:center">Baud Rate<br/>波特率</td>
+<td style="text-align:center">Baud Rate of Dynamixel<br/>Dynamixel的波特率</td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">1 (0X01)</td>
+</tr>
+<tr>
+<td style="text-align:center">5 (0X05)</td>
+<td style="text-align:center">Return Delay Time<br/>回应延迟时间</td>
+<td style="text-align:center">Return Delay Time<br/>回应延迟时间</td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">250 (0XFA)</td>
+</tr>
+<tr>
+<td style="text-align:center">6 (0X06)</td>
+<td style="text-align:center">CW Angle Limit(L)<br/>顺时针角度限制</td>
+<td style="text-align:center">Lowest byte of clockwise Angle Limit<br/>顺时针角度限制的低字节</td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">0 (0X00)</td>
+</tr>
+<tr>
+<td style="text-align:center">7 (0X07)</td>
+<td style="text-align:center">CW Angle Limit(H)<br/>顺时针角度限制</td>
+<td style="text-align:center">Highest byte of clockwise Angle Limit<br/>顺时针角度限制的高字节</td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">0 (0X00)</td>
+</tr>
+<tr>
+<td style="text-align:center">8 (0X08)</td>
+<td style="text-align:center">CCW Angle Limit(L)<br/>逆时针角度限制</td>
+<td style="text-align:center">Lowest byte of counterclockwise Angle Limit<br/>逆时针角度限制的低字节</td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">255 (0XFF)</td>
+</tr>
+<tr>
+<td style="text-align:center">9 (0X09)</td>
+<td style="text-align:center">CCW Angle Limit(H)<br/>逆时针角度限制</td>
+<td style="text-align:center">Highest byte of counterclockwise Angle Limit<br/>逆时针角度限制的高字节</td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">3 (0X03)</td>
+</tr>
+<tr>
+<td style="text-align:center">11 (0X0B)</td>
+<td style="text-align:center">the Highest Limit Temperature<br/>最高温度限制</td>
+<td style="text-align:center">Internal Limit Temperature<br/>内部极限温度</td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">70 (0X46)</td>
+</tr>
+<tr>
+<td style="text-align:center">12 (0X0C)</td>
+<td style="text-align:center">the Lowest Limit Voltage<br/>最低电压限制</td>
+<td style="text-align:center">Lowest Limit Voltage<br/>最低极限电压</td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">60 (0X3C)</td>
+</tr>
+<tr>
+<td style="text-align:center">13 (0X0D)</td>
+<td style="text-align:center">the Highest Limit Voltage<br/>最高电压限制</td>
+<td style="text-align:center">Highest Limit Voltage<br/>最高极限电压</td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">140 (0XBE)</td>
+</tr>
+<tr>
+<td style="text-align:center">14 (0X0E)</td>
+<td style="text-align:center">Max Torque(L)<br/>最大扭矩</td>
+<td style="text-align:center">Lowest byte of Max. Torque<br/>最大扭矩的低字节</td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">255 (0XFF)</td>
+</tr>
+<tr>
+<td style="text-align:center">15 (0X0F)</td>
+<td style="text-align:center">Max Torque(H)<br/>最大扭矩</td>
+<td style="text-align:center">Highest byte of Max. Torque<br/>最大扭矩的高字节</td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">3 (0X03)</td>
+</tr>
+<tr>
+<td style="text-align:center">16 (0X10)</td>
+<td style="text-align:center">Status Return Level<br/>状态回传</td>
+<td style="text-align:center">Status Return Level<br/>状态回传</td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">2 (0X02)</td>
+</tr>
+<tr>
+<td style="text-align:center">17 (0X11)</td>
+<td style="text-align:center">Alarm LED<br/>警示LED</td>
+<td style="text-align:center">LED for Alarm<br/>警示LED</td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">36(0x24)</td>
+</tr>
+<tr>
+<td style="text-align:center">18 (0X12)</td>
+<td style="text-align:center">Alarm Shutdown<br/>关闭警示</td>
+<td style="text-align:center">Shutdown for Alarm<br/>关闭警示</td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">36(0x24)</td>
+</tr>
+</tbody>
+</table>
+<p>Model Number</p>
+<p>舵机型号，比如AX-12A，型号为12；</p>
+<p>Firmware Version</p>
+<p>固件版本</p>
+<p>ID</p>
+<p>这是一个唯一数值，用于标识Dynamixel舵机。<br>
+可以使用的值范围为0到252（0xFC），254（0xFE）作为广播ID使用。<br>
+如果ID 254（0xFE）作为指令包使用，将会对所有Dynamixel舵机起作用。<br>
+注意：不要在同一控制系统中使用重复的舵机ID（将会导致控制器无法检测到舵机的情况出现）</p>
+<p>Baud Rate</p>
+<p>这个值代表了协议的传输速度，可以用0到254（0xFE）的值来代替，分别代表的波特率值如下表所示。<br>
+速度值可以用以下公式进行计算：<br>
+Speed(BPS) = 2000000/(Data+1)</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Data<br/>数值</th>
+<th style="text-align:center">Set BPS<br/>设置波特率</th>
+<th style="text-align:center">Target BPS<br/>目标波特率</th>
+<th style="text-align:center">Tolerance<br/>容许误差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1000000.0</td>
+<td style="text-align:center">1000000.0</td>
+<td style="text-align:center">0.000 %</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">500000.0</td>
+<td style="text-align:center">500000.0</td>
+<td style="text-align:center">0.000 %</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">400000.0</td>
+<td style="text-align:center">400000.0</td>
+<td style="text-align:center">0.000 %</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center">250000.0</td>
+<td style="text-align:center">250000.0</td>
+<td style="text-align:center">0.000 %</td>
+</tr>
+<tr>
+<td style="text-align:center">9</td>
+<td style="text-align:center">200000.0</td>
+<td style="text-align:center">200000.0</td>
+<td style="text-align:center">0.000 %</td>
+</tr>
+<tr>
+<td style="text-align:center">16</td>
+<td style="text-align:center">117647.1</td>
+<td style="text-align:center">115200.0</td>
+<td style="text-align:center">-2.124 %</td>
+</tr>
+<tr>
+<td style="text-align:center">34</td>
+<td style="text-align:center">57142.9</td>
+<td style="text-align:center">57600.0</td>
+<td style="text-align:center">0.794 %</td>
+</tr>
+<tr>
+<td style="text-align:center">103</td>
+<td style="text-align:center">19230.8</td>
+<td style="text-align:center">19200.0</td>
+<td style="text-align:center">-0.160 %</td>
+</tr>
+<tr>
+<td style="text-align:center">207</td>
+<td style="text-align:center">9615.4</td>
+<td style="text-align:center">9600.0</td>
+<td style="text-align:center">-0.160 %</td>
+</tr>
+</tbody>
+</table>
+<p>注意：UART串口通信能接受最大3%左右的错误率。</p>
+<p>Return Delay Time （回应延迟时间）</p>
+<p>回应延迟时间是指在数据发出时，到数据返回直接的时间间隔。<br>
+可用数值范围为0到254（0xFE），而每个数值代表2微秒。<br>
+这就是说，如果数值为10，那么就是延迟20微秒，而默认的初始值是250（0xFA），也就是0.5毫秒。</p>
+<p>CW/CCW Angle Limit （顺时针/逆时针角度限制）</p>
+<p>控制舵机的极限角度。<br>
+可设置的范围和单位跟目标位置的相同（地址：30（0X1E），31（0X1F））<br>
+顺时针方向角度限制：目标位置的最小值（地址：30（0X1E），31（0X1F））<br>
+逆时针方向角度限制：目标位置的最大值（地址：30（0X1E），31（0X1F））<br>
+可以依据顺时针或者逆时针方向来设定以下两种模式的值</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Operation Type<br/>运行方式</th>
+<th style="text-align:center">CW / CCW<br/>顺时针/逆时针</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Wheel Mode<br/>轮子模式</td>
+<td style="text-align:center">both are 0<br/>都是0</td>
+</tr>
+<tr>
+<td style="text-align:center">Joint Mode<br/>关节模式</td>
+<td style="text-align:center">neither at 0<br/>都不是0</td>
+</tr>
+</tbody>
+</table>
+<p>轮子模式可以使舵机处于无极限地旋转状态，此时机器人可以把舵机当做车轮来使用。<br>
+关节模式可以控制舵机的转动角度，此时可以把舵机当做机器人的关节来使用。</p>
+<p>The Highest Limit Temperature（最高温度限制）</p>
+<p>警告：设置温度时不要低于/高于默认值。<br>
+当温度警示灯停止之后，要等待至少20分钟之后才重新使用舵机。<br>
+如果舵机在高温下使用，可能会损坏舵机。</p>
+<p>The Lowest (Highest) Limit Voltage （最低（最高）电压限制）</p>
+<p>可以设置的范围为：50到250（0x32~0x96），单位为0.1V。<br>
+例如，如果设置为80，则电压值为8V。<br>
+如果“当前电压值”（地址42（0x2A）的值）超出设定值，电压状态错误位（Bit0）会被置为‘1’并返回，同时也会导致警报地址（地址17（0x11）和18（0x12））被设置。</p>
+<p>Max Torque （最大扭矩）</p>
+<p>最大输出扭矩，可设置范围为0到1023（0x03ff），单位为最大扭矩的0.1%。<br>
+比如，数值1023（0x3ff）代表的是Dynamixel舵机的最大扭矩，而数值512（0x200）代表的是舵机最大扭矩的50%。但舵机上电时，地址34（0x22）和35（0x23）里的数值代表的是舵机初始扭矩。</p>
+<p>Status Return Level （状态回传）</p>
+<p>状态回传取决于怎样回传状态包，这里有三种回传方式可选择：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">数值</th>
+<th style="text-align:center">状态回传</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">对所有指令不作回传 (除了 PING 指令)</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">只对“READ”指令做回传</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">对所有指令做回传</td>
+</tr>
+</tbody>
+</table>
+<p>当指令为广播ID时，不管回传状态为什么方式都不作回传。</p>
+<p>Alarm LED （警示LED）</p>
+<p>Alarm Shutdown （关闭警示）</p>
+<p>Dynamixel舵机在操作期间如果监测到错误发生，会做出自我保护。<br>
+错误位可以设置为以下情况：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Bit</th>
+<th style="text-align:center">Name</th>
+<th style="text-align:center">Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Bit 7</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">—</td>
+</tr>
+<tr>
+<td style="text-align:center">Bit 6</td>
+<td style="text-align:center">指令错误</td>
+<td style="text-align:center">当传送了不符合规格的指令，或者传送的动作指令里没有reg_write指令。</td>
+</tr>
+<tr>
+<td style="text-align:center">Bit 5</td>
+<td style="text-align:center">过载错误</td>
+<td style="text-align:center">当前承载超过了最大扭矩的承受范围</td>
+</tr>
+<tr>
+<td style="text-align:center">Bit 4</td>
+<td style="text-align:center">校验位错误</td>
+<td style="text-align:center">发送的协议出现校验位的校验码错误</td>
+</tr>
+<tr>
+<td style="text-align:center">Bit 3</td>
+<td style="text-align:center">范围错误</td>
+<td style="text-align:center">所传送的指令超出设定范围</td>
+</tr>
+<tr>
+<td style="text-align:center">Bit 2</td>
+<td style="text-align:center">过热错误</td>
+<td style="text-align:center">舵机内在温度超出了设定的温度范围</td>
+</tr>
+<tr>
+<td style="text-align:center">Bit 1</td>
+<td style="text-align:center">角度限制错误</td>
+<td style="text-align:center">传送指令中的角度超出设定的角度范围</td>
+</tr>
+<tr>
+<td style="text-align:center">Bit 0</td>
+<td style="text-align:center">输入电压错误</td>
+<td style="text-align:center">使用电压超出设定的电压范围</td>
+</tr>
+</tbody>
+</table>
+<p>由于错误码是以逻辑或“OR”进行运算的，所以可以叠加回传。例如，0X05（二进制为：00000101）集合，表示检测到输入电压错误和过热错误。如果错误产生，就报警LED来说，LED会闪烁，假如报警LED关闭，舵机将会通过控制扭矩限制Torque Limit（地址34,35）变为0，而致使输出扭矩变成0%。</p>
+<h2 id="ram">RAM</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">地址（16进制）</th>
+<th style="text-align:center">名称</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">存取</th>
+<th style="text-align:center">初始值（16进制）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">24 (0X18)</td>
+<td style="text-align:center">Torque Enable<br/>扭矩使能</td>
+<td style="text-align:center">Torque On/Off<br/></td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">0 (0X00)</td>
+</tr>
+<tr>
+<td style="text-align:center">25 (0X19)</td>
+<td style="text-align:center">LED</td>
+<td style="text-align:center">LED On/Off</td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">0 (0X00)</td>
+</tr>
+<tr>
+<td style="text-align:center">26 (0X1A)</td>
+<td style="text-align:center">CW Compliance Margin</td>
+<td style="text-align:center">CW Compliance margin</td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">1 (0X01)</td>
+</tr>
+<tr>
+<td style="text-align:center">27 (0X1B)</td>
+<td style="text-align:center">CCW Compliance Margin</td>
+<td style="text-align:center">CCW Compliance margin</td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">1 (0X01)</td>
+</tr>
+<tr>
+<td style="text-align:center">28 (0X1C)</td>
+<td style="text-align:center">CW Compliance Slope</td>
+<td style="text-align:center">CW Compliance slope</td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">32 (0X20)</td>
+</tr>
+<tr>
+<td style="text-align:center">29 (0X1D)</td>
+<td style="text-align:center">CCW Compliance Slope</td>
+<td style="text-align:center">CCW Compliance slope</td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">32 (0X20)</td>
+</tr>
+<tr>
+<td style="text-align:center">30 (0X1E)</td>
+<td style="text-align:center">Goal Position(L)<br/>目标位置</td>
+<td style="text-align:center">Lowest byte of Goal Position<br/>目标位置低字节</td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">–</td>
+</tr>
+<tr>
+<td style="text-align:center">31 (0X1F)</td>
+<td style="text-align:center">Goal Position(H)<br/>目标位置</td>
+<td style="text-align:center">Highest byte of Goal Position<br/>目标位置高字节</td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">–</td>
+</tr>
+<tr>
+<td style="text-align:center">32 (0X20)</td>
+<td style="text-align:center">Moving Speed(L)<br/>转动速度</td>
+<td style="text-align:center">Lowest byte of Moving Speed (Moving Velocity)转动速度低字节</td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">–</td>
+</tr>
+<tr>
+<td style="text-align:center">33 (0X21)</td>
+<td style="text-align:center">Moving Speed(H)<br/>转动速度</td>
+<td style="text-align:center">Highest byte of Moving Speed (Moving Velocity)转动速度高字节</td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">–</td>
+</tr>
+<tr>
+<td style="text-align:center">34 (0X22)</td>
+<td style="text-align:center">Torque Limit(L)<br/>扭矩限制</td>
+<td style="text-align:center">Lowest byte of Torque Limit (Goal Torque)<br/>扭矩限制低字节</td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">ADD14</td>
+</tr>
+<tr>
+<td style="text-align:center">35 (0X23)</td>
+<td style="text-align:center">Torque Limit(H)<br/>扭矩限制</td>
+<td style="text-align:center">Highest byte of Torque Limit (Goal Torque)<br/>扭矩限制高字节</td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">ADD15</td>
+</tr>
+<tr>
+<td style="text-align:center">36 (0X24)</td>
+<td style="text-align:center">Present Position(L)<br/>当前位置</td>
+<td style="text-align:center">Lowest byte of Current Position (Present Velocity)<br/>当前位置低字节</td>
+<td style="text-align:center">R</td>
+<td style="text-align:center">–</td>
+</tr>
+<tr>
+<td style="text-align:center">37 (0X25)</td>
+<td style="text-align:center">Present Position(H)<br/>当前位置</td>
+<td style="text-align:center">Highest byte of Current Position (Present Velocity)<br/>当前位置高字节</td>
+<td style="text-align:center">R</td>
+<td style="text-align:center">–</td>
+</tr>
+<tr>
+<td style="text-align:center">38 (0X26)</td>
+<td style="text-align:center">Present Speed(L)<br/>当前速度</td>
+<td style="text-align:center">Lowest byte of Current Speed<br/>当前速度低字节</td>
+<td style="text-align:center">R</td>
+<td style="text-align:center">–</td>
+</tr>
+<tr>
+<td style="text-align:center">39 (0X27)</td>
+<td style="text-align:center">Present Speed(H)<br/>当前速度</td>
+<td style="text-align:center">Highest byte of Current Speed<br/>当前速度高字节</td>
+<td style="text-align:center">R</td>
+<td style="text-align:center">–</td>
+</tr>
+<tr>
+<td style="text-align:center">40 (0X28)</td>
+<td style="text-align:center">Present Load(L)<br/>当前负载</td>
+<td style="text-align:center">Lowest byte of Current Load<br/>当前负载低字节</td>
+<td style="text-align:center">R</td>
+<td style="text-align:center">–</td>
+</tr>
+<tr>
+<td style="text-align:center">41 (0X29)</td>
+<td style="text-align:center">Present Load(H)<br/>当前负载</td>
+<td style="text-align:center">Highest byte of Current Load<br/>当前负载高字节</td>
+<td style="text-align:center">R</td>
+<td style="text-align:center">–</td>
+</tr>
+<tr>
+<td style="text-align:center">42 (0X2A)</td>
+<td style="text-align:center">Present Voltage<br/>当前电压</td>
+<td style="text-align:center">Current Voltage<br/>当前电压</td>
+<td style="text-align:center">R</td>
+<td style="text-align:center">–</td>
+</tr>
+<tr>
+<td style="text-align:center">43 (0X2B)</td>
+<td style="text-align:center">Present Temperature<br/>当前温度</td>
+<td style="text-align:center">Current Temperature<br/>当前温度</td>
+<td style="text-align:center">R</td>
+<td style="text-align:center">–</td>
+</tr>
+<tr>
+<td style="text-align:center">44 (0X2C)</td>
+<td style="text-align:center">Registered<br/>指令登记</td>
+<td style="text-align:center">Means if Instruction is registered<br/>表示指令是否被执行</td>
+<td style="text-align:center">R</td>
+<td style="text-align:center">0 (0X00)</td>
+</tr>
+<tr>
+<td style="text-align:center">46 (0X2E)</td>
+<td style="text-align:center">Moving<br/>运动</td>
+<td style="text-align:center">Means if there is any movement<br/>表示是否运动</td>
+<td style="text-align:center">R</td>
+<td style="text-align:center">0 (0X00)</td>
+</tr>
+<tr>
+<td style="text-align:center">47 (0X2F)</td>
+<td style="text-align:center">Lock<br/>锁定</td>
+<td style="text-align:center">Locking EEPROM<br/>EEPROM锁定</td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">0 (0X00)</td>
+</tr>
+<tr>
+<td style="text-align:center">48 (0X30)</td>
+<td style="text-align:center">Punch(L)<br/>载流</td>
+<td style="text-align:center">Lowest byte of Punch<br/>载流低字节</td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">32 (0X20)</td>
+</tr>
+<tr>
+<td style="text-align:center">49 (0X31)</td>
+<td style="text-align:center">Punch(H)<br/>载流</td>
+<td style="text-align:center">Highest byte of Punch<br/>载流高字节</td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">0 (0X00)</td>
+</tr>
+</tbody>
+</table>
+<p>扭矩生效</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">数值</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">通过中断电机供电保持舵机转矩不变</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">通过对电机供电使舵机产生转矩</td>
+</tr>
+</tbody>
+</table>
+<p>LED</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">数值</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">关闭LED</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">开启LED</td>
+</tr>
+</tbody>
+</table>
+<p>Goal Position (目标位置)</p>
+<p>这个值代表目标位置。<br>
+值的范围为：0到1023。单位精度为0.29度。<br>
+如果目标位置超出范围值，状态数据包的角度限制错误位（Bit 1）将会返回“1”，并且将会根据警告LED的设置发出警报。<br>
+<img src="http://xiaoyatec.com/wp-content/uploads/2016/07/20160711114841_86161.png" alt="" loading="lazy"><br>
+以上图片信息只用于关节模式，在轮子模式下不可用！</p>
+<p>Moving Speed （转动速度）</p>
+<p>这个值代表的是到达目标位置的转动速度。<br>
+根据不同的模式选择，会有不同的范围值和单位值。</p>
+<ul>
+<li>
+<h2 id="关节模式">关节模式：</h2>
+</li>
+</ul>
+<p>范围值为：0到1023（0X3FF）。单位值为0.111rpm。<br>
+当设置为0时，舵机将不受速度控制，以最大速度运动。<br>
+如果设置为最大值1023时，速度为114rpm。<br>
+例如，如果值设置为300，代表的是33.3rpm。<br>
+注意：确保是在关节模式时设置的最大值，即使设置的范围超出了最大值，转动的速度也将不会超出最大的范围值。</p>
+<ul>
+<li>
+<h2 id="轮子模式">轮子模式：</h2>
+</li>
+</ul>
+<p>范围值为：0到2047（0X7FF），单位为0.1%。<br>
+当逆时针方向旋转时，范围值为0到1023，0值为停止；<br>
+当顺时针方向旋转时，范围值为1024到2047，1024值为停止。<br>
+这就是说第10个bit是用于控制方向的。<br>
+在轮子模式，对于扭矩可以控制输出的大小，而不可以控制速度。<br>
+例如，如果设置为512，代表为最大输出的50%。</p>
+<p>Torque Limit (扭矩限制)</p>
+<p>最大扭矩输出控制<br>
+范围为0到1023（0X3FF），单位为0.1%。<br>
+例如，如果设置为512，代表为50%，意思就是最大输出扭矩的50%。<br>
+当控制器上电时，将会以Max Torque（地址14，15）里的值为初始值。<br>
+注意：当触发关机警告时，舵机将会失去扭矩，此时舵机扭矩为0。在这个时候，如果更改舵机扭矩的值，不为0，舵机将可重新启用。</p>
+<p>Present Position （当前位置值）</p>
+<p>代表舵机的当前位置。<br>
+范围为0到1023（0X3FF），单位为0.29度。<br>
+<img src="http://xiaoyatec.com/wp-content/uploads/2016/07/20160711115150_41253.png" alt="舵机位置表示" loading="lazy"><br>
+警告：在轮子模式下，这个值不能代表移动距离和转动频率。</p>
+<p>Present Speed （当前速度）</p>
+<p>代表当前的运动速度。<br>
+范围值为0到2047（0X7FF）。<br>
+如果此值为0到1023时，代表此时是逆时针旋转；<br>
+如果此值为1024到2047时，代表顺时针旋转。<br>
+这就是说，第10个bit的值代表了运动方向，0和1024是等效的。<br>
+这个值的单位得视转动模式而定。</p>
+<ul>
+<li>
+<h2 id="关节模式-2">关节模式：</h2>
+</li>
+</ul>
+<p>单位为0.11rpm。<br>
+例如，如果值为300，代表了逆时针运动的速度为33.3rpm。</p>
+<ul>
+<li>
+<h2 id="轮子模式-2">轮子模式：</h2>
+</li>
+</ul>
+<p>单位为0.1%。<br>
+例如，如果值为512，代表着逆时针输出扭矩为最大扭矩的50%。</p>
+<p>Present Load （即时负载）</p>
+<p>代表现在负载情况。<br>
+范围为0到2047，单位为0.1%。<br>
+如果范围为0到1023，逆时针方向负载；<br>
+如果范围为1024到2047，顺时针方向负载。<br>
+这就是说，第10个bit的值代表了运动方向，0和1024是等效的。<br>
+例如，如果值为512，代表着逆时针方向以50%的扭矩负载。<br>
+<img src="http://xiaoyatec.com/wp-content/uploads/2016/07/20160711115253_58068.png" alt="" loading="lazy"><br>
+注意：即时负载是根据输出进行内部推测的值，而不是来自力矩传感器。由于这个原因，这个值不可用于测量重量或者力矩，但可以用于判断受压方向。</p>
+<p>Present Voltage （当前电压）</p>
+<p>代表当前供应的电压。<br>
+这个值是当前实际电压的10倍，例如，输入电压为10V，这个值为100（0X64）。</p>
+<p>Present Temperature （当前温度）</p>
+<p>这个值代表了舵机的摄氏温度。<br>
+这个值跟实际摄氏温度值一致，例如，数值为85（0X55），代表当前温度为85℃。</p>
+<p>指令登记：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">值</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">没有指令通过REG_WRITE传输</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">有指令通过REG_WRITE传输</td>
+</tr>
+</tbody>
+</table>
+<p>注意：如果ACTION指令被执行，这个值将会变成0。</p>
+<p>旋转运动</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">值</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">目标位置运动指令执行完毕</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">目标位置运动指令正在执行中</td>
+</tr>
+</tbody>
+</table>
+<p>锁定</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">值</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">EEPROM 区域可被修改</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">EEPROM 区域不可被修改</td>
+</tr>
+</tbody>
+</table>
+<p>警示：如果Lock设置为1，必须断电，重新上电，该数值变为0。</p>
+<p>载流</p>
+<p>驱动电机的电流已经设为最小。<br>
+可设置的范围为0x20到0x3ff。</p>
+<h1 id="舵机尺寸">舵机尺寸：</h1>
+<figure data-type="image" tabindex="2"><img src="http://xiaoyatec.com/wp-content/uploads/2016/07/20160711120711_42144.png" alt="舵机尺寸图" loading="lazy"></figure>
+<h1 id="a-target_blank-hrefhttpmailqqcomcgi-binqm_sharetqm_mailmeemailk_h88fzp0_livfd8-g-styletext-decorationnone-意见反馈a"><a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=k_H88fzp0_LivfD8-g" style="text-decoration:none;">✉ 意见反馈</a></h1>
+
+                        </div>
+                        
+                            <div class="post-toc">
+                                <ul class="markdownIt-TOC">
+<li><a href="#%E6%8A%80%E6%9C%AF%E5%8F%82%E6%95%B0">技术参数：</a></li>
+<li><a href="#%E6%8E%A7%E5%88%B6%E5%88%97%E8%A1%A8">控制列表：</a>
+<ul>
+<li><a href="#eeprom-%E5%92%8C-ram-%E5%AD%98%E5%82%A8">EEPROM 和 RAM 存储</a></li>
+<li><a href="#address-%E4%BD%8D%E5%9D%80">Address ( 位址)</a></li>
+<li><a href="#access-%E5%AD%98%E5%8F%96">Access ( 存取)</a></li>
+<li><a href="#initial-value-%E5%88%9D%E5%A7%8B%E5%80%BC">Initial Value ( 初始值)</a></li>
+<li><a href="#highestlowest-byte-%E9%AB%98%E4%BD%8E%E4%BD%8D%E5%AD%97%E8%8A%82">Highest/Lowest Byte ( 高/低位字节)</a></li>
+<li><a href="#eeprom">EEPROM</a></li>
+<li><a href="#ram">RAM</a></li>
+<li><a href="#%E5%85%B3%E8%8A%82%E6%A8%A1%E5%BC%8F">关节模式：</a></li>
+<li><a href="#%E8%BD%AE%E5%AD%90%E6%A8%A1%E5%BC%8F">轮子模式：</a></li>
+<li><a href="#%E5%85%B3%E8%8A%82%E6%A8%A1%E5%BC%8F-2">关节模式：</a></li>
+<li><a href="#%E8%BD%AE%E5%AD%90%E6%A8%A1%E5%BC%8F-2">轮子模式：</a></li>
+</ul>
+</li>
+<li><a href="#%E8%88%B5%E6%9C%BA%E5%B0%BA%E5%AF%B8">舵机尺寸：</a></li>
+<li><a href="#a-target_blank-hrefhttpmailqqcomcgi-binqm_sharetqm_mailmeemailk_h88fzp0_livfd8-g-styletext-decorationnone-%E6%84%8F%E8%A7%81%E5%8F%8D%E9%A6%88a"><a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=k_H88fzp0_LivfD8-g" style="text-decoration:none;">✉ 意见反馈</a></a></li>
+</ul>
+
+                            </div>
+                            
+                                
+                                    
+                                            <!--zh-->
+                                            <section class="post-copyright zh">
+                                                <p class="copyright-item ">
+                                                    <span>&#x4F5C;&#x8005;:</span>
+                                                    <span>ROBOZ</span>
+                                                </p>
+
+                                                <p class="copyright-item">
+                                                    <span>&#x6C38;&#x4E45;&#x94FE;&#x63A5;:</span>
+                                                    <span><a href="https://roboz-up.github.io/post/xiao-ya-duo-ji-ji-zhu-zi-liao/">https://roboz-up.github.io/post/xiao-ya-duo-ji-ji-zhu-zi-liao/</a></span>
+                                                </p>
+
+                                                <p class="copyright-item">
+                                                    <span>&#x534F;&#x8BAE;:</span>
+                                                    <span>MIT License</span>
+                                                </p>
+                                            </section>
+                                            
+                                                
+                                                    
+                                                                    <!--Share-->
+                                                                    <span style="margin-right:15px">
+                        <i class="post-share"></i>
+                        <span>&#x5206;&#x4EAB;:</span>
+                                                                    <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://roboz-up.github.io/post/xiao-ya-duo-ji-ji-zhu-zi-liao/"><i class="fa fa-qrcode"></i></a>
+                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://roboz-up.github.io/post/xiao-ya-duo-ji-ji-zhu-zi-liao/&sharesource=qzone&title=小芽舵机技术资料&pics=https://roboz-up.github.io/images/avatar.png?v=1602934132569&summary="><i class="fa fa-qq"></i></a>
+                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://roboz-up.github.io/post/xiao-ya-duo-ji-ji-zhu-zi-liao/&sharesource=weibo&title=小芽舵机技术资料 + " - " + &pic="https://roboz-up.github.io/images/avatar.png?v=1602934132569 "><i class="fa fa-weibo "></i></a>
+
+                                                                    </span>
+                                                                    
+                                                                            <!--zh-->
+                                                                            <section class="post-tags zh ">
+                                                                                <div>
+                                                                                    <span>&#x6807;&#x7B7E;:</span>
+                                                                                    <span class="tag ">
+                        
+                                </span>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <a href="javascript:window.history.back();">
+                        &#x8FD4;&#x56DE;</a>
+                                                                                    <span>&dot;</span>
+                                                                                    <a href="#">&#x4E3B;&#x9875;</a>
+                                                                                </div>
+                                                                            </section>
+
+                                                                            
+                                                                                <!---->
+                                                                                <section class="post-nav">
+                                                                                    
+                                                                                            
+                                                                                                <a class="next" rel="next" href="https://roboz-up.github.io/post/api-ji/">
+                                                                                                    API集
+                                                                                                </a>
+                                                                                                
+                                                                                </section>
+                    </article>
+                </div>
+                
+                                            
+            </div>
+    </div>
+    </div>
+    </div>
+    
+        <footer id="footer" class="footer">
+            <div class="copyright">
+                
+                        <a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=k_H88fzp0_LivfD8-g" style="text-decoration:none;">意见反馈  ✒</a>
+                            
+                                <b id="hitokoto"></b><br>
+                                
+                                        <svg viewBox="0 0 1024 1024" style="margin-left: 5px;margin-right: 5px;" version="1.0" width="8" height="8" class="my-face">
+            <path
+                d="M863.597631 513.574282l-271.33965-140.213484L729.783667 81.926656c3.583731-7.87141 7.167462-15.742819 7.167462-25.214109C736.887134 25.226908 708.345275 0.012799 672.635953 0.012799a63.611229 63.611229 0 0 0-39.293053 12.607055c-1.791866 1.59988-3.519736 3.19976-5.311602 3.19976L147.87531 418.925381a55.547834 55.547834 0 0 0-19.646527 47.356448c1.791866 17.278704 14.27093 33.021523 32.125591 42.492813l271.33965 141.749369L292.504463 945.221908c-12.479064 25.214109-1.791866 53.563983 23.166262 69.306802 10.751194 6.335525 23.230258 9.47129 35.709322 9.47129 16.062795 0 32.125591-4.735645 44.604655-15.742819l480.091993-403.297753a55.547834 55.547834 0 0 0 19.646526-47.228458 61.243407 61.243407 0 0 0-32.12559-44.156688z"
+                fill="#93b5cf"></path>
+        </svg>
+                                        ROBOZ &copy;Copyright
+                                            <script>
+                                                var date = new Date();
+                                                document.write("" + date.getFullYear());
+                                            </script>
+                                            | Powered by
+                                            <a href="https://github.com/" target="_blank">
+                                                Github
+                                            </a>
+            </div>
+            <div id="update" style="display:none;">
+                on
+            </div>
+            
+                <div id="version" style="display:none;">
+                    1.7.3
+                </div>
+                
+                    <script>
+                        var pat = '';
+                        
+                        document.write('<div id="home_path" style="display:none;">' + document.location.protocol + '//' + window.document.location.hostname + pat + '</div>')
+                    </script>
+        </footer>
+        
+            <script src='https://cdn.jsdelivr.net/npm/live2d-widget@3.x/lib/L2Dwidget.min.js'></script>
+            
+                <script>
+                    
+                    
+                    loadlive2d();
+                    
+                    
+                    hitokoto();
+                    
+                    getStar();
+                    hljs.initHighlighting();
+                    console.clear();
+                    
+                    CheckVersion();
+                    
+                    var newDate = new Date();
+                    newDate.setTime(1602934132569);
+                    console.log(" Blog Update Time: " + newDate.toLocaleDateString());
+                    console.log("\n %c \u26a1Theme:Chic Author's Blog:https://blog.itjoker.cn  Write By ITJoker  \n\n", "color: #ffffff; background: rgba(49, 49, 49, 0.85); padding:5px 0;border-radius:5px;");
+                </script>
+                
+        </div>
+</body>
+<script>
+    scroll();
+</script>
+
+</html>
