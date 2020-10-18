@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://roboz-up.github.io</id>
     <title>ROBOZ</title>
-    <updated>2020-10-18T08:00:38.862Z</updated>
+    <updated>2020-10-18T08:06:00.285Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://roboz-up.github.io"/>
     <link rel="self" href="https://roboz-up.github.io/atom.xml"/>
@@ -103,6 +103,8 @@
 </table>
 <p>※ 堵转扭矩指的是瞬间禁止最大扭矩<br>
 ※ 稳定动作的扭矩一般设计为堵转扭矩的1/5或者更少</p>
+<h1 id="舵机尺寸">舵机尺寸：</h1>
+<figure data-type="image" tabindex="1"><img src="http://xiaoyatec.com/wp-content/uploads/2016/07/20160711120711_42144.png" alt="舵机尺寸图" loading="lazy"></figure>
 <h1 id="控制列表">控制列表：</h1>
 <p>控制表包含了舵机的状态和操作信息。用户可以通过修改指令包数据来控制舵机。</p>
 <h3 id="eeprom-和-ram-存储">EEPROM 和 RAM 存储</h3>
@@ -804,8 +806,6 @@ Speed(BPS) = 2000000/(Data+1)</p>
 <h3 id="载流">载流</h3>
 <p>驱动电机的电流已经设为最小。<br>
 可设置的范围为0x20到0x3ff。</p>
-<h1 id="舵机尺寸">舵机尺寸：</h1>
-<figure data-type="image" tabindex="1"><img src="http://xiaoyatec.com/wp-content/uploads/2016/07/20160711120711_42144.png" alt="舵机尺寸图" loading="lazy"></figure>
 <h1 id="a-target_blank-hrefhttpmailqqcomcgi-binqm_sharetqm_mailmeemailk_h88fzp0_livfd8-g-styletext-decorationnone-意见反馈a"><a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=k_H88fzp0_LivfD8-g" style="text-decoration:none;">✉ 意见反馈</a></h1>
 ]]></content>
     </entry>
